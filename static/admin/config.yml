@@ -1,6 +1,12 @@
+local_backend: true
+
+publish_mode: editorial_workflow
+display_url: https://www.ppfhouse.com/
+logo_url: https://www.ppfhouse.com/safari-pinned-tab.svg
+
 backend:
   name: git-gateway
-  branch: master
+  branch: primary
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -9,58 +15,406 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 media_folder: static/img
-public_folder: /img
+# public_folder: /img
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dunew51zn
+    api_key: 193318238412777
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: 'animation'
+    label: 'Animation'
+    folder: 'src/pages/animation'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'animation',
+        }
+      - label: ID
+        name: id
+        widget: ncw-id
+        prefix: animation
+        timestamp: false
+        hidden: true
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Type',
+          name: 'type',
+          widget: 'select',
+          options: ['demo', 'independent', 'commercial'],
+        }
+      - { label: 'URL', name: 'url', widget: 'string' }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
-  - name: "pages"
-    label: "Pages"
+  - name: 'art-design'
+    label: 'Art and Design'
+    folder: 'src/pages/art-design'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'art-design',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: art-design }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Filename', name: 'filename', widget: image }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'news'
+    label: 'News'
+    folder: 'src/pages/news'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'news',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: news }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Group',
+          name: 'group',
+          widget: 'select',
+          options:
+            [
+              'PPF House',
+              'Tim Shia',
+              'Howie Shia',
+              'LEO37',
+              'The Worst Pop Band Ever',
+              'Jazz for Juniors',
+            ],
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Include on PPF House News page',
+          name: 'general',
+          widget: 'boolean',
+          default: true,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'event'
+    label: 'Event'
+    folder: 'src/pages/events'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{artist}}-{{venue}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'event',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: event }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          hint: 'If not provided, a default title of "Artist, Venue" will be used.',
+          required: false,
+        }
+      - { label: 'Date', name: 'date', widget: 'datetime', picker_utc: true }
+      - {
+          label: 'Time',
+          name: 'eventTime',
+          widget: 'string',
+          hint: 'If the event time is more nuanced than what is already available from the date.',
+          required: false,
+        }
+      - { label: 'Artist', name: 'artist', widget: 'string' }
+      - { label: 'Venue', name: 'venue', widget: 'string' }
+      - { label: 'City', name: 'city', widget: 'string', required: false }
+      - { label: 'Guests', name: 'guests', widget: 'string', required: false }
+      - { label: 'Link', name: 'url', widget: 'string', required: false }
+      - {
+          label: 'Group',
+          name: 'group',
+          widget: 'select',
+          options:
+            [
+              'PPF House',
+              'Tim Shia',
+              'Howie Shia',
+              'LEO37',
+              'The Worst Pop Band Ever',
+              'Jazz for Juniors',
+            ],
+        }
+
+  - name: 'comics'
+    label: 'Comics'
+    folder: 'src/pages/comics'
+    create: true
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'comics',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Cover', name: 'cover', widget: image }
+      - label: 'Pages'
+        name: 'pages'
+        widget: 'list'
+        collapsed: false
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Image', name: 'image', widget: image }
+
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: 'src/pages/index.md'
+        label: 'Splash Page'
+        name: 'index'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'index-page',
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+          - { label: Description, name: description, widget: string }
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Main,
+              name: main,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Image1,
+                    name: image1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                  {
+                    label: Image2,
+                    name: image2,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                  {
+                    label: Image3,
+                    name: image3,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                ],
+            }
+      - file: 'src/pages/about/index.md'
+        label: 'About'
+        name: 'about'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'about-page',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - label: 'Content'
+            name: 'content'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Body', name: 'body', widget: 'markdown' }
+
+      - name: 'contacts'
+        label: 'Contacts'
+        file: 'src/pages/contact/index.md'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'contacts',
+            }
+          - label: 'Contacts'
+            name: 'contacts'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - {
+                  label: 'URL',
+                  name: 'url',
+                  widget: 'string',
+                  hint: 'For email links, enter "mailto:" before the email address; for websites, include "https://',
+                }
+              - {
+                  label: 'Type',
+                  name: 'type',
+                  widget: 'select',
+                  options: ['Contact', 'Community'],
+                }
+
+      - name: 'music'
+        label: 'Music'
+        file: 'src/pages/music/index.md'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music',
+            }
+          - label: 'Groups'
+            name: 'groups'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Name', name: 'title', widget: 'string' }
+              - { label: 'Cover', name: 'thumbnail', widget: image }
+              - {
+                  label: 'Internal',
+                  name: 'slug',
+                  widget: 'string',
+                  hint: 'Short version of the name, lowercase, no special characters, and hyphen (-) for spaces. One of Internal or External is required.',
+                  required: false,
+                }
+              - {
+                  label: 'External',
+                  name: 'url',
+                  widget: 'string',
+                  hint: 'The full URL to an external website. One of Internal or External is required.',
+                  required: false,
+                }
+
+  - name: 'utilities'
+    label: 'Utilities'
+    files:
+      - name: 'animation-order'
+        label: 'Animation Order'
+        file: 'src/pages/animation-order/index.md'
+        fields:
+          - label: 'Utility'
+            name: 'utility'
+            widget: 'hidden'
+            default: 'animation-order'
+          - label: 'Animation items'
+            name: 'items'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - {
+                  label: 'Item',
+                  name: 'item',
+                  widget: 'relation',
+                  collection: 'animation',
+                  search_fields: ['title'],
+                  value_field: '{{id}}',
+                  display_fields: ['{{title}} ({{type}})'],
+                }
+
+      - name: 'art-design-order'
+        label: 'Art and Design Order'
+        file: 'src/pages/art-design-order/index.md'
+        fields:
+          - label: 'Utility'
+            name: 'utility'
+            widget: 'hidden'
+            default: 'art-design-order'
+          - label: 'Art and Design items'
+            name: 'items'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - {
+                  label: 'Item',
+                  name: 'item',
+                  widget: 'relation',
+                  collection: 'art-design',
+                  search_fields: ['title'],
+                  value_field: '{{id}}',
+                  display_fields: ['{{title}}'],
+                }
+
+      - name: 'comics-order'
+        label: 'Comics Order'
+        file: 'src/pages/comics-order/index.md'
+        fields:
+          - label: 'Utility'
+            name: 'utility'
+            widget: 'hidden'
+            default: 'comics-order'
+          - label: 'Comics items'
+            name: 'items'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - {
+                  label: 'Item',
+                  name: 'item',
+                  widget: 'relation',
+                  collection: 'comics',
+                  search_fields: ['title'],
+                  value_field: '{{id}}',
+                  display_fields: ['{{title}}'],
+                }

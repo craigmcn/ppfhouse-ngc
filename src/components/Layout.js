@@ -1,15 +1,22 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React, { Fragment, useEffect } from 'react'
 import { withPrefix } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import Header from '../components/Header'
+import useSiteMetadata from './SiteMetadata'
 
-const TemplateWrapper = ({ children }) => {
+import "../styles/base.css"
+import "../styles/layout.css"
+import "../styles/utilities.css"
+
+const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
   const { title, description } = useSiteMetadata()
+
+  useEffect(() => {
+    document.documentElement.className = "js";
+  }, []);
+
   return (
-    <div>
+    <Fragment>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -18,25 +25,25 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          href={`${withPrefix('/')}apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`${withPrefix('/')}favicon-32x32.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          href={`${withPrefix('/')}favicon-16x16.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
+          href={`${withPrefix('/')}safari-pinned-tab.svg`}
+          color="#ff0000"
         />
         <meta name="theme-color" content="#fff" />
 
@@ -48,10 +55,23 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
+
+      <a className="sr-only" href="#content">Skip to main content</a>
+
+      <Header />   
+
+      <div id="container" { ...props } >
+        { pageHeader }
+        { sidebar }
+
+        <div id="content">
+          <div className="wrapper">
+            { children }
+          </div>
+        </div>
+      </div>
+
+    </Fragment>
   )
 }
 

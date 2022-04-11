@@ -45,7 +45,7 @@ const Navbar = class extends React.Component {
               <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
-            <div
+            <button
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -53,7 +53,7 @@ const Navbar = class extends React.Component {
               <span />
               <span />
               <span />
-            </div>
+            </button>
           </div>
           <div
             id="navMenu"
@@ -81,7 +81,7 @@ const Navbar = class extends React.Component {
                 className="navbar-item"
                 href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 <span className="icon">
                   <img src={github} alt="Github" />
