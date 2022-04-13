@@ -10,4 +10,4 @@ Another brand new video [Love is for Losers](https://youtu.be/it54j9MoAso "Love 
 
 with special guests Sophia Perlman and Rebecca Hennessy. Special thanks to Matt Dusk for sound and camerawork.
 
-![Love is for Losers](https://www.ppfhouse.com/img/music/love%20is%20for%20losers.jpg)
+![Love is for Losers](https://res.cloudinary.com/dunew51zn/image/upload/v1617059309/music/love_is_for_losers_qzfnus.jpg)

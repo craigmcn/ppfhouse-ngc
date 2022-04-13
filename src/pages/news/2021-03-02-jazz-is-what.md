@@ -1,7 +1,7 @@
 ---
 templateKey: news
 title: Jazz is What!?
-group: Tim Shia
+group: The Worst Pop Band Ever
 general: true
 postedBy: timshia
 date: 2021-03-02T15:06:44-05:00

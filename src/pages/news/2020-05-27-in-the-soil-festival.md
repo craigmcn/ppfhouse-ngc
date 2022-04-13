@@ -14,7 +14,7 @@ You can join the experiment in story telling on Saturday, May 30 at 7pm
 or  
 [www.youtube.com/user/<wbr></wbr>InTheSoilArtsFest](https://www.youtube.com/user/InTheSoilArtsFest?fbclid=IwAR2PyaBBcipXm7zAjXB92gduIfjx1UhPT5bHSPyn51I9sBhu-FS_aLzRcAI)<span class="text_exposed_show">  
   
-for other festival events go to [www.inthesoil.on.ca](http://www.inthesoil.on.ca/?fbclid=IwAR38xP56HXbMyODmF8d-yQ8untV3QLsNWkz2Q8-9U33yKQzekjA8q5fAXxA)  
+for other festival events go to [www.inthesoil.on.ca](https://www.inthesoil.on.ca/?fbclid=IwAR38xP56HXbMyODmF8d-yQ8untV3QLsNWkz2Q8-9U33yKQzekjA8q5fAXxA)  
   
 The WPBE gives special thanks to the  
 Toronto Arts Council and the Ontario Arts Council</span>
