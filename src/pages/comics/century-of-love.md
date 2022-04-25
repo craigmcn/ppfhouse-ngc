@@ -1,6 +1,6 @@
 ---
 templateKey: comics
-id: ec4d6848-b670-11ec-86c0-a576618370a4
+id: 7bd9f49d-1683-4e46-9189-46f89bc940dc
 title: 'Century of Love'
 cover: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/century-of-love-cover_cye61e.jpg
 pages:

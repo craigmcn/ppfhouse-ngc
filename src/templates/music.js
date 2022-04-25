@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import PageHeader from '../components/MusicPageHeader'
@@ -8,18 +8,18 @@ import PageHeader from '../components/MusicPageHeader'
 const MusicPageTemplate = ({ groups }) => {
 
   return (
-    <div class="music-items columns-5">
+    <div className="music-items columns-5">
       { groups.map((group, index) => {
         const displayTitle = group.title === 'LEO37' ? 'LEO37' : group.title.toLowerCase()
         return (
-          <div class="column" key={ index }>
-            <div class="wrapper">
-              <div class="music-item">
-                <a href={ `${group.url || '/'+group.slug}` }>
+          <div className="column" key={ index }>
+            <div className="wrapper">
+              <div className="music-item">
+                <Link to={ `${group.url || '/'+group.slug}` }>
                   <img src={ group.thumbnail} alt={ group.title } />
-                </a>
-                <div class="music-item-title">
-                  <a href={ `${group.url || '/'+group.slug}` }>{ displayTitle }</a>
+                </Link>
+                <div className="music-item-title">
+                  <Link to={ `${group.url || '/'+group.slug}` }>{ displayTitle }</Link>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ContactPagePreview = ({ entry }) => {
+const MusicPagePreview = ({ entry }) => {
   const { groups } = entry.get('data').toJSON()
 
   return (
@@ -24,10 +24,10 @@ const ContactPagePreview = ({ entry }) => {
   )
 }
 
-ContactPagePreview.propTypes = {
+MusicPagePreview.propTypes = {
   entry: PropTypes.shape({
     get: PropTypes.func,
   }),
 }
 
-export default ContactPagePreview
+export default MusicPagePreview

@@ -10,7 +10,7 @@ Directed by Howie Shia
 
 Music by Tim Shia
 
-Animation by Howie Shia &amp; Lillian Chan
+Animation by Howie Shia & Lillian Chan
 
 Produced by Michael Fukushima (NFB, 2009)
 

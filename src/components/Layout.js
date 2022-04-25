@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { withPrefix } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import Header from '../components/Header'
+import Header from './shared/Header'
 import useSiteMetadata from './SiteMetadata'
 
 import "../styles/base.css"

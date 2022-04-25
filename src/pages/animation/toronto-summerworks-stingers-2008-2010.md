@@ -8,6 +8,6 @@ url:
 ---
 stingers for Toronto Summerworks Independent Theatre Festival
 
-directed &amp; animated by Howie Shia
+directed & animated by Howie Shia
 
 2008-2010

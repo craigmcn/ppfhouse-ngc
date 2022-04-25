@@ -17,6 +17,8 @@ const AnimationItem = (props) => {
         href={ url }
         title={ content }
         onClick={ handleClick }
+        data-id={ id }
+        data-title={ title }
       >
         <img src={ thumbnail } alt={ title } />
       </a>

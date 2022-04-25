@@ -8,6 +8,6 @@ url: https://www.youtube.com/embed/HpdkoLMVBds
 ---
 Television Pilot
 
-Written &amp; Directed by Howie Shia &amp; Dave Wolfe
+Written & Directed by Howie Shia & Dave Wolfe
 
 PORTFOLIO ENTERTAINMENT/TELETOON

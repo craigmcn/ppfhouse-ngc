@@ -3,7 +3,8 @@ import { CSSTransition } from "react-transition-group";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import ReactPortal from "../ReactPortal";
-import "./modalStyles.scss";
+import styles from "./modalStyles.module.scss";
+import "./modalTransitions.css";
 
 function Modal({ children, isOpen, handleClose, className }) {
 	const nodeRef = useRef(null);
@@ -28,14 +29,14 @@ function Modal({ children, isOpen, handleClose, className }) {
 				classNames="modal"
 				nodeRef={nodeRef}
 			>
-				<div className="modal" ref={nodeRef}>
-					<div className="modal__outer">
-						<div className="modal__close">
-							<button onClick={handleClose} className="modal__close" aria-label="Close">
+				<div className={ styles.modal } ref={nodeRef}>
+					<div className={ styles.modalOuter }>
+						<div className={ styles.modalClose }>
+							<button onClick={handleClose} aria-label="Close">
 								<FontAwesomeIcon icon={faXmark} size='2x' fixedWidth />
 							</button>
 						</div>
-						<div className={`modal-inner${ className ? ' '+className : ''}`}>{children}</div>
+						<div className={`${styles.modalInner}${ className ? ' '+className : ''}`}>{children}</div>
 					</div>
 				</div>
 			</CSSTransition>

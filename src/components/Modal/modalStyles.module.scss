@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.4);
+}
+
+.modalOuter {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalClose {
+  display: flex;
+  flex-shrink: 1;
+  justify-content: flex-end;
+}
+
+.modalClose>button {
+  all: unset;
+  color: white;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.modalClose>button:hover {
+  background-color: transparent;
+  border: none;
+  opacity: 1;
+}
+
+.modalInner {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

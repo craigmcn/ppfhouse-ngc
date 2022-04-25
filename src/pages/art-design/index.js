@@ -4,9 +4,10 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import { Helmet } from 'react-helmet'
 import Lightbox from '../../components/Lightbox/Lightbox'
-import { HowieSidebar as Sidebar } from '../../components/Sidebars'
+import { HowieSidebar as Sidebar } from '../../components/shared/Sidebars'
 import ArtDesignItem from '../../components/ArtDesign/ArtDesignItem'
 import ArtDesignPageHeader from '../../components/ArtDesign/PageHeader'
+import { getLightboxType } from '../../utilities'
 
 const ArtDesignPageTemplate = ({ pages }) => {
   const validArtItems = pages.edges
@@ -18,6 +19,7 @@ const ArtDesignPageTemplate = ({ pages }) => {
       content: node.internal.content?.trim(),
       description: node.html,
       thumbnail: node.frontmatter.thumbnail,
+      type: getLightboxType(node.frontmatter.filename),
     }))
   const [current, setCurrent] = useState({})
   const [open, setOpen] = useState(false)

@@ -32,7 +32,7 @@ content:
       Howie has been the executive creative producer on various creator-driven projects with Disney, UN-Habitat, Freemantle and more and his illustrations have been the face of projects for likes of Nike, Donny McCaslin and David Binney. His last film for the NFB, ***BAM***, debuted at the Toronto International Film Festival in 2015. His latest short film, ***Marco's Oriental Noodles***, was part of Jesse Wente's ***Keep Calm and Decolonize*** series for CBC.
 
 
-      ***Gods &amp; Greens Vol.1*,** a collection of comic strips, was recently published by **Animator Made Publishing** in Los Angeles.
+      ***Gods & Greens Vol.1*,** a collection of comic strips, was recently published by **Animator Made Publishing** in Los Angeles.
 
 
       Howie is presently developing several short films, 3 graphic novels, and a daughter with endless questions and a less quizzical baby boy.
@@ -44,21 +44,20 @@ content:
       headline tours and festivals through 11 countries, collaborate with some
       of Asia's leaders in street culture (as both a designer and endorsee)
       including: **REMIX** - *U.N.I.* (*TW*), **O.I.T.** - *FILTRD* (*TW, JP*)
-      **MJ FRESH -** #DYWM One Year Anniversary (*TW) &* **AFIRE** - B1993R
-      (*TW*) as well as being a founding member of ***The Blast*** who were
-      responsible for cultural movements **\\#DYWM** (Do You Want More?!) and
-      ***NIKE's*** 6-week street culture exhibition ***Summer Nights*** held in
-      Taipei. Having shared the stage with an eclectic mix of artists ranging
-      from *Raekwon & Ghostface Killah* (of the *Wu-Tang Clan*) to *the Bad Plus
-      to Louis Cole to Dean Beanz* and drawing inspiration from the careers of
-      artists like Miles Davis, the Soulquarians, the Native Tongues, Radiohead
-      and Björk. LEO37 strives for forward-thinking, content-driven music with a
-      thick groove. Be it as a solo performer, a producer or director, his range
-      is deep and diverse, offering forth an inspired and unique voice for our
-      times."
+      **MJ FRESH -** \\#DYWM One Year Anniversary (*TW) &* **AFIRE** -
+      B1993R (*TW*) as well as being a founding member of ***The Blast*** who
+      were responsible for cultural movements ***\\#DYWM** (Do You Want More?!)*
+      and ***NIKE's*** 6-week street culture exhibition ***Summer Nights*** held
+      in Taipei. Having shared the stage with an eclectic mix of artists ranging
+      from *Raekwon & Ghostface Killah* (of the *Wu-Tang Clan*) to *the Bad
+      Plus to Louis Cole to Dean Beanz* and drawing inspiration from the careers
+      of artists like Miles Davis, the Soulquarians, the Native Tongues,
+      Radiohead and Björk. LEO37 strives for forward-thinking, content-driven
+      music with a thick groove. Be it as a solo performer, a producer or
+      director, his range is deep and diverse, offering forth an inspired and
+      unique voice for our times."
 ---
-
-We make music, animation, art, and design for ourselves and others. Past and Present clients include **Disney**, **Nike**, **Freemantle Media**, **UN-habitat**, **the National Film Board of Canada**, **Teletoon**, **the CBC**, **O.I.T., Remix Taipei**, **David Binney**, **Donny McCaslin** and others. Meanwhile, we have garnered numerous awards and critical-acclaim for such independent initiatives as the **Worst Pop Band Ever**, **the Blast**, **037993**, **Jazz 4 Jrs**, and numerous comics and animated shorts (including the 2007 _Tokyo Anime Fair_ Grand-Prix winner, **_Flutter_**).
+We make music, animation, art, and design for ourselves and others. Past and Present clients include **Disney**, **Nike**, **Freemantle Media**, **UN-habitat**, **the National Film Board of Canada**, **Teletoon**, **the CBC**, **O.I.T., Remix Taipei**, **David Binney**, **Donny McCaslin** and others. Meanwhile, we have garnered numerous awards and critical-acclaim for such independent initiatives as the **Worst Pop Band Ever**, **the Blast**, **037993**, **Jazz 4 Jrs**, and numerous comics and animated shorts (including the 2007 *Tokyo Anime Fair* Grand-Prix winner, ***Flutter***).
 
 We are based in Toronto and Taipei.
 

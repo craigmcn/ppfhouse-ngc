@@ -7,11 +7,9 @@ import Modal from "../Modal/Modal"
 import './lightbox.scss'
 
 const Lightbox = (props) => {
-
   const {
     gallery = [],
     current = {},
-    type = "image",
     headerPosition = "top",
     loading = true,
     open = false,
@@ -44,7 +42,7 @@ const Lightbox = (props) => {
     if (contentRef.current) {
       const html = document.querySelector('html')
       const fontSize = getFontSize()
-      const aspectRatio = type === "image" ? contentRef.current.naturalWidth / contentRef.current.naturalHeight : 16 / 9
+      const aspectRatio = currentItem.type === "image" ? contentRef.current.naturalWidth / contentRef.current.naturalHeight : 16 / 9
       let width = html.clientWidth - (fontSize * 5) - 40 // 40 is the padding on the modal
       let height = width * (1 / aspectRatio)
       const maxHeight = html.clientHeight - lightboxHeaderRef.current?.clientHeight - (fontSize * 2.5)
@@ -55,7 +53,7 @@ const Lightbox = (props) => {
       contentRef.current.style.width = `${width}px`
       contentRef.current.style.height = `${height}px`
     }
-  }, [type])
+  }, [currentItem.type])
 
   useEffect(() => {
     window.addEventListener("resize", resizeContent);
@@ -92,7 +90,7 @@ const Lightbox = (props) => {
 
   return (
     <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen} className="lightbox">
-      <div ref={lightboxHeaderRef} className={ `lightbox__header${headerPosition === 'bottom' ? 'lightbox__header--bottom' : ''}` }>
+      <div ref={lightboxHeaderRef} className={ `lightbox__header${headerPosition === 'bottom' ? ' lightbox__header--bottom' : ''}` }>
         { currentItem.title && (
           <h1 className="lightbox__title">{ currentItem.title }</h1>
         )}
@@ -109,7 +107,7 @@ const Lightbox = (props) => {
             </div>
           ) }
 
-          { type === "image" && (
+          { currentItem.type === 'image' && (
             <img
               ref={contentRef}
               src={currentItem.src}
@@ -118,7 +116,7 @@ const Lightbox = (props) => {
             />
           )}
 
-          { type === "iframe" && (
+          { currentItem.type === 'iframe' && (
             <iframe
               ref={contentRef}
               title={currentItem.title}
@@ -126,6 +124,20 @@ const Lightbox = (props) => {
               onLoad={handleLoad}
               allow="accelerometer; fullscreen; gyroscope"
             />
+          )}
+
+          { currentItem.type === 'facebook' && (
+            <iframe
+              ref={contentRef}
+              title={currentItem.title}
+              src={ `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(currentItem.src)}&show_text=false&t=0&height=540&width=960` }
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen="true"
+              onLoad={handleLoad}
+            /> 
           )}
 
         </div>

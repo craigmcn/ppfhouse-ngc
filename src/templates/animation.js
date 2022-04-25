@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
-import { HowieSidebar as Sidebar } from '../components/Sidebars'
+import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
 import AnimationPageHeader from '../components/Animation/PageHeader'
 
 const AnimationTemplate = ({ content, title, thumbnail, url, description  }) => {

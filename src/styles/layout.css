@@ -405,7 +405,7 @@ h3.calendar:not(:first-of-type) {
     padding-right: 0;
   }
 
-  #music-menu li.active a {
+  #music-menu a.active {
     color: #222;
   }
 
@@ -432,6 +432,10 @@ h3.calendar:not(:first-of-type) {
   .music-item {
     font-size: 140%;
     text-align: left;
+  }
+
+  .music-item img {
+    margin: 0;
   }
 }
 

@@ -9,4 +9,4 @@ Poster design for ***Boblo Island*** by **Erin Brandenburg**
 
 TORONTO THEATRE CENTRE, 2012
 
-Ink on Terraskin; Prada Cotton; Holiday &amp; Brown patterns; digital finishing
+Ink on Terraskin; Prada Cotton; Holiday & Brown patterns; digital finishing

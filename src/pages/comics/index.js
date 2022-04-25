@@ -3,15 +3,16 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../../components/Layout'
-import { HowieSidebar as Sidebar } from '../../components/Sidebars'
+import { HowieSidebar as Sidebar } from '../../components/shared/Sidebars'
 import ComicsPageHeader from '../../components/ComicsPageHeader'
 import Lightbox from '../../components/Lightbox/Lightbox'
+import { getLightboxType } from '../../utilities'
 
 const ComicsPageTemplate = ({ comics }) => {
 
   const validComics = comics.edges.filter(({node}) => node.frontmatter.title && node.frontmatter.cover && node.frontmatter.pages)
   const galleries = validComics.reduce((r, c, i) => {
-    r[c.node.id] = c.node.frontmatter.pages.map(page => ({ id: `${page.name}-${i}`, src: page.image }))
+    r[c.node.id] = c.node.frontmatter.pages.map(page => ({ id: `${page.name}-${i}`, src: page.image, type: getLightboxType(page.image) }))
     return r
   }, {})
   const [gallery, setGallery] = useState([])

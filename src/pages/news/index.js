@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import { Helmet } from 'react-helmet'
-import NewsList from '../../components/NewsList'
+import NewsList from '../../components/News/NewsList'
 
 const NewsPage = () => {
 

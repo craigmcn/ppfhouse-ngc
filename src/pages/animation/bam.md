@@ -8,7 +8,7 @@ url: https://www.nfb.ca/film/bam/embed/player/
 ---
 short film directed by Howie Shia
 
-music by Tim Shia &amp; LEO37
+music by Tim Shia & LEO37
 
 animation by Howie Shia w/ Lillian Chan, Simon Cottee, Jennifer Krick, Jonathan Ng, Malcolm Sutherland
 

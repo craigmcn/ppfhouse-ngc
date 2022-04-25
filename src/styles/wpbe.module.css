@@ -1,0 +1,11 @@
+.wpbeVisualsItem {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.icon {
+    bottom: 4px;
+    color: white;
+    position: absolute;
+    right: 0;
+}

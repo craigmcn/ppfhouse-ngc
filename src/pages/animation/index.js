@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import AnimationPageHeader from '../../components/Animation/PageHeader'
-import { HowieSidebar as Sidebar } from '../../components/Sidebars'
+import { HowieSidebar as Sidebar } from '../../components/shared/Sidebars'
 import { Helmet } from 'react-helmet'
 import Lightbox from '../../components/Lightbox/Lightbox'
 import AnimationItem from '../../components/Animation/AnimationItem'
+import { getLightboxType } from '../../utilities'
 
 const AnimationPageTemplate = ({ pages }) => {
   const validAnimations = pages.edges.filter(({node}) => node.frontmatter.title && node.frontmatter.thumbnail && node.frontmatter.url)
@@ -23,6 +24,7 @@ const AnimationPageTemplate = ({ pages }) => {
       content: node.internal.content?.trim(),
       description: node.html,
       thumbnail: node.frontmatter.thumbnail,
+      type: getLightboxType(node.frontmatter.url),
     }))
 
   const [current, setCurrent] = useState({})
@@ -36,6 +38,15 @@ const AnimationPageTemplate = ({ pages }) => {
   const handleClose = useCallback(() => {
     setOpen(false)
   }, [])
+
+  useEffect(() => {
+    const el = document.querySelector('a[data-title=BAM]')
+    if (window.location.hash === '#bam' && !!el && !open) {
+      setCurrent(gallery.find(item => item.id === el.dataset.id))
+      setOpen(true)
+    }
+  }, [open, gallery])
+
 
   return (
     <>
@@ -102,38 +113,9 @@ const AnimationPageTemplate = ({ pages }) => {
       <Lightbox
         gallery={gallery}
         current={current}
-        type="iframe"
         open={open}
         onClose={handleClose}
       />
-
-      {/* <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen} className="lightbox">
-        <div ref={lightboxHeaderRef} className="lightbox__header">
-          <h1 className="lightbox__title">{ showAnimation?.frontmatter?.title }</h1>
-          { (showAnimation && showAnimation?.html) && (
-            <HTMLContent className="lightbox__description" content={ showAnimation?.html } />
-          ) }
-        </div>
-        <div className="lightbox__body">
-          <div className="lightbox__content">
-            { isLoading && (
-              <div className="lightbox__loading">
-                <FontAwesomeIcon icon={faCircleNotch} spin />
-                <span className="sr-only"> Loading</span>
-              </div>
-            ) }
-            <iframe
-              ref={iframeRef}
-              title={showAnimation?.frontmatter?.title}
-              src={showAnimation?.frontmatter?.url}
-              onLoad={handleLoad}
-              allow="accelerometer; fullscreen; gyroscope"
-            />
-          </div>
-          <button className='lightbox__controls lightbox__controls--previous' type="button" onClick={handleModalPrevious} aria-label="Previous"><FontAwesomeIcon icon={ faChevronLeft } size="2x" fixedWidth /></button>
-          <button className='lightbox__controls lightbox__controls--next' type="button" onClick={handleModalNext} aria-label="Next"><FontAwesomeIcon icon={ faChevronRight } size="2x" fixedWidth /></button>
-        </div>
-      </Modal> */}
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import { Helmet } from 'react-helmet'
-import EventList from '../../components/EventList'
+import EventList from '../../components/Events/EventList'
 
 const EventsPage = () => {
 

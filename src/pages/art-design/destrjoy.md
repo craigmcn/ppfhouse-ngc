@@ -5,7 +5,7 @@ title: Destrjoy!
 thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/art_design/destrjoy2_T_bvm1og.jpg
 filename: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/art_design/destrjoy2_obt4p1.jpg
 ---
-tour poster for **LEO37** &amp; **Magnolius**
+tour poster for **LEO37** & **Magnolius**
 
 PPF HOUSE, 2015
 

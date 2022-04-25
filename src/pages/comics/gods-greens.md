@@ -1,6 +1,6 @@
 ---
 templateKey: comics
-id: ec4d61ea-b670-11ec-86c0-a576618370a4
+id: dd04c730-097d-46df-a6e7-ac3ec5c7df31
 title: 'Gods & Greens'
 cover: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-and-greens-cover_hilpbu.jpg
 pages:

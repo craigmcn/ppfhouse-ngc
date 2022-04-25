@@ -71,42 +71,27 @@ collections:
       - { label: 'Thumbnail', name: 'thumbnail', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
-  - name: 'news'
-    label: 'News'
-    folder: 'src/pages/news'
+  - name: 'comics'
+    label: 'Comics'
+    folder: 'src/pages/comics'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'news',
+          default: 'comics',
         }
-      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: news }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - {
-          label: 'Group',
-          name: 'group',
-          widget: 'select',
-          options:
-            [
-              'PPF House',
-              'Tim Shia',
-              'Howie Shia',
-              'LEO37',
-              'The Worst Pop Band Ever',
-              'Jazz for Juniors',
-            ],
-        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - {
-          label: 'Include on PPF House News page',
-          name: 'general',
-          widget: 'boolean',
-          default: true,
-        }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Cover', name: 'cover', widget: image }
+      - label: 'Pages'
+        name: 'pages'
+        widget: 'list'
+        collapsed: false
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Image', name: 'image', widget: image }
 
   - name: 'event'
     label: 'Event'
@@ -156,116 +141,248 @@ collections:
             ],
         }
 
-  - name: 'comics'
-    label: 'Comics'
-    folder: 'src/pages/comics'
-    create: true
-    fields:
-      - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'comics',
-        }
-      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Cover', name: 'cover', widget: image }
-      - label: 'Pages'
-        name: 'pages'
-        widget: 'list'
-        collapsed: false
-        fields:
-          - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Image', name: 'image', widget: image }
-
-  - name: 'pages'
-    label: 'Pages'
+  - name: 'music-tim-shia'
+    label: 'Music > Tim Shia'
     files:
-      - file: 'src/pages/index.md'
-        label: 'Splash Page'
-        name: 'index'
+      - file: 'src/pages/tim-shia/index.md'
+        label: 'Bio'
+        name: 'music-tim-shia-bio'
         fields:
           - {
               label: 'Template Key',
               name: 'templateKey',
               widget: 'hidden',
-              default: 'index-page',
+              default: 'music-tim-shia',
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: 'src/pages/tim-shia/live-music-and-dj-services.md'
+        label: 'Services'
+        name: 'music-tim-shia-services'
+        fields:
           - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-tim-shia',
             }
-          - { label: Description, name: description, widget: string }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: 'src/pages/tim-shia/music.md'
+        label: 'Music'
+        name: 'music-tim-shia-music'
+        fields:
           - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-tim-shia',
             }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'music-jazz-4-jrs'
+    label: 'Music > Jazz 4 Jrs'
+    files:
+      - file: 'src/pages/jazz-4-jrs/index.md'
+        label: 'Overview'
+        name: 'music-jazz-4-jrs-overview'
+        fields:
           - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-jazz-4-jrs',
             }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: 'src/pages/jazz-4-jrs/testimonials.md'
+        label: 'Testimonials'
+        name: 'music-jazz-4-jrs-testimonials'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-jazz-4-jrs',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+          - label: 'Testimonials'
+            label_singular: 'Testimonial'
+            name: 'pressSections'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Section title', name: 'title', widget: 'string', required: false }
+              - label: 'Clippings'
+                label_singular: 'Clipping'
+                name: 'pressClippings'
+                widget: 'list'
+                collapsed: false
+                fields:
+                  - { label: 'Content', name: 'body', widget: 'markdown' }
+                  - { label: 'Source', name: 'source', widget: 'string' }
+      - file: 'src/pages/jazz-4-jrs/educational-content.md'
+        label: 'Curriculum'
+        name: 'music-jazz-4-jrs-curriculum'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-jazz-4-jrs',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: 'src/pages/jazz-4-jrs/the-original-video.md'
+        label: 'Video'
+        name: 'music-jazz-4-jrs-video'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-jazz-4-jrs',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+          - label: 'Video'
+            name: 'video'
+            widget: object
+            fields:
+              - { label: 'Poster', name: 'poster', widget: 'image' }
+              - { label: 'MP4', name: 'mp4', widget: 'string' }
+              - { label: 'OGG/OGV', name: 'ogg', widget: 'string', required: false }
+              - { label: 'WebM', name: 'webm', widget: 'string', required: false }
+              - { label: 'Captions', name: 'captions', widget: 'string', required: false }
+              - { label: 'Text', name: 'text', widget: 'markdown', required: false }
+
+  - name: 'music-wpbe'
+    label: 'Music > WPBE'
+    files:
+      - file: 'src/pages/wpbe/about.md'
+        label: 'About'
+        name: 'music-wpbe-about'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-wpbe-about',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - { label: 'Press title', name: 'press', widget: 'string' }
+          - label: 'Press sections'
+            label_singular: 'Section'
+            name: 'pressSections'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Section title', name: 'title', widget: 'string', required: false }
+              - label: 'Clippings'
+                label_singular: 'Clipping'
+                name: 'pressClippings'
+                widget: 'list'
+                collapsed: false
+                fields:
+                  - { label: 'Content', name: 'body', widget: 'markdown' }
+                  - { label: 'Source', name: 'source', widget: 'string' }
+
+      - file: 'src/pages/wpbe/music.md'
+        label: 'Music'
+        name: 'music-wpbe-music'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-wpbe-music',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - label: 'Music'
+            name: 'content'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+              - { label: 'Title', name: 'music', widget: 'string' }
+              - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
+
+      - file: 'src/pages/wpbe/visuals.md'
+        label: 'Visuals'
+        name: 'music-wpbe-visuals'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-wpbe-visuals',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - label: 'Visuals'
+            name: 'content'
+            widget: 'list'
+            collapsed: false
+            summary: '{{fields.visuals}} ({{fields.url}})'
+            fields:
+              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+              - { label: 'Title', name: 'visuals', widget: 'string' }
+              - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
+
+  - name: 'news'
+    label: 'News'
+    folder: 'src/pages/news'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'news',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: news }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Group',
+          name: 'group',
+          widget: 'select',
+          options:
+            [
+              'PPF House',
+              'Tim Shia',
+              'Howie Shia',
+              'LEO37',
+              'The Worst Pop Band Ever',
+              'Jazz for Juniors',
+            ],
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Include on PPF House News page',
+          name: 'general',
+          widget: 'boolean',
+          default: true,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'pages'
+    label: 'Pages'
+    files:
       - file: 'src/pages/about/index.md'
         label: 'About'
         name: 'about'
@@ -335,20 +452,41 @@ collections:
               - {
                   label: 'Internal',
                   name: 'slug',
-                  widget: 'string',
-                  hint: 'Short version of the name, lowercase, no special characters, and hyphen (-) for spaces. One of Internal or External is required.',
-                  required: false,
+                  widget: 'hidden',
                 }
               - {
                   label: 'External',
                   name: 'url',
                   widget: 'string',
-                  hint: 'The full URL to an external website. One of Internal or External is required.',
+                  hint: 'The full URL to an external website.',
                   required: false,
                 }
 
-  - name: 'utilities'
-    label: 'Utilities'
+      - name: 'music-film-tv-scoring'
+        label: 'Music > Film & TV Scoring'
+        file: 'src/pages/film-tv-scoring/index.md'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-film-tv-scoring',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - label: 'Videos'
+            name: 'content'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
+              - { label: 'Video title', name: 'video', widget: 'string' }
+              - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
+              - { label: 'Description', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'settings'
+    label: 'Settings'
     files:
       - name: 'animation-order'
         label: 'Animation Order'

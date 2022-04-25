@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import { Helmet } from 'react-helmet'
-import NewsList from "../../components/NewsList"
-import EventList from '../../components/EventList'
+import NewsList from "../../components/News/GeneralNewsList"
+import EventList from '../../components/Events/EventList'
 
 const NewsEventsPage = () => {
 
@@ -18,6 +18,7 @@ const NewsEventsPage = () => {
         <div className="column">
           <div className="wrapper">
 
+            <h2 id="news">news</h2>
             <NewsList />
 
           </div>
@@ -26,6 +27,7 @@ const NewsEventsPage = () => {
         <div className="column">
           <div className="wrapper">
 
+            <h2 id="events">events</h2>
             <EventList />
 
           </div>

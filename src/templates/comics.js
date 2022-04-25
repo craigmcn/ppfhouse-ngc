@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import { HowieSidebar as Sidebar } from '../components/Sidebars'
+import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
 
 const PageHeader = (
   <div id="page-header">
