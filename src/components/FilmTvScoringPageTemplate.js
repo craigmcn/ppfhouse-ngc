@@ -15,8 +15,6 @@ export const FilmTvScoringPageTemplate = ({ content }) => {
       type: getLightboxType(item.url),
     }))
 
-    console.table(gallery)
-
   const column1 = content.slice(0, Math.ceil(content.length / 2))
   const column2 = content.slice(Math.ceil(content.length / 2))
 

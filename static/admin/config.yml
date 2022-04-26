@@ -6,7 +6,7 @@ logo_url: https://www.ppfhouse.com/safari-pinned-tab.svg
 
 backend:
   name: git-gateway
-  branch: primary
+  branch: main
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
