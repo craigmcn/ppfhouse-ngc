@@ -1,115 +1,19 @@
-import React, {
-  Fragment,
-  useState,
-  useEffect
-} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import {
   graphql,
   StaticQuery
 } from 'gatsby'
-import format from 'date-fns/format'
-import subDays from 'date-fns/subDays'
 import EventItem from './EventItem'
-import {
-  formatSongkickEvents
-} from '../../utilities/songkick'
-import {
-  usePrevious
-} from '../../hooks'
+import Songkick from '../shared/Songkick'
+import { useSongkick } from '../../hooks/useSongkick'
 
 const EventList = ({
   data
 }) => {
 
-  const [songkick, setSongkick] = useState([])
-  const [songkickPast, setSongkickPast] = useState([])
-  const [songkickCurrent, setSongkickCurrent] = useState([])
-  const [songkickPastLoading, setSongkickPastLoading] = useState(false)
-  const [songkickCurrentLoading, setSongkickCurrentLoading] = useState(false)
-  const prevSongKickPast = usePrevious(songkickPast)
-  const prevSongKickCurrent = usePrevious(songkickCurrent)
-
-  useEffect(() => {
-    setSongkickPastLoading(true)
-    setSongkickCurrentLoading(true)
-
-    const minDate = format(subDays(new Date(), 60), 'y-MM-dd')
-
-    const fetchSongkickPast = () => {
-      fetch(
-          `https://api.songkick.com/api/3.0/artists/1158046/gigography.json?apikey=${process.env.GATSBY_SONGKICK_API_KEY}&order=desc&min_date=${minDate}`
-        )
-        .then((response) => response.json())
-        .then((data) => {
-          const {
-            resultsPage
-          } = data
-          if (
-            resultsPage.status === 'ok' &&
-            resultsPage.results.event &&
-            resultsPage.results.event.length
-          ) {
-            const songkickEvents = formatSongkickEvents(resultsPage.results.event)
-            setSongkickPast(songkickEvents)
-          } else {
-            if (resultsPage.error) {
-              console.error(resultsPage.error.message)
-            } else {
-              console.warn('No past Songkick events found')
-            }
-          }
-          setSongkickPastLoading(false)
-        })
-        .catch((e) => console.error(e))
-    }
-
-    const fetchSongkickCurrent = () => {
-      fetch(
-          `https://api.songkick.com/api/3.0/artists/1158046/calendar.json?apikey=${process.env.GATSBY_SONGKICK_API_KEY}`
-        )
-        .then((response) => response.json())
-        .then((data) => {
-          const {
-            resultsPage
-          } = data
-          if (
-            resultsPage.status === 'ok' &&
-            resultsPage.results.event &&
-            resultsPage.results.event.length
-          ) {
-            const songkickEvents = formatSongkickEvents(resultsPage.results.event)
-            setSongkickCurrent(songkickEvents)
-          } else {
-            if (resultsPage.error) {
-              console.error(resultsPage.error.message)
-            } else {
-              console.warn('No current Songkick events found')
-            }
-          }
-          setSongkickCurrentLoading(false)
-        })
-        .catch((e) => console.error(e))
-    }
-
-    fetchSongkickPast()
-    fetchSongkickCurrent()
-  }, [])
-
-  useEffect(() => {
-    if (prevSongKickPast && !prevSongKickPast.length && songkickPast.length) {
-      setSongkick(songkick.concat(songkickPast))
-    }
-    if (prevSongKickCurrent && !prevSongKickCurrent.length && songkickCurrent.length) {
-      setSongkick(songkick.concat(songkickCurrent))
-    }
-  }, [
-    prevSongKickPast,
-    songkickPast,
-    prevSongKickCurrent,
-    songkickCurrent,
-    songkick,
-  ])
+  const songkickCurrent = useSongkick('1158046', 'current')
+  const songkickPast = useSongkick('1158046', 'past', 60)
 
   // Combine locally-created events with Songkick events
   const {
@@ -148,11 +52,12 @@ const EventList = ({
       url
     }
   })
-  const posts = [...localPosts, ...songkick]
+
+  const posts = localPosts.concat(songkickPast.data).concat(songkickCurrent.data)
   posts.sort((a, b) => (a.date > b.date ? 1 : a.date < b.date ? -1 : 0))
 
   return (
-    <Fragment>
+    <>
       { posts.length > 0
         && posts.map((post, index, a) => (
           <EventItem
@@ -163,10 +68,9 @@ const EventList = ({
         ))
       }
       { posts.length === 0 && <p>No events currently scheduled</p> }
-      { (songkickPastLoading || songkickCurrentLoading) &&
-          <p className="text-muted">Loading from Songkick…</p>
-      }
-    </Fragment>
+
+      <Songkick loading={songkickPast.loading || songkickCurrent.loading} />
+    </>
   )
 }
 
