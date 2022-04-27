@@ -9,5 +9,8 @@ static/admin/*.bundle.*
 yarn-error.log
 .env*
 
+# VS Code
+.vscode/
+
 # Songkick attribution assets
 attribution-assets/
