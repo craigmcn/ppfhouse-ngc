@@ -10,7 +10,7 @@ yarn-error.log
 .env*
 
 # VS Code
-.vscode/
+.vscode
 
 # Songkick attribution assets
 attribution-assets/

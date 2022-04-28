@@ -12,8 +12,8 @@ const MusicPagePreview = ({ entry }) => {
           return (
             <div className="column">
               <div key={ index }>
-                <a href={ group.url || '/'+group.slug }><img src={ group.thumbnail } alt={ group.title } /></a>
-                <a href={ group.url || '/'+group.slug }>{ displayTitle }</a>
+                <p><a href={ group.url || '/'+group.slug }><img src={ group.thumbnail } alt={ group.title } /></a></p>
+                <p><a href={ group.url || '/'+group.slug }>{ displayTitle }</a></p>
                 <p><code>{ group.url || '/'+group.slug }</code></p>
               </div>
             </div>

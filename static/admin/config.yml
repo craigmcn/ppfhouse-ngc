@@ -88,7 +88,8 @@ collections:
       - label: 'Pages'
         name: 'pages'
         widget: 'list'
-        collapsed: false
+        collapsed: true
+        summary: '{{fields.name}}'
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Image', name: 'image', widget: image }
@@ -224,7 +225,8 @@ collections:
                 label_singular: 'Clipping'
                 name: 'pressClippings'
                 widget: 'list'
-                collapsed: false
+                collapsed: true
+                summary: '{{fields.body}} --{{fields.source}}'
                 fields:
                   - { label: 'Content', name: 'body', widget: 'markdown' }
                   - { label: 'Source', name: 'source', widget: 'string' }
@@ -293,7 +295,8 @@ collections:
                 label_singular: 'Clipping'
                 name: 'pressClippings'
                 widget: 'list'
-                collapsed: false
+                collapsed: true
+                summary: '{{fields.body}} --{{fields.source}}'
                 fields:
                   - { label: 'Content', name: 'body', widget: 'markdown' }
                   - { label: 'Source', name: 'source', widget: 'string' }
@@ -313,7 +316,8 @@ collections:
           - label: 'Music'
             name: 'content'
             widget: 'list'
-            collapsed: false
+            collapsed: true
+            summary: '{{fields.music}} ({{fields.url}})'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
               - { label: 'Title', name: 'music', widget: 'string' }
@@ -335,7 +339,7 @@ collections:
           - label: 'Visuals'
             name: 'content'
             widget: 'list'
-            collapsed: false
+            collapsed: true
             summary: '{{fields.visuals}} ({{fields.url}})'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
@@ -372,6 +376,18 @@ collections:
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Posted by',
+          name: 'postedBy',
+          widget: 'select',
+          options:
+            [
+              'ppfhouse',
+              'timshia',
+              'howieshia',
+              'LEO37',
+            ],
+        }
       - {
           label: 'Include on PPF House News page',
           name: 'general',
@@ -477,7 +493,8 @@ collections:
           - label: 'Videos'
             name: 'content'
             widget: 'list'
-            collapsed: false
+            collapsed: true
+            summary: '{{fields.video}} ({{fields.url}})'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
               - { label: 'Video title', name: 'video', widget: 'string' }

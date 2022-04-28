@@ -92,6 +92,7 @@ h3.calendar:not(:first-of-type) {
 .calendar-item-content {
   line-height: 1.33;
   margin: 0.5em 0;
+  overflow-wrap: break-word;
 }
 
 .calendar-item-date,
