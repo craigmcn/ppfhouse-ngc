@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 
+id: 
 date: 2020-03-26T12:00:00+00:00
 eventTime: '12:00 pm'
 title: 'the Worst Pop Band Ever, https://wpbe.bandcamp.com/'

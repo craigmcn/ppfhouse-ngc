@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 48AB9A43-CDDA-8C3F-7FD1-198C9AC3FBD5
+id: 48AB9A43-CDDA-8C3F-7FD1-198C9AC3FBD5
 date: 2020-09-24T12:30:00+00:00
 eventTime: '12:30 pm'
 title: the Worst Pop Band Ever, the Worst PSA release

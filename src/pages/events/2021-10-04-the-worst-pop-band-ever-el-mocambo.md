@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 90E5D976-29E8-7101-48A6-E875D47465C0
+id: 90E5D976-29E8-7101-48A6-E875D47465C0
 date: 2021-10-04T17:00:00+00:00
 eventTime: 5pm
 title: the Worst Pop Band Ever, El Mocambo

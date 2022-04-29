@@ -1,6 +1,6 @@
 ---
 templateKey: music-jazz-4-jrs
-id: 0a8cbac0-158b-49af-92bd-d06abd4a1c3d
+id: 3d2640eb-cd44-4ffb-b9fe-2c5e0b76d428
 title: Overview
 ---
 Jazz for Juniors is an engaging 45 minute- 1 hour interactive performance that takes elementary students (grades k-8) on a fun and educational journey into the world of Jazz.

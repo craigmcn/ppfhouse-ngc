@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 0899c4c4-6eab-11ea-99c5-002590d1d1b0
+id: 0899c4c4-6eab-11ea-99c5-002590d1d1b0
 date: 2020-01-16T12:30:00+00:00
 eventTime: '12:30 pm'
 title: the Worst Pop Band Ever/Jazz 4 Jrs, Jazz FM 91.1

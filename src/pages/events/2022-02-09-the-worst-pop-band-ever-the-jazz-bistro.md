@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 6B1D1150-C7A4-2542-15BD-83AC10AD4D9A
+id: 6B1D1150-C7A4-2542-15BD-83AC10AD4D9A
 date: 2022-02-09T20:00:00+00:00
 eventTime: 8pm
 title: the Worst Pop Band Ever, the Jazz Bistro

@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: D9474850-7ED6-07A8-3835-9F59463E4076
+id: D9474850-7ED6-07A8-3835-9F59463E4076
 date: 2021-04-24T17:00:00+00:00
 eventTime: 5pm
 title: Peter Hum and New Pathways, syncspace

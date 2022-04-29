@@ -1,6 +1,6 @@
 ---
 templateKey: music-wpbe-about
-id: 28a6b155-3450-472a-aefc-688eff7b13c6
+id: 70ce04c7-5560-4823-9eec-aa1fe7d406be
 title: About
 press: Selected Press Clippings/Testimonials
 pressSections:
@@ -28,13 +28,13 @@ pressSections:
     pressClippings:
     - body: |-
         “*Blackout is a fresh and successful take on a genre-hopping approach to music making that has seen a growing number of exponents in recent years…. the group grafts wide-ranging musical elements onto each other that serve to subtly or not so subtly transform the source materials. Peachy Keen features modern jazz piano comping over a reggae feel that creates a surprisingly ideal setting for Chris Gale’s soulful saxophone solo. The abrupt switch to a full-out rock groove with electronica for the tune’s ending somehow seems completely appropriate.* “
-              source: Ted Quinlan (Wholenote Magazine, March 2016)
+      source: Ted Quinlan (Wholenote Magazine, March 2016)
   - title: 
     pressClippings:
     - body: |-
         “*Though not as overtly funky as Medeski, Martin & Wood or as acoustically inclined as the Bad Plus, TWPBE finds its niche in meting out Wurlitzer-grounded grooves like the steady struttin’ introductory track “Inor Man,” or Gospell” which walk the line between catchy, almost pop melodies and loose, egalitarian improv. They are able the shift strategies on each song without losing any identity, too. From “Inor Man,” there’s the faux-reggae “Peachy Keen,” the multiple rhythms propelling the rockin’ “Panic,” or the dark, piano-based strain of “Scene Two aka Not So Fun Anymore.” There aren’t any vocals this time around, but Gale’s got a big, soul-laden tone that often serves as the band’s lead voice, and serves it well… In sum, the appeal with Blackout remains the same as it was with 2009’s Dost Thou Believeth In Science?: quirky titles but no-nonsense organic grooves usually topped off by a revolving cast of proficient soloists who know how far to take it before they run out of steam. And they do it with a touch of wit. The Worst Pop Band Ever has a hand-made, unforced approach that makes rock-jazz uncommonly relaxing, and Blackout keeps that relaxed vibe going.*”
       source: S. Victor Aaron (Something Else Reviews, Jan. 2016)
-  - title: For “Sometimes Things Go Wrong”
+  - title: For &#8220;Sometimes Things Go Wrong&#8221;
     pressClippings:
     - body: |-
         Recorded live at Cory Weed’s Cellar Jazz Club in Vancouver, The Worst Pop Band Ever’s Sometime Things Go Wrong (and other songs we shouldn’t play)is music for people, whether they dig jazz or not. The group delivers a set that cares less about genres… There’s no crossover message here; just a tight band playing with substance and feeling for an appreciative audience.
@@ -42,7 +42,7 @@ pressSections:
     - body: |-
         The Worst Pop Band Ever might not have a name that screams confidence, but their blend of improvisational jazz and indie pop makes them stand-outs in a scene that gets little attention in popular music circles….While jazz might not be the most popular type of music on playlists these days, if anyone can make the genre break through to a pop-loving mainstream crowd, it could just be The Worst Pop Band Ever. Ironic, no?
       source: Ben Conoley, Canadian Musician Magazine (June 2012)
-  - title: For “Dost Thou Believeth in Science”
+  - title: For &#8220;Dost Thou Believeth in Science&#8221;
     pressClippings:
     - body: |-
         The Quintet makes smart if curious music…It’s all easy on the ear, expertly and effortlessly delivered with elaborate solos and surprising heat.
@@ -56,7 +56,7 @@ pressSections:
     - body: |-
         A truly democratic group where everyone pitches in on the songwriting, the WPBE are very listenable, even when they aren’t grooving…\[They\] might be a little weird but they strike a good balance between accessible and creative, and is one that should be checked out by anyone looking for bands like MMW or The Bad Plus.
       source: Pico, Something Else.com (formerly of Jazz.com, Jan. 2010)
-  - title: For “Thanks For Coming Out”
+  - title: For &#8220;Thanks For Coming Out&#8221;
     pressClippings:
     - body: |-
         This may be one of the worst band names ever, right up there with JMOG, but the jazz on its seven tunes is intriguing, well-calibrated and focused in a very contemporary, accessible fashion.. The music’s fresh, may appeal to pop lovers but assuredly to jazzers keen on a kind of driven fluency as genre stylings are examined, discarded and reworked.

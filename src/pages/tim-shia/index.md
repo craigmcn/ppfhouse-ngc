@@ -1,6 +1,6 @@
 ---
 templateKey: music-tim-shia
-id: 8a8e4f71-f856-42b6-9e0e-66f3bd9ff7bc
+id: b93612c5-7c72-4311-9944-808efeae1097
 title: Bio
 ---
 Tim makes music. Sometimes it is good and acclaimed, and gets featured on *allaboutjazz, Canadian Musician, tojazz.com, CBC, Toronto Star, NOW Magazine and TEDx;* used in films for the *Governor General Awards, the NFB, CBC, Teletoon and Disney;* and even reaches #1 on college radio charts.

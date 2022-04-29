@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: 57437FA8-9FB5-0E69-30F5-8860BFEB13CA
+id: 57437FA8-9FB5-0E69-30F5-8860BFEB13CA
 date: 2021-07-22T19:00:00+00:00
 eventTime: 7pm
 title: the Worst Pop Band Ever, the Rex Hotel

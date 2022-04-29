@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: E1A36828-F739-B0C7-9FFC-F45524A34F39
+id: E1A36828-F739-B0C7-9FFC-F45524A34F39
 date: 2021-05-21T19:30:00+00:00
 eventTime: '7:30pm'
 title: Way North, syncspace

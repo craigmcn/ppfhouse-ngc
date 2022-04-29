@@ -10,15 +10,15 @@ const NewsPagePreview = ({ entry }) => {
 
   return (
     <>
-      <h2 className="is-size-3">{ title?.toLowerCase() }</h2>
+      <h2 className="is-size-3">{ title }</h2>
       <p>
-        <span className="tag is-primary">{ group }</span>
-        {general ? <span className="tag is-info ml-1">General</span> : null}
+        {group ? <span className="tag is-primary">{ group }</span> : null}
+        {general ? <span className={`tag is-info${group ? ' ml-1' : ''}`}>General</span> : null}
       </p>
       <div className="content">
         <HTMLContent content={ md2Html(body) } />
       </div>
-      <p className="notification is-info is-light">posted by {postedBy}, {format(parseISO(date), 'MMMM d, y')}</p>
+      <p className="notification is-info is-light">posted {postedBy ? `by ${postedBy}, ` : ''}{format(parseISO(date), 'MMMM d, y')}</p>
     </>
   )
 }

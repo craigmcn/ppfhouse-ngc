@@ -1,8 +1,7 @@
 ---
 templateKey: music-jazz-4-jrs
-id: eecb7945-28de-4719-8c0d-7a413e5e060d
+id: 7c8afe1a-e360-4fe2-87ab-ae20513acda7
 title: Educational Content
-
 ---
 The **Curriculum Focus/Educational Value** of *Jazz for Juniors* has been designed to meet many of the music expectations of the Ontario Arts Curriculum while also maximizing student participation and facilitating questions.
 

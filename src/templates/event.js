@@ -1,14 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { Helmet } from 'react-helmet'
 
-const EventTemplate = ({ title, fieldsTitle, artist, venue, city, date, time, guests, url }) => {
+const EventTemplate = ({ title, artist, venue, city, date, time, guests, url, image }) => {
 
   return (
-    <Fragment>
-      <h2>{ title || fieldsTitle }</h2>
+    <>
+      {image && <img src={ image } alt={ `${title} poster` } />}
+
+      <h2>{ title }</h2>
 
       <p className="calendar-item-content">
         WHO: { artist }<br />
@@ -16,14 +18,13 @@ const EventTemplate = ({ title, fieldsTitle, artist, venue, city, date, time, gu
         WHEN: { date }{ (!!time && time !== "none") && ` ${ time }` }<br />
         { !!guests && `WITH: ${ guests }` }
       </p>
-      <p><a href={ url } target="_blank" rel="noreferrer">{ url }</a></p>
-    </Fragment>
+      {url && <p><a href={ url } target="_blank" rel="noreferrer">{ url }</a></p>}
+    </>
   )
 }
 
 EventTemplate.propTypes = {
   title: PropTypes.string,
-  fieldsTitle: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
   venue: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
@@ -31,27 +32,29 @@ EventTemplate.propTypes = {
   time: PropTypes.string.isRequired,
   guests: PropTypes.string,
   url: PropTypes.string,
+  image: PropTypes.string,
 }
 
 const Event = ({ data }) => {
   const { markdownRemark: event } = data
+  const { title, artist, venue, city, date, eventTime, guests, url, image } = event?.frontmatter
 
   return (
     <Layout className="event has-sidebar">
       <Helmet>
-        <title>{ event.frontmatter.title || event.fields.title } :: Event :: PPF House</title>
-        <meta name="description" content={ `PPF House Event: ${event.frontmatter.title || event.fields.title}` } />
+        <title>{ title } :: Event :: PPF House</title>
+        <meta name="description" content={ `PPF House Event: ${title}` } />
       </Helmet>
       <EventTemplate
-        title={ event.frontmatter.title }
-        fieldsTitle={ event.fields.title }
-        artist={ event.frontmatter.artist }
-        venue={ event.frontmatter.venue }
-        city={ event.frontmatter.city }
-        date={ event.frontmatter.date }
-        time={ event.frontmatter.eventTime }
-        guests={ event.frontmatter.guests }
-        url={ event.frontmatter.url }
+        title={ title }
+        artist={ artist }
+        venue={ venue }
+        city={ city }
+        date={ date }
+        time={ eventTime }
+        guests={ guests }
+        url={ url }
+        image={ image }
       />
     </Layout>
   )
@@ -67,7 +70,7 @@ export const contactQuery = graphql`
   query Event($id: String!) {
     markdownRemark(id: { eq: $id }) {
       fields {
-        title
+        slug
       }
       frontmatter {
         title
@@ -79,6 +82,7 @@ export const contactQuery = graphql`
         guests
         url
         group
+        image
       }
     }
   }

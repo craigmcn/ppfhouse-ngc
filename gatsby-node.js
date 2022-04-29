@@ -166,5 +166,19 @@ exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
         },
       },
     }),
+    schema.buildObjectType({
+      name: 'MarkdownRemarkFrontmatter',
+      interfaces: ['Node'],
+      fields: {
+        image: "String",
+      },
+    }),
+    schema.buildObjectType({
+      name: 'MarkdownRemarkFields',
+      interfaces: ['Node'],
+      fields: {
+        time: "String",
+      },
+    }),
   ])
 }

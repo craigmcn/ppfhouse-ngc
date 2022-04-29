@@ -1,6 +1,6 @@
 ---
 templateKey: music-tim-shia
-id: 70cce8e1-2f29-48b0-890e-d2f78038d617
+id: 60f35b2e-846c-4a02-b7a2-124e0182e53d
 title: live music and DJ services
 ---
 PPF Music's acclaimed *Love Orchestra* features a diverse roster of in-demand and Juno award nominated/winning musicians available in a variety of configurations from guitar and piano jazz/blues trios, to large pop and dance bands. Led by Tim Shia, the Love Orchestra can be customized to any mood, event or venue, making it the ideal group for everything from important corporate functions to bar mitzvahs to weddings and private parties.

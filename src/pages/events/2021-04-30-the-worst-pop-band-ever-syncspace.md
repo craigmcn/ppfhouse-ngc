@@ -1,6 +1,6 @@
 ---
 templateKey: event
-guid: C385041C-9AA8-A903-BF56-9C5E1668F270
+id: C385041C-9AA8-A903-BF56-9C5E1668F270
 date: 2021-04-30T19:30:00+00:00
 eventTime: '7:30pm'
 title: the Worst Pop Band Ever, syncspace
