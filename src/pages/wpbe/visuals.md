@@ -34,23 +34,23 @@ content:
   - visuals: The WPBE Present CHRIS GALE
     id: 7b5b16dc-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-chris-gale_lvb8n6.jpg
-    url: //youtube.com/embed/eGOPiyM4mRU
+    url: https://youtube.com/embed/eGOPiyM4mRU
   - visuals: The WPBE Present ADREAN FARRUGIA
     id: 7b5b16e6-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-adrean-farrugia_cxgyfm.jpg
-    url: //youtube.com/embed/sQjQ8fORLoY
+    url: https://youtube.com/embed/sQjQ8fORLoY
   - visuals: The WPBE Present DREW BIRSTON
     id: 7b5b16e7-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-drew-birston_cokq4x.jpg
-    url: //youtube.com/embed/PegpHi7_LG8
+    url: https://youtube.com/embed/PegpHi7_LG8
   - visuals: The WPBE Present LEO37
     id: 7b5b16f0-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-leo37_wkju3l.jpg
-    url: //youtube.com/embed/plSxGQHM7jk
+    url: https://youtube.com/embed/plSxGQHM7jk
   - visuals: The WPBE Present TIM SHIA
     id: 7b5b16fa-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-tim-shia_dtayxo.jpg
-    url: //youtube.com/embed/cDze3zaDFUw
+    url: https://youtube.com/embed/cDze3zaDFUw
   - visuals: I remember
     id: 7b5b16fb-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059319/music/taiwan_selfie_opkv1s.png
@@ -66,19 +66,19 @@ content:
   - visuals: The Worst Pop Band Ever in &#34;The Worst Tour Ever&#34;
     id: 7b5b1718-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059321/music/wpbe-wte-1_vcb2xu.jpg
-    url: //youtube.com/embed/1dHninj934s
+    url: https://youtube.com/embed/1dHninj934s
   - visuals: The Second Worst Tour Ever - Day 1
     id: 7b5b1719-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-2_ow14an.jpg
-    url: //youtube.com/embed/uWs4PIWP2-s
+    url: https://youtube.com/embed/uWs4PIWP2-s
   - visuals: The Second Worst Tour Ever - Day 2
     id: 7b5b1722-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-3_zcxcl5.jpg
-    url: //youtube.com/embed/3WVSZ9b48T0
+    url: https://youtube.com/embed/3WVSZ9b48T0
   - visuals: The Worst Pop Band Ever Interview - SoundClash 2011
     id: 7b5b1723-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059321/music/wpbe-soundclash_nkkw8d.jpg
-    url: //youtube.com/embed/E3BE9hOaSTs
+    url: https://youtube.com/embed/E3BE9hOaSTs
   - visuals: Band
     id: 7b5b172c-c7ee-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059301/music/band_t_tne9r6.jpg
