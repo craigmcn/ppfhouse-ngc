@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
@@ -6,30 +6,122 @@ import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
 import AnimationPageHeader from '../components/Animation/PageHeader'
+import Lightbox from '../components/Lightbox/Lightbox'
+import AnimationItem from '../components/Animation/AnimationItem'
+import { getLightboxType } from '../utilities'
 
-const AnimationTemplate = ({ content, title, thumbnail, url, description  }) => {
+const AnimationPageTemplate = ({ pages }) => {
+  console.log(pages)
+  const validAnimations = pages.filter((page) => page.title && page.thumbnail && page.url)
+
+  const demo = validAnimations.filter((page) => page.type === "demo")
+  const independent = validAnimations.filter((page) => page.type === "independent")
+  const commercial = validAnimations.filter((page) => page.type === "commercial")
+
+  const gallery = validAnimations
+    .map((page) => ({
+      id: page.id,
+      title: page.title,
+      src: page.url,
+      // content: node.internal.content?.trim(),
+      // description: node.html,
+      thumbnail: page.thumbnail,
+      type: getLightboxType(page.url),
+    }))
+
+  const [current, setCurrent] = useState({})
+  const [open, setOpen] = useState(false)
+
+  const handleClick = useCallback((id) => {
+    setCurrent(gallery.find(item => item.id === id))
+    setOpen(true)
+  }, [gallery])
+
+  const handleClose = useCallback(() => {
+    setOpen(false)
+  }, [])
+
+  useEffect(() => {
+    const el = document.querySelector('a[data-title=BAM]')
+    if (window.location.hash === '#bam' && !!el && !open) {
+      setCurrent(gallery.find(item => item.id === el.dataset.id))
+      setOpen(true)
+    }
+  }, [open, gallery])
 
   return (
-    <Fragment>
-      <h2>{ title }</h2>
-      <p>
-        <a href={ url } target="_blank" rel="noreferrer">
-          <img src={ thumbnail } alt={ description } />
-        </a>
-      </p>
-      <HTMLContent content={ content } />
-      <iframe
-        title={title}
-        src={url}
-        allow="accelerometer; fullscreen; gyroscope"
-        width="690"
-        height="388"
+    <>
+      <div className="columns-3">
+
+        <div className="column">
+          <div className="wrapper">
+            <h2 className="centered">demo reel</h2>
+            { demo.map((page) => {
+              return (
+                <AnimationItem
+                  key={ page.id }
+                  id={ page.id }
+                  url={ page.url }
+                  content={ page.content?.trim() }
+                  thumbnail={ page.thumbnail }
+                  title={ page.title }
+                  onClick={ handleClick }
+                />
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="column">
+          <div className="wrapper">
+            <h2 className="centered">shorts &amp; videos</h2>
+            { independent.map((page) => {
+              return (
+                <AnimationItem
+                  key={ page.id }
+                  id={ page.id }
+                  url={ page.url }
+                  content={ page.content?.trim() }
+                  thumbnail={ page.thumbnail }
+                  title={ page.title }
+                  onClick={ handleClick }
+                />
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="column">
+          <div className="wrapper">
+            <h2 className="centered">TV &amp; advertising</h2>
+            { commercial.map((page) => {
+              return (
+                <AnimationItem
+                  key={ page.id }
+                  id={ page.id }
+                  url={ page.url }
+                  content={ page.content?.trim() }
+                  thumbnail={ page.thumbnail }
+                  title={ page.title }
+                  onClick={ handleClick }
+                />
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      <Lightbox
+        gallery={gallery}
+        current={current}
+        open={open}
+        onClose={handleClose}
       />
-    </Fragment>
+    </>
   )
 }
 
-AnimationTemplate.propTypes = {
+AnimationPageTemplate.propTypes = {
   content: PropTypes.string,
   title: PropTypes.string.isRequired,
   type: PropTypes.string,
@@ -39,22 +131,16 @@ AnimationTemplate.propTypes = {
 }
 
 const Animation = ({ data }) => {
-  const { markdownRemark: animation } = data
+  const { animation } = data?.allMarkdownRemark?.edges[0]?.node?.frontmatter
+  console.log(animation)
 
   return (
     <Layout className="has-sidebar has-columns" pageHeader={ AnimationPageHeader } sidebar={ Sidebar }>
       <Helmet>
-        <title>{ animation.frontmatter.title } :: Animation ({ animation.frontmatter.type }) :: PPF House</title>
-        <meta name="description" content={ animation.internal.content || animation.frontmatter.title } />
+        <title>Animation :: PPF House</title>
+        <meta name="description" content="PPF House animation portfolio" />
       </Helmet>
-      <AnimationTemplate
-        content={ animation.html }
-        title={ animation.frontmatter.title }
-        type={ animation.frontmatter.type }
-        thumbnail={ animation.frontmatter.thumbnail }
-        url={ animation.frontmatter.url }
-        description={ animation.internal.content || animation.frontmatter.title }
-      />
+      <AnimationPageTemplate pages={ animation } />
     </Layout>
   )
 }
@@ -66,18 +152,22 @@ Animation.propTypes = {
 export default Animation
 
 export const animationQuery = graphql`
-  query Animation($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-        frontmatter {
-          thumbnail
-          title
-          type
-          url
+  query Animation {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "animation"}}}) {
+      edges {
+        node {
+          frontmatter {
+            animation {
+              id
+              title
+              body
+              thumbnail
+              type
+              url
+            }
+          }
         }
-        html
-        internal {
-					content
-        }
+      }
     }
   }
 `

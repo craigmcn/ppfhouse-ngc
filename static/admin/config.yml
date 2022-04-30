@@ -24,35 +24,6 @@ media_library:
     api_key: 193318238412777
 
 collections:
-  - name: 'animation'
-    label: 'Animation'
-    folder: 'src/pages/animation'
-    create: true
-    slug: '{{slug}}'
-    fields:
-      - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'animation',
-        }
-      - label: ID
-        name: id
-        widget: ncw-id
-        prefix: animation
-        timestamp: false
-        hidden: true
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - {
-          label: 'Type',
-          name: 'type',
-          widget: 'select',
-          options: ['demo', 'independent', 'commercial'],
-        }
-      - { label: 'URL', name: 'url', widget: 'string' }
-      - { label: 'Thumbnail', name: 'thumbnail', widget: image }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-
   - name: 'art-design'
     label: 'Art and Design'
     folder: 'src/pages/art-design'
@@ -418,6 +389,46 @@ collections:
             fields:
               - { label: 'Heading', name: 'heading', widget: 'string' }
               - { label: 'Body', name: 'body', widget: 'markdown' }
+
+      - file: 'src/pages/animation/index.md'
+        label: 'Animation'
+        name: 'animation'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'animation',
+            }
+          - label: ID
+            name: id
+            widget: ncw-id
+            prefix: animation
+            timestamp: false
+            hidden: true
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - label: Items
+            name: animation
+            widget: list
+            collapsed: true
+            summary: '{{fields.title}}: {{fields.url}} ({{fields.type}})'
+            fields:
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: animation
+                timestamp: false
+                hidden: true
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Type',
+                  name: 'type',
+                  widget: 'select',
+                  options: ['demo', 'independent', 'commercial'],
+                }
+              - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Thumbnail', name: 'thumbnail', widget: image }
+              - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
       - name: 'contacts'
         label: 'Contacts'
