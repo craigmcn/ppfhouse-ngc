@@ -7,7 +7,7 @@ import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
 import AnimationPageHeader from '../components/Animation/PageHeader'
 import Lightbox from '../components/Lightbox/Lightbox'
 import AnimationItem from '../components/Animation/AnimationItem'
-import { getLightboxType, md2Html } from '../utilities'
+import { getLightboxType, md2Html, remove_hash_from_url } from '../utilities'
 
 const AnimationPageTemplate = ({ items }) => {
   const validAnimations = items.filter((item) => item.title && item.thumbnail && item.url)
@@ -42,6 +42,7 @@ const AnimationPageTemplate = ({ items }) => {
   useEffect(() => {
     const el = document.querySelector('a[data-title=BAM]')
     if (window.location.hash === '#bam' && !!el && !open) {
+      remove_hash_from_url()
       setCurrent(gallery.find(item => item.id === el.dataset.id))
       setOpen(true)
     }
@@ -120,12 +121,14 @@ const AnimationPageTemplate = ({ items }) => {
 }
 
 AnimationPageTemplate.propTypes = {
-  content: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  thumbnail: PropTypes.string,
-  url: PropTypes.string,
-  description: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string,
+    thumbnail: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }))
 }
 
 const Animation = ({ data }) => {

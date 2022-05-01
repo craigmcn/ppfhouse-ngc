@@ -28,3 +28,12 @@ export const getYoutubeUrl = (url) => {
   if ((!url.includes('youtu.be') && !url.includes('youtube')) || url.includes('embed')) return url
   return `https://www.youtube.com/embed/${url?.split('/').pop()}`
 }
+
+export const remove_hash_from_url = () => {
+  const uri = window.location.toString();
+
+  if (uri.indexOf("#") > 0) {
+    const clean_uri = uri.substring(0, uri.indexOf("#"));
+    window.history.replaceState({}, document.title, clean_uri);
+  }
+}
