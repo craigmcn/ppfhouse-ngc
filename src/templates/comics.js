@@ -1,81 +1,112 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { getLightboxType } from '../utilities'
 import Layout from '../components/Layout'
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
+import ComicsPageHeader from '../components/ComicsPageHeader'
+import Lightbox from '../components/Lightbox/Lightbox'
 
-const PageHeader = (
-  <div id="page-header">
-    <h2>comics</h2>
-  </div>
-)
+const ComicsPageTemplate = ({ comics }) => {
+  const validComics = comics.filter((comic) => comic.title && comic.cover && comic.pages)
+  const galleries = validComics.reduce((r, c, i) => {
+    r[c.id] = c.pages.map(page => ({ id: `${page.name}-${i}`, src: page.image, type: getLightboxType(page.image) }))
+    return r
+  }, {})
 
-const ComicsTemplate = ({ title, cover, pages }) => {
+  const [gallery, setGallery] = useState([])
+  const [current, setCurrent] = useState({})
+  const [open, setOpen] = useState(false)
 
+  const handleClick = useCallback((e) => {
+    e.preventDefault()
+    const galleryId = e.currentTarget.dataset.id
+    setGallery(galleries[galleryId])
+    setCurrent(galleries[galleryId][0])
+    setOpen(true)
+  }, [galleries])
+
+  const handleClose = useCallback(() => {
+    setOpen(false)
+  }, [])
+  
   return (
     <>
-      <h2>{ title.toLowerCase() }</h2>
-      <p>
-        <img src={ cover } alt={ title } />
-      </p>
+      { validComics.map((comic) => {
+        return (
+            <Fragment key={comic.id}>
+              <h2>{ comic.title.toLowerCase() }</h2>
+              <p>
+                <a
+                  data-id={comic.id}
+                  href={ comic.title.toLowerCase().replaceAll(/[^a-z0-9]/g, '-') }
+                  title={ comic.title }
+                  onClick={ handleClick }
+                >
+                  <img src={ comic.cover } alt={ comic.title } />
+                </a>
+              </p>
+            </Fragment>
+        )
+      })}
 
-      { pages.map(({name, image}) => {
-      return (
-          <Fragment key={name}>
-            <h3>{ name.toLowerCase() }</h3>
-            <p>
-              <img src={ image } alt={ name } />
-            </p>
-          </Fragment>
-      )
-    }) }
+      <Lightbox
+        gallery={gallery}
+        current={current}
+        open={open}
+        onClose={handleClose}
+      />
     </>
   )
 }
 
-ComicsTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  cover: PropTypes.string,
-  pages: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.string,
+ComicsPageTemplate.propTypes = {
+  comics: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    cover: PropTypes.string,
+    pages: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      image: PropTypes.string,
+    }))
   })
 }
 
-const Comics = ({ data }) => {
-  const { markdownRemark: comics } = data
+const ComicsPage = ({ data }) => {
+  const { comics } = data?.markdownRemark?.frontmatter
 
   return (
-    <Layout className="has-sidebar" pageHeader={ PageHeader } sidebar={ Sidebar }>
+    <Layout className="has-sidebar" pageHeader={ ComicsPageHeader } sidebar={ Sidebar }>
       <Helmet>
-        <title>{ comics.frontmatter.title } :: Comics :: PPF House</title>
-        <meta name="description" content={ `${comics.frontmatter.title}, a comic by Howie Shia` } />
+        <title>Comics :: PPF House</title>
+        <meta name="description" content="Comics by Howie Shia" />
       </Helmet>
-      <ComicsTemplate
-        title={ comics.frontmatter.title }
-        cover={ comics.frontmatter.cover }
-        pages={ comics.frontmatter.pages }
-      />
+
+      <ComicsPageTemplate comics={ comics } />
     </Layout>
   )
 }
 
-Comics.propTypes = {
+ComicsPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default Comics
+export default ComicsPage
 
 export const comicsQuery = graphql`
   query Comics($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        cover
         title
-        pages {
-          name
-          image
+        comics {
+          id
+          cover
+          title
+          pages {
+            name
+            image
+          }
         }
       }
     }

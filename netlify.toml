@@ -28,13 +28,13 @@ to = "/wpbe/epk-stage-plot/"
 status = 301
 
 [[redirects]]
-from = "/music/tim-shia/"
-to = "/tim-shia/"
+from = "/music/tim-shia/*"
+to = "/tim-shia/:splat"
 status = 301
 
 [[redirects]]
-from = "/music/timshia/"
-to = "/tim-shia/"
+from = "/music/timshia/*"
+to = "/tim-shia/:splat"
 status = 301
 
 [[redirects]]
@@ -46,6 +46,7 @@ status = 302
 from = "/news/"
 to = "/news-events/"
 status = 301
+force = true
 
 [[redirects]]
 from = "/art/"

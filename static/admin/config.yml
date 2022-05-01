@@ -24,29 +24,6 @@ media_library:
     api_key: 193318238412777
 
 collections:
-  - name: 'comics'
-    label: 'Comics'
-    folder: 'src/pages/comics'
-    create: true
-    fields:
-      - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'comics',
-        }
-      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Cover', name: 'cover', widget: image }
-      - label: 'Pages'
-        name: 'pages'
-        widget: 'list'
-        collapsed: true
-        summary: '{{fields.name}}'
-        fields:
-          - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Image', name: 'image', widget: image }
-
   - name: 'event'
     label: 'Event'
     folder: 'src/pages/events'
@@ -448,6 +425,38 @@ collections:
               - { label: 'Thumbnail', name: 'thumbnail', widget: image }
               - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
+      - file: 'src/pages/comics/index.md'
+        name: 'comics'
+        label: 'Comics'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'comics',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
+          - { label: 'Title', name: 'title', widget: string }
+          - label: 'Comics'
+            label_singular: 'Comic'
+            name: 'comics'
+            widget: 'list'
+            collapsed: true
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: comic }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Cover', name: 'cover', widget: image }
+              - label: 'Pages'
+                label_singular: 'Page'
+                name: 'pages'
+                widget: 'list'
+                collapsed: true
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: 'Name', name: 'name', widget: 'string' }
+                  - { label: 'Image', name: 'image', widget: image }
+
       - name: 'contacts'
         label: 'Contacts'
         file: 'src/pages/contact/index.md'
@@ -530,75 +539,3 @@ collections:
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
               - { label: 'Description', name: 'body', widget: 'markdown', required: false }
-
-  - name: 'settings'
-    label: 'Settings'
-    files:
-      - name: 'animation-order'
-        label: 'Animation Order'
-        file: 'src/pages/animation-order/index.md'
-        fields:
-          - label: 'Utility'
-            name: 'utility'
-            widget: 'hidden'
-            default: 'animation-order'
-          - label: 'Animation items'
-            name: 'items'
-            widget: 'list'
-            collapsed: false
-            fields:
-              - {
-                  label: 'Item',
-                  name: 'item',
-                  widget: 'relation',
-                  collection: 'animation',
-                  search_fields: ['title'],
-                  value_field: '{{id}}',
-                  display_fields: ['{{title}} ({{type}})'],
-                }
-
-      - name: 'art-design-order'
-        label: 'Art and Design Order'
-        file: 'src/pages/art-design-order/index.md'
-        fields:
-          - label: 'Utility'
-            name: 'utility'
-            widget: 'hidden'
-            default: 'art-design-order'
-          - label: 'Art and Design items'
-            name: 'items'
-            widget: 'list'
-            collapsed: false
-            fields:
-              - {
-                  label: 'Item',
-                  name: 'item',
-                  widget: 'relation',
-                  collection: 'art-design',
-                  search_fields: ['title'],
-                  value_field: '{{id}}',
-                  display_fields: ['{{title}}'],
-                }
-
-      - name: 'comics-order'
-        label: 'Comics Order'
-        file: 'src/pages/comics-order/index.md'
-        fields:
-          - label: 'Utility'
-            name: 'utility'
-            widget: 'hidden'
-            default: 'comics-order'
-          - label: 'Comics items'
-            name: 'items'
-            widget: 'list'
-            collapsed: false
-            fields:
-              - {
-                  label: 'Item',
-                  name: 'item',
-                  widget: 'relation',
-                  collection: 'comics',
-                  search_fields: ['title'],
-                  value_field: '{{id}}',
-                  display_fields: ['{{title}}'],
-                }

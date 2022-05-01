@@ -2,18 +2,27 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const ComicsPagePreview = ({ entry }) => {
-  const data = entry.get('data').toJSON()
+  const { title, comics } = entry.get('data').toJSON()
 
   return (
     <>
-      <h1 className="is-size-3 has-text-weight-semibold">{data.title}</h1>
-      <img src={data.cover} alt={data.title} />
+      <h1 className="is-size-3 has-text-weight-semibold">{title}</h1>
 
-      { data.pages.map((page) => {
+      { comics.map(({ id, title, cover, pages }) => {
         return (
-          <Fragment key={page.image}>
-            <h2 className="is-size-4 has-text-weight-light">{page.name}</h2>
-            <img src={page.image} alt={page.name} />
+          <Fragment key={id}>
+            <h2 className="is-size-4">{ title }</h2>
+
+            <img src={cover} alt={title} />
+
+            { pages.map(({image, name}) => {
+              return (
+                <Fragment key={image}>
+                  <h3 className="is-size-5 has-text-weight-light">{name}</h3>
+                  <img src={image} alt={name} />
+                </Fragment>
+              )
+            })}
           </Fragment>
         )
       })}
