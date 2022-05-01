@@ -4,19 +4,19 @@ import { getLightboxType, md2Html } from '../utilities'
 import AnimationItem from './Animation/AnimationItem'
 import Lightbox from './Lightbox/Lightbox'
 
-export const FilmTvScoringPageTemplate = ({ content }) => {
-  const gallery = content
+export const FilmTvScoringPageTemplate = ({ items }) => {
+  const gallery = items
     .map((item) => ({
       id: item.id,
       title: item.video,
       src: item.url,
       description: md2Html(item.body),
-      thumbnail: content.thumbnail,
+      thumbnail: item.thumbnail,
       type: getLightboxType(item.url),
     }))
 
-  const column1 = content.slice(0, Math.ceil(content.length / 2))
-  const column2 = content.slice(Math.ceil(content.length / 2))
+  const column1 = items.slice(0, Math.ceil(items.length / 2))
+  const column2 = items.slice(Math.ceil(items.length / 2))
 
   const [current, setCurrent] = useState({})
   const [open, setOpen] = useState(false)
@@ -34,15 +34,15 @@ export const FilmTvScoringPageTemplate = ({ content }) => {
     <div className="columns-2">
       <div className="column">
           <div className="wrapper">
-            { column1.map((content) => {
+            { column1.map((item) => {
               return (
-                <Fragment key={ content.id }>
+                <Fragment key={ item.id }>
                   <AnimationItem
-                    id={ content.id }
-                    url={ content.url }
-                    content={ content.body }
-                    thumbnail={ content.thumbnail }
-                    title={ content.video }
+                    id={ item.id }
+                    url={ item.url }
+                    content={ item.body }
+                    thumbnail={ item.thumbnail }
+                    title={ item.title }
                     onClick={ handleClick }
                   />
                 </Fragment>
@@ -53,15 +53,15 @@ export const FilmTvScoringPageTemplate = ({ content }) => {
 
       <div className="column">
           <div className="wrapper">
-            { column2.map((content) => {
+            { column2.map((item) => {
               return (
-                <Fragment key={ content.id }>
+                <Fragment key={ item.id }>
                   <AnimationItem
-                    id={ content.id }
-                    url={ content.url }
-                    content={ content.body }
-                    thumbnail={ content.thumbnail }
-                    title={ content.video }
+                    id={ item.id }
+                    url={ item.url }
+                    content={ item.body }
+                    thumbnail={ item.thumbnail }
+                    title={ item.title }
                     onClick={ handleClick }
                   />
                 </Fragment>
@@ -81,5 +81,5 @@ export const FilmTvScoringPageTemplate = ({ content }) => {
 }
 
 FilmTvScoringPageTemplate.propTypes = {
-  content: PropTypes.array,
+  items: PropTypes.array,
 }

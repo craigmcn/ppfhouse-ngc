@@ -4,20 +4,20 @@ import { getLightboxType, getYoutubeUrl, md2Html } from '../../utilities'
 import VisualsItem from './VisualsItem'
 import Lightbox from '../Lightbox/Lightbox'
 
-export const WpbeVisualsPageTemplate = ({ content }) => {
-  const gallery = content
+export const WpbeVisualsPageTemplate = ({ items }) => {
+  const gallery = items
     .map((item) => ({
         id: item.id,
-        title: item.visuals,
-        src: getYoutubeUrl(item.url),
+        title: item.title,
+        src: item.url ? getYoutubeUrl(item.url) : item.image,
         description: md2Html(item.body),
-        thumbnail: content.thumbnail,
-        type: getLightboxType(item.url),
+        thumbnail: item.thumbnail,
+        type: getLightboxType(item.url || item.image),
       })
     )
 
-  const column1 = content.slice(0, Math.ceil(content.length / 2))
-  const column2 = content.slice(Math.ceil(content.length / 2))
+  const column1 = items.slice(0, Math.ceil(items.length / 2))
+  const column2 = items.slice(Math.ceil(items.length / 2))
 
   const [current, setCurrent] = useState({})
   const [open, setOpen] = useState(false)
@@ -35,17 +35,17 @@ export const WpbeVisualsPageTemplate = ({ content }) => {
     <div className="columns-2">
       <div className="column">
           <div className="wrapper">
-            { column1.map((content) => {
+            { column1.map((item) => {
               return (
-                <Fragment key={ content.id }>
+                <Fragment key={ item.id }>
                   <VisualsItem
-                    id={ content.id }
-                    url={ content.url }
-                    content={ content.body }
-                    thumbnail={ content.thumbnail }
-                    title={ content.visuals }
+                    id={ item.id }
+                    url={ item.url || item.image }
+                    items={ item.body }
+                    thumbnail={ item.thumbnail }
+                    title={ item.title }
                     onClick={ handleClick }
-                    type={ getLightboxType(content.url) }
+                    type={ getLightboxType(item.url || item.image) }
                   />
                 </Fragment>
               )
@@ -55,17 +55,17 @@ export const WpbeVisualsPageTemplate = ({ content }) => {
 
       <div className="column">
           <div className="wrapper">
-            { column2.map((content) => {
+            { column2.map((item) => {
               return (
-                <Fragment key={ content.id }>
+                <Fragment key={ item.id }>
                   <VisualsItem
-                    id={ content.id }
-                    url={ content.url }
-                    content={ content.body }
-                    thumbnail={ content.thumbnail }
-                    title={ content.visuals }
+                    id={ item.id }
+                    url={ item.url || item.image }
+                    items={ item.body }
+                    thumbnail={ item.thumbnail }
+                    title={ item.title }
                     onClick={ handleClick }
-                    type={ getLightboxType(content.url) }
+                    type={ getLightboxType(item.url || item.image) }
                   />
                 </Fragment>
               )
@@ -84,5 +84,5 @@ export const WpbeVisualsPageTemplate = ({ content }) => {
 }
 
 WpbeVisualsPageTemplate.propTypes = {
-  content: PropTypes.array,
+  items: PropTypes.array,
 }

@@ -24,24 +24,6 @@ media_library:
     api_key: 193318238412777
 
 collections:
-  - name: 'art-design'
-    label: 'Art and Design'
-    folder: 'src/pages/art-design'
-    create: true
-    slug: '{{slug}}'
-    fields:
-      - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'art-design',
-        }
-      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: art-design }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Filename', name: 'filename', widget: image }
-      - { label: 'Thumbnail', name: 'thumbnail', widget: image }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-
   - name: 'comics'
     label: 'Comics'
     folder: 'src/pages/comics'
@@ -285,13 +267,13 @@ collections:
           - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
           - { label: 'Title', name: 'title', widget: 'string' }
           - label: 'Music'
-            name: 'content'
+            name: 'items'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.music}} ({{fields.url}})'
+            summary: '{{fields.title}} ({{fields.url}})'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
-              - { label: 'Title', name: 'music', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
 
@@ -308,15 +290,16 @@ collections:
           - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
           - { label: 'Title', name: 'title', widget: 'string' }
           - label: 'Visuals'
-            name: 'content'
+            name: 'items'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.visuals}} ({{fields.url}})'
+            summary: '{{fields.title}} {{fields.url}}{{fields.image}}'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
-              - { label: 'Title', name: 'visuals', widget: 'string' }
-              - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
+              - { label: 'Image', name: 'image', widget: 'image', required: false, hint: 'One of Image or URL is required' }
+              - { label: 'URL', name: 'url', widget: 'string', required: false, hint: 'One of Image or URL is required' }
 
   - name: 'news'
     label: 'News'
@@ -408,7 +391,7 @@ collections:
             hidden: true
           - { label: 'Title', name: 'title', widget: 'string' }
           - label: Items
-            name: animation
+            name: items
             widget: list
             collapsed: true
             summary: '{{fields.title}}: {{fields.url}} ({{fields.type}})'
@@ -427,6 +410,41 @@ collections:
                   options: ['demo', 'independent', 'commercial'],
                 }
               - { label: 'URL', name: 'url', widget: 'string' }
+              - { label: 'Thumbnail', name: 'thumbnail', widget: image }
+              - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+
+      - file: 'src/pages/art-design/index.md'
+        label: 'Art & Design'
+        name: 'art-design'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'art-design',
+            }
+          - label: ID
+            name: id
+            widget: ncw-id
+            prefix: art-design
+            timestamp: false
+            hidden: true
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - label: Items
+            label_singular: 'Item'
+            name: items
+            widget: list
+            collapsed: true
+            summary: '{{fields.title}}: {{fields.image}}'
+            fields:
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: art-design
+                timestamp: false
+                hidden: true
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: image }
               - { label: 'Thumbnail', name: 'thumbnail', widget: image }
               - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
@@ -502,13 +520,13 @@ collections:
           - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
           - { label: 'Title', name: 'title', widget: 'string' }
           - label: 'Videos'
-            name: 'content'
+            name: 'items'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.video}} ({{fields.url}})'
+            summary: '{{fields.title}} ({{fields.url}})'
             fields:
               - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
-              - { label: 'Video title', name: 'video', widget: 'string' }
+              - { label: 'Video', name: 'title', widget: 'string' }
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
               - { label: 'Description', name: 'body', widget: 'markdown', required: false }

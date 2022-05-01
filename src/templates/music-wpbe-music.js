@@ -8,10 +8,10 @@ import PageHeader from '../components/Wpbe/PageHeader'
 
 const WpbeMusicPage = ({ data }) => {
   const { markdownRemark: music } = data
-  const { title, content } = music.frontmatter
+  const { title, items } = music.frontmatter
 
-  const column1 = content.slice(0, Math.ceil(content.length / 2))
-  const column2 = content.slice(Math.ceil(content.length / 2))
+  const column1 = items.slice(0, Math.ceil(items.length / 2))
+  const column2 = items.slice(Math.ceil(items.length / 2))
 
   return (
     <Layout className="music wpbe has-sidebar no-columns" pageHeader={ PageHeader } sidebar={ Sidebar }>
@@ -25,18 +25,18 @@ const WpbeMusicPage = ({ data }) => {
       <div className="columns-2">
         <div className="column">
             <div className="wrapper">
-              { column1.map((content) => {
+              { column1.map((item) => {
                 return (
                   <div class="music-item">
                     <a
-                      href={ content.url }
-                      title={ content.music }
+                      href={ item.url }
+                      title={ item.title }
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={ content.thumbnail } alt={ `Album cover for ${content.music}` } />
+                      <img src={ item.thumbnail } alt={ `Album cover for ${item.title}` } />
                     </a>
-                    <p>{ content.music.toLowerCase() }</p>
+                    <p>{ item.title.toLowerCase() }</p>
                   </div>
                 )
               }) }
@@ -45,18 +45,18 @@ const WpbeMusicPage = ({ data }) => {
 
         <div className="column">
             <div className="wrapper">
-              { column2.map((content) => {
+              { column2.map((item) => {
                 return (
                   <div class="music-item">
                     <a
-                      href={ content.url }
-                      title={ content.music }
+                      href={ item.url }
+                      title={ item.title }
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={ content.thumbnail } alt={ `Album cover for ${content.music}` } />
+                      <img src={ item.thumbnail } alt={ `Album cover for ${item.title}` } />
                     </a>
-                    <p>{ content.music.toLowerCase() }</p>
+                    <p>{ item.title.toLowerCase() }</p>
                   </div>
                 )
               }) }
@@ -79,8 +79,8 @@ export const wpbeMusicPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        content {
-          music
+        items {
+          title
           url
           thumbnail
         }

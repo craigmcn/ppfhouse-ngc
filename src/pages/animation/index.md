@@ -2,7 +2,7 @@
 templateKey: animation
 id: 86aa1078-0c72-42ab-92e1-783d30b4c12c
 title: Animation
-animation:
+items:
   - title: "Marco's Oriental Noodles"
     id: 26C72FBF-285E-6051-8DFF-608395C682F6
     type: independent

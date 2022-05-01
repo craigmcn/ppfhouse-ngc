@@ -3,30 +3,28 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import { HTMLContent } from '../components/Content'
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars'
 import AnimationPageHeader from '../components/Animation/PageHeader'
 import Lightbox from '../components/Lightbox/Lightbox'
 import AnimationItem from '../components/Animation/AnimationItem'
-import { getLightboxType } from '../utilities'
+import { getLightboxType, md2Html } from '../utilities'
 
-const AnimationPageTemplate = ({ pages }) => {
-  console.log(pages)
-  const validAnimations = pages.filter((page) => page.title && page.thumbnail && page.url)
+const AnimationPageTemplate = ({ items }) => {
+  const validAnimations = items.filter((item) => item.title && item.thumbnail && item.url)
 
-  const demo = validAnimations.filter((page) => page.type === "demo")
-  const independent = validAnimations.filter((page) => page.type === "independent")
-  const commercial = validAnimations.filter((page) => page.type === "commercial")
+  const demo = validAnimations.filter((item) => item.type === "demo")
+  const independent = validAnimations.filter((item) => item.type === "independent")
+  const commercial = validAnimations.filter((item) => item.type === "commercial")
 
   const gallery = validAnimations
-    .map((page) => ({
-      id: page.id,
-      title: page.title,
-      src: page.url,
-      // content: node.internal.content?.trim(),
-      // description: node.html,
-      thumbnail: page.thumbnail,
-      type: getLightboxType(page.url),
+    .map((item) => ({
+      id: item.id,
+      title: item.title,
+      src: item.url,
+      content: item.body,
+      description: md2Html(item.body),
+      thumbnail: item.thumbnail,
+      type: getLightboxType(item.url),
     }))
 
   const [current, setCurrent] = useState({})
@@ -56,15 +54,15 @@ const AnimationPageTemplate = ({ pages }) => {
         <div className="column">
           <div className="wrapper">
             <h2 className="centered">demo reel</h2>
-            { demo.map((page) => {
+            { demo.map((item) => {
               return (
                 <AnimationItem
-                  key={ page.id }
-                  id={ page.id }
-                  url={ page.url }
-                  content={ page.content?.trim() }
-                  thumbnail={ page.thumbnail }
-                  title={ page.title }
+                  key={ item.id }
+                  id={ item.id }
+                  url={ item.url }
+                  content={ item.body }
+                  thumbnail={ item.thumbnail }
+                  title={ item.title }
                   onClick={ handleClick }
                 />
               )
@@ -75,15 +73,15 @@ const AnimationPageTemplate = ({ pages }) => {
         <div className="column">
           <div className="wrapper">
             <h2 className="centered">shorts &amp; videos</h2>
-            { independent.map((page) => {
+            { independent.map((item) => {
               return (
                 <AnimationItem
-                  key={ page.id }
-                  id={ page.id }
-                  url={ page.url }
-                  content={ page.content?.trim() }
-                  thumbnail={ page.thumbnail }
-                  title={ page.title }
+                  key={ item.id }
+                  id={ item.id }
+                  url={ item.url }
+                  content={ item.body }
+                  thumbnail={ item.thumbnail }
+                  title={ item.title }
                   onClick={ handleClick }
                 />
               )
@@ -94,15 +92,15 @@ const AnimationPageTemplate = ({ pages }) => {
         <div className="column">
           <div className="wrapper">
             <h2 className="centered">TV &amp; advertising</h2>
-            { commercial.map((page) => {
+            { commercial.map((item) => {
               return (
                 <AnimationItem
-                  key={ page.id }
-                  id={ page.id }
-                  url={ page.url }
-                  content={ page.content?.trim() }
-                  thumbnail={ page.thumbnail }
-                  title={ page.title }
+                  key={ item.id }
+                  id={ item.id }
+                  url={ item.url }
+                  content={ item.body }
+                  thumbnail={ item.thumbnail }
+                  title={ item.title }
                   onClick={ handleClick }
                 />
               )
@@ -131,8 +129,7 @@ AnimationPageTemplate.propTypes = {
 }
 
 const Animation = ({ data }) => {
-  const { animation } = data?.allMarkdownRemark?.edges[0]?.node?.frontmatter
-  console.log(animation)
+  const { items } = data?.markdownRemark?.frontmatter
 
   return (
     <Layout className="has-sidebar has-columns" pageHeader={ AnimationPageHeader } sidebar={ Sidebar }>
@@ -140,7 +137,7 @@ const Animation = ({ data }) => {
         <title>Animation :: PPF House</title>
         <meta name="description" content="PPF House animation portfolio" />
       </Helmet>
-      <AnimationPageTemplate pages={ animation } />
+      <AnimationPageTemplate items={ items } />
     </Layout>
   )
 }
@@ -152,20 +149,16 @@ Animation.propTypes = {
 export default Animation
 
 export const animationQuery = graphql`
-  query Animation {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "animation"}}}) {
-      edges {
-        node {
-          frontmatter {
-            animation {
-              id
-              title
-              body
-              thumbnail
-              type
-              url
-            }
-          }
+  query Animation($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        items {
+          id
+          title
+          body
+          thumbnail
+          type
+          url
         }
       }
     }

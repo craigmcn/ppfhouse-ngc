@@ -8,7 +8,7 @@ import PageHeader from '../components/FilmTvScoring/PageHeader'
 import Sidebar from '../components/FilmTvScoring/Sidebar'
 
 const FilmTvScoringPage = ({ data }) => {
-  const { markdownRemark: video } = data
+  const { items } = data?.markdownRemark?.frontmatter
 
   return (
     <Layout className="music film-tv-scoring has-sidebar no-columns" pageHeader={ PageHeader } sidebar={ Sidebar }>
@@ -16,9 +16,8 @@ const FilmTvScoringPage = ({ data }) => {
         <title>Film & TV Scoring :: Music :: PPF House</title>
         <meta name="description" content="PPF House: PPF House Music: Film & TV Scoring" />
       </Helmet>
-      <FilmTvScoringPageTemplate
-        content={ video.frontmatter.content }
-      />
+      
+      <FilmTvScoringPageTemplate items={ items } />
     </Layout>
   )
 }
@@ -33,8 +32,8 @@ export const musicFilmTvScoringPageQuery = graphql`
   query FilmTvScoringPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        content {
-          video
+        items {
+          title
           id
           url
           thumbnail

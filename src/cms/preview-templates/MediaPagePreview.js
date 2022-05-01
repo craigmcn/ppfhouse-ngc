@@ -4,7 +4,7 @@ import { md2Html } from '../../utilities'
 import { HTMLContent } from '../../components/Content'
 
 const MediaPagePreview = ({ entry }) => {
-  const { title, body, content } = entry.get('data').toJSON()
+  const { title, body, items } = entry.get('data').toJSON()
 
   return (
     <>
@@ -12,14 +12,14 @@ const MediaPagePreview = ({ entry }) => {
       <div className="content">
         <HTMLContent content={ md2Html(body) } />
       </div>
-      { content.map(item => {
-        const { id, video, music, body, url, thumbnail } = item
-        const title = video || music
+      { items.map(item => {
+        const { id, title, body, url, image, thumbnail } = item
         return (
           <Fragment key={ id }>
             <h3 className="is-size-4">{ title }</h3>
-            <p><code>{ url }</code></p>
-            <p><img src={ thumbnail } alt={ title } /></p>
+            {url && <p style={{ wordBreak: 'break-word'}}><a href={ url }><code>{ url }</code></a></p>}
+            <img src={ thumbnail } alt={ title } width={image ? '200' : '420' } />
+            {image && <img className="ml-1" src={ image } alt={ title } width="420" />}
             <div className="content">
               <HTMLContent content={ md2Html(body) } />
             </div>

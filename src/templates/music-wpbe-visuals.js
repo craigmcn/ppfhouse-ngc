@@ -9,7 +9,7 @@ import { WpbeVisualsPageTemplate } from '../components/Wpbe/VisualsPageTemplate'
 
 const WpbeVisualsPage = ({ data }) => {
   const { markdownRemark: visuals } = data
-  const { title, content } = visuals.frontmatter
+  const { title, items } = visuals.frontmatter
 
   return (
     <Layout className="music wpbe has-sidebar no-columns" pageHeader={ PageHeader } sidebar={ Sidebar }>
@@ -20,9 +20,7 @@ const WpbeVisualsPage = ({ data }) => {
 
       <h2>{ title.toLowerCase() }</h2>
 
-      <WpbeVisualsPageTemplate
-        content={ content }
-      />
+      <WpbeVisualsPageTemplate items={ items } />
     </Layout>
   )
 }
@@ -38,10 +36,11 @@ export const wpbeVisualsPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        content {
+        items {
           id
-          visuals
+          title
           url
+          image
           thumbnail
         }
       }

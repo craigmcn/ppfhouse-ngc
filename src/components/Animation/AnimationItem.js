@@ -15,7 +15,7 @@ const AnimationItem = (props) => {
     <div className="animation-item">
       <a
         href={ url }
-        title={ content }
+        title={ `${title}${content ? ': '+content : ''}` }
         onClick={ handleClick }
         data-id={ id }
         data-title={ title }
