@@ -6,3 +6,53 @@ functions = "lambda"
 NODE_VERSION = "14"
 YARN_VERSION = "1.22.15"
 YARN_FLAGS = "--no-ignore-optional"
+
+[[redirects]]
+from = "/myspaceimages/*"
+to = "https://cdn.ppfhouse.com/myspaceimages/:splat"
+status = 301
+
+[[redirects]]
+from = "/flutter/*"
+to = "https://flutter.ppfhouse.com/"
+status = 301
+
+[[redirects]]
+from = "/music/wpbe/"
+to = "/wpbe/"
+status = 301
+
+[[redirects]]
+from = "/wpbe/stage-plot/"
+to = "/wpbe/epk-stage-plot/"
+status = 301
+
+[[redirects]]
+from = "/music/tim-shia/"
+to = "/tim-shia/"
+status = 301
+
+[[redirects]]
+from = "/music/timshia/"
+to = "/tim-shia/"
+status = 301
+
+[[redirects]]
+from = "/music/leo37/*"
+to = "https://www.facebook.com/037vudu"
+status = 302
+
+[[redirects]]
+from = "/news/"
+to = "/news-events/"
+status = 301
+
+[[redirects]]
+from = "/art/"
+to = "/art-design/"
+status = 301
+
+[[redirects]]
+from = "/art/design/"
+to = "/art-design/"
+status = 301
