@@ -3,6 +3,20 @@ templateKey: comics
 id: d93b2a21-cdc3-4530-919d-97102667d533
 title: Comics
 comics:
+  - id: 52cb49a8-5125-4e34-894c-90f216a62061
+    title: Gods & Greens
+    cover: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-and-greens-cover_hilpbu.jpg
+    pages:
+      - name: Balder
+        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_balder_kjcb6s.jpg
+      - name: Herakles
+        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_herakles_moe4dm.jpg
+      - name: Io
+        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_io_bb0kzi.jpg
+      - name: Musubi
+        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_musubi_z6wmxp.jpg
+      - name: Proserpina
+        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_proserpina_kvdjbq.jpg
   - id: d93b2a21-cdc3-4530-919d-97102667d533
     title: Century of Love
     cover: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/century-of-love-cover_cye61e.jpg
@@ -31,18 +45,4 @@ comics:
         image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/century-of-love/10-01-12-splash-copy_fiwyev.jpg
       - name: thief
         image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/century-of-love/centuryoflove-thief-fcbd_x94i29.jpg
-  - id: 52cb49a8-5125-4e34-894c-90f216a62061
-    title: Gods & Greens
-    cover: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-and-greens-cover_hilpbu.jpg
-    pages:
-      - name: Balder
-        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_balder_kjcb6s.jpg
-      - name: Herakles
-        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_herakles_moe4dm.jpg
-      - name: Io
-        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_io_bb0kzi.jpg
-      - name: Musubi
-        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_musubi_z6wmxp.jpg
-      - name: Proserpina
-        image: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/comics/gods-greens/G_G_proserpina_kvdjbq.jpg
 ---
