@@ -1,23 +1,25 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
-const remark = require("remark");
-const remarkHTML = require("remark-html");
-const format = require("date-fns/format")
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+const remark = require('remark');
+const remarkHTML = require('remark-html');
+const format = require('date-fns/format');
 
 const pagePathFromSlug = ({ fields, frontmatter }) => {
-  if (frontmatter.templateKey !== "event") return fields.slug;
+  if (frontmatter.templateKey !== 'event') return fields.slug;
 
-  const pagePathArray = fields.slug.substring(0, fields.slug.length-1).split('/');
+  const pagePathArray = fields.slug
+    .substring(0, fields.slug.length - 1)
+    .split('/');
   const pageSlug = pagePathArray.pop();
-  pagePathArray.push(frontmatter.date.substring(0,10) + pageSlug.substring(10));
+  pagePathArray.push(
+    frontmatter.date.substring(0, 10) + pageSlug.substring(10)
+  );
 
   return pagePathArray.join('/') + '/';
-}
+};
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
@@ -38,14 +40,14 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then((result) => {
     if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      result.errors.forEach((e) => console.error(e.toString()));
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((edge) => {
-      const id = edge.node.id
+      const id = edge.node.id;
 
       if (edge.node.frontmatter.templateKey) {
         createPage({
@@ -57,86 +59,87 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id,
           },
-        })
+        });
       }
-
-    })
-  })
-}
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
 
   const fm = node.frontmatter;
   if (fm && fm.content) {
     const contentList = fm.content;
-  
+
     if (contentList) {
-      const value = contentList.map(content =>
-         remark()
-        .use(remarkHTML)
-        .processSync(content.body)
-        .toString()
-      )
-  
+      const value = contentList.map((content) =>
+        remark().use(remarkHTML).processSync(content.body).toString()
+      );
+
       createNodeField({
         name: `contentList`,
         node,
-        value
+        value,
       });
     }
   }
 
-  if (fm && fm.templateKey === "event") {
+  if (fm && fm.templateKey === 'event') {
     if (!fm.title) {
       createNodeField({
         name: `title`,
         node,
-        value: `${fm.artist}, ${fm.venue}`
+        value: `${fm.artist}, ${fm.venue}`,
       });
     }
 
     if (!fm.eventTime) {
-      const value = format(new Date(fm.date.substring(0, fm.date.length - 1)), 'h:mm bbb')
+      const value = format(
+        new Date(fm.date.substring(0, fm.date.length - 1)),
+        'h:mm bbb'
+      );
 
       createNodeField({
         name: `time`,
         node,
-        value
+        value,
       });
     }
   }
 
-  if (fm && ["animation-order", "art-design-order", "comics-order"].includes(fm.utility)) {
+  if (
+    fm &&
+    ['animation-order', 'art-design-order', 'comics-order'].includes(fm.utility)
+  ) {
     const items = fm.items;
 
     items.forEach((item, index) => {
       const orderedNode = getNodes().find(
-        node =>
+        (node) =>
           node.internal.type === `MarkdownRemark` &&
           node.frontmatter.id === item.item
-      )
+      );
 
       if (orderedNode) {
         createNodeField({
           node: orderedNode,
           name: `order`,
           value: index,
-        })
+        });
       }
     });
   }
-}
+};
 
 // https://github.com/gatsbyjs/gatsby/issues/17159
 exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
@@ -170,23 +173,23 @@ exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
       name: 'MarkdownRemarkFrontmatter',
       interfaces: ['Node'],
       fields: {
-        image: "String",
+        image: 'String',
       },
     }),
     schema.buildObjectType({
       name: 'MarkdownRemarkFields',
       interfaces: ['Node'],
       fields: {
-        time: "String",
+        time: 'String',
       },
     }),
     schema.buildObjectType({
       name: 'MarkdownRemarkFrontmatterItems',
       interfaces: ['Node'],
       fields: {
-        image: "String",
-        url: "String",
+        image: 'String',
+        url: 'String',
       },
     }),
-  ])
-}
+  ]);
+};

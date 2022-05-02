@@ -43,7 +43,13 @@ collections:
           widget: 'string',
           hint: 'Used for identification in the collection list and on the standalone event page.',
         }
-      - { label: 'Image', name: 'image', widget: 'image', required: false, hint: 'A title image used on the standalone event page.' }
+      - {
+          label: 'Image',
+          name: 'image',
+          widget: 'image',
+          required: false,
+          hint: 'A title image used on the standalone event page.',
+        }
       - { label: 'Date', name: 'date', widget: 'datetime', picker_utc: true }
       - {
           label: 'Time',
@@ -85,7 +91,12 @@ collections:
               widget: 'hidden',
               default: 'music-tim-shia',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-tim-shia,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/tim-shia/live-music-and-dj-services.md'
@@ -98,7 +109,12 @@ collections:
               widget: 'hidden',
               default: 'music-tim-shia',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-tim-shia,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/tim-shia/music.md'
@@ -111,7 +127,12 @@ collections:
               widget: 'hidden',
               default: 'music-tim-shia',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-tim-shia }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-tim-shia,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -128,7 +149,12 @@ collections:
               widget: 'hidden',
               default: 'music-jazz-4-jrs',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-jazz-4-jrs,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/jazz-4-jrs/testimonials.md'
@@ -141,16 +167,26 @@ collections:
               widget: 'hidden',
               default: 'music-jazz-4-jrs',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-jazz-4-jrs,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-          - label: 'Testimonials'
-            label_singular: 'Testimonial'
+          - label: 'Press sections'
+            label_singular: 'Section'
             name: 'pressSections'
             widget: 'list'
             collapsed: false
             fields:
-              - { label: 'Section title', name: 'title', widget: 'string', required: false }
+              - {
+                  label: 'Section title',
+                  name: 'title',
+                  widget: 'string',
+                  required: false,
+                }
               - label: 'Clippings'
                 label_singular: 'Clipping'
                 name: 'pressClippings'
@@ -170,7 +206,12 @@ collections:
               widget: 'hidden',
               default: 'music-jazz-4-jrs',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-jazz-4-jrs,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/jazz-4-jrs/the-original-video.md'
@@ -183,7 +224,12 @@ collections:
               widget: 'hidden',
               default: 'music-jazz-4-jrs',
             }
-          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-jazz-4-jrs }
+          - {
+              label: 'ID',
+              name: 'id',
+              widget: 'ncw-id',
+              prefix: music-jazz-4-jrs,
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown', required: false }
           - label: 'Video'
@@ -192,10 +238,30 @@ collections:
             fields:
               - { label: 'Poster', name: 'poster', widget: 'image' }
               - { label: 'MP4', name: 'mp4', widget: 'string' }
-              - { label: 'OGG/OGV', name: 'ogg', widget: 'string', required: false }
-              - { label: 'WebM', name: 'webm', widget: 'string', required: false }
-              - { label: 'Captions', name: 'captions', widget: 'string', required: false }
-              - { label: 'Text', name: 'text', widget: 'markdown', required: false }
+              - {
+                  label: 'OGG/OGV',
+                  name: 'ogg',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'WebM',
+                  name: 'webm',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Captions',
+                  name: 'captions',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Text',
+                  name: 'text',
+                  widget: 'markdown',
+                  required: false,
+                }
 
   - name: 'music-wpbe'
     label: 'Music > WPBE'
@@ -220,7 +286,12 @@ collections:
             widget: 'list'
             collapsed: false
             fields:
-              - { label: 'Section title', name: 'title', widget: 'string', required: false }
+              - {
+                  label: 'Section title',
+                  name: 'title',
+                  widget: 'string',
+                  required: false,
+                }
               - label: 'Clippings'
                 label_singular: 'Clipping'
                 name: 'pressClippings'
@@ -249,7 +320,12 @@ collections:
             collapsed: true
             summary: '{{fields.title}} ({{fields.url}})'
             fields:
-              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+              - {
+                  label: 'ID',
+                  name: 'id',
+                  widget: 'ncw-id',
+                  prefix: music-wpbe,
+                }
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
@@ -272,11 +348,28 @@ collections:
             collapsed: true
             summary: '{{fields.title}} {{fields.url}}{{fields.image}}'
             fields:
-              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+              - {
+                  label: 'ID',
+                  name: 'id',
+                  widget: 'ncw-id',
+                  prefix: music-wpbe,
+                }
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
-              - { label: 'Image', name: 'image', widget: 'image', required: false, hint: 'One of Image or URL is required' }
-              - { label: 'URL', name: 'url', widget: 'string', required: false, hint: 'One of Image or URL is required' }
+              - {
+                  label: 'Image',
+                  name: 'image',
+                  widget: 'image',
+                  required: false,
+                  hint: 'One of Image or URL is required',
+                }
+              - {
+                  label: 'URL',
+                  name: 'url',
+                  widget: 'string',
+                  required: false,
+                  hint: 'One of Image or URL is required',
+                }
 
   - name: 'news'
     label: 'News'
@@ -311,13 +404,7 @@ collections:
           label: 'Posted by',
           name: 'postedBy',
           widget: 'select',
-          options:
-            [
-              'ppfhouse',
-              'timshia',
-              'howieshia',
-              'LEO37',
-            ],
+          options: ['ppfhouse', 'timshia', 'howieshia', 'LEO37'],
         }
       - {
           label: 'Include on PPF House News page',
@@ -388,7 +475,12 @@ collections:
                 }
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: image }
-              - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+              - {
+                  label: 'Body',
+                  name: 'body',
+                  widget: 'markdown',
+                  required: false,
+                }
 
       - file: 'src/pages/art-design/index.md'
         label: 'Art & Design'
@@ -423,7 +515,12 @@ collections:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Image', name: 'image', widget: image }
               - { label: 'Thumbnail', name: 'thumbnail', widget: image }
-              - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+              - {
+                  label: 'Body',
+                  name: 'body',
+                  widget: 'markdown',
+                  required: false,
+                }
 
       - file: 'src/pages/comics/index.md'
         name: 'comics'
@@ -503,11 +600,7 @@ collections:
             fields:
               - { label: 'Name', name: 'title', widget: 'string' }
               - { label: 'Cover', name: 'thumbnail', widget: image }
-              - {
-                  label: 'Internal',
-                  name: 'slug',
-                  widget: 'hidden',
-                }
+              - { label: 'Internal', name: 'slug', widget: 'hidden' }
               - {
                   label: 'External',
                   name: 'url',
@@ -534,8 +627,18 @@ collections:
             collapsed: true
             summary: '{{fields.title}} ({{fields.url}})'
             fields:
-              - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-video }
+              - {
+                  label: 'ID',
+                  name: 'id',
+                  widget: 'ncw-id',
+                  prefix: music-video,
+                }
               - { label: 'Video', name: 'title', widget: 'string' }
               - { label: 'URL', name: 'url', widget: 'string' }
               - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
-              - { label: 'Description', name: 'body', widget: 'markdown', required: false }
+              - {
+                  label: 'Description',
+                  name: 'body',
+                  widget: 'markdown',
+                  required: false,
+                }

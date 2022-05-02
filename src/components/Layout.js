@@ -1,18 +1,19 @@
-import React, { Fragment, useEffect } from 'react'
-import { withPrefix } from 'gatsby'
-import { Helmet } from 'react-helmet'
-import Header from './shared/Header'
-import useSiteMetadata from './SiteMetadata'
+import React, { Fragment, useEffect } from 'react';
+import { withPrefix } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import Header from './shared/Header';
+import useSiteMetadata from './SiteMetadata';
 
-import "../styles/base.css"
-import "../styles/layout.css"
-import "../styles/utilities.css"
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/utilities.css';
+import { ChildrenPropType } from '../utilities/propTypes';
 
 const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = useSiteMetadata();
 
   useEffect(() => {
-    document.documentElement.className = "js";
+    document.documentElement.className = 'js';
   }, []);
 
   return (
@@ -56,23 +57,28 @@ const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
         />
       </Helmet>
 
-      <a className="sr-only" href="#content">Skip to main content</a>
+      <a className="sr-only" href="#content">
+        Skip to main content
+      </a>
 
-      <Header />   
+      <Header />
 
-      <div id="container" { ...props } >
-        { pageHeader }
-        { sidebar }
+      <div id="container" {...props}>
+        {pageHeader}
+        {sidebar}
 
         <div id="content">
-          <div className="wrapper">
-            { children }
-          </div>
+          <div className="wrapper">{children}</div>
         </div>
       </div>
-
     </Fragment>
-  )
-}
+  );
+};
 
-export default TemplateWrapper
+TemplateWrapper.propTypes = {
+  children: ChildrenPropType,
+  pageHeader: ChildrenPropType,
+  sidebar: ChildrenPropType,
+};
+
+export default TemplateWrapper;

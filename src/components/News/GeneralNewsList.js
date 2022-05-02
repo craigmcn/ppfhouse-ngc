@@ -1,17 +1,14 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import NewsList from './NewsList'
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
+import NewsList from './NewsList';
 
-export default () => (
+const StaticQueryRender = () => (
   <StaticQuery
     query={graphql`
       query generalNewsList {
         allMarkdownRemark(
           filter: {
-            frontmatter: {
-              templateKey: { eq: "news" }
-              general: { eq: true }
-            }
+            frontmatter: { templateKey: { eq: "news" }, general: { eq: true } }
           }
           sort: { fields: frontmatter___date, order: DESC }
           limit: 12
@@ -32,6 +29,8 @@ export default () => (
         }
       }
     `}
-    render={ data => <NewsList data={ data } /> }
+    render={(data) => <NewsList data={data} />}
   />
-)
+);
+
+export default StaticQueryRender;

@@ -3,13 +3,12 @@ import { createPortal } from 'react-dom';
 
 function createWrapperAndAppendToBody(wrapperId) {
   const wrapperElement = document.createElement('div');
-  wrapperElement.setAttribute("id", wrapperId);
+  wrapperElement.setAttribute('id', wrapperId);
   document.body.appendChild(wrapperElement);
   return wrapperElement;
 }
 
-
-function ReactPortal({ children, wrapperId = "react-portal-wrapper" }) {
+function ReactPortal({ children, wrapperId = 'react-portal-wrapper' }) {
   const [wrapperElement, setWrapperElement] = useState(null);
 
   useLayoutEffect(() => {
@@ -22,13 +21,13 @@ function ReactPortal({ children, wrapperId = "react-portal-wrapper" }) {
       element = createWrapperAndAppendToBody(wrapperId);
     }
     setWrapperElement(element);
-  
+
     return () => {
       // delete the programmatically created element
       if (systemCreated && element.parentNode) {
         element.parentNode.removeChild(element);
       }
-    }
+    };
   }, [wrapperId]);
 
   // wrapperElement state will be null on very first render.

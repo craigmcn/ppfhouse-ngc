@@ -4,7 +4,9 @@ const useSplash = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query SplashLarge {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "splash"}}}) {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "splash" } } }
+        ) {
           edges {
             node {
               frontmatter {
@@ -15,15 +17,15 @@ const useSplash = () => {
           }
         }
       }
-    `,
+    `
   );
 
-  const random = Math.floor(Math.random() * allMarkdownRemark.edges.length)
-  const edge = allMarkdownRemark.edges[random]
+  const random = Math.floor(Math.random() * allMarkdownRemark.edges.length);
+  const edge = allMarkdownRemark.edges[random];
   return {
     large: edge.node.frontmatter.large,
-    small: edge.node.frontmatter.small
+    small: edge.node.frontmatter.small,
   };
 };
 
-export default useSplash
+export default useSplash;

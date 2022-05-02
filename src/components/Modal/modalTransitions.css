@@ -1,14 +1,14 @@
-body .modal-open {
-    overflow: hidden;
+body.modal-open {
+  overflow: hidden;
 }
 
 .modal-enter-done {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
 }
 
 .modal-exit {
-    opacity: 0;
-    transform: scale(0.4);
+  opacity: 0;
+  transform: scale(0.4);
 }

@@ -1,4 +1,4 @@
-import React from "react"
-import PageHeader from "./shared/PageHeader"
+import React from 'react';
+import PageHeader from './shared/PageHeader';
 
-export default <PageHeader name="music" />
+export default <PageHeader name="music" />;

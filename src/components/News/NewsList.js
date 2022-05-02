@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import NewsItem from './NewsItem'
+import React from 'react';
+import PropTypes from 'prop-types';
+import NewsItem from './NewsItem';
 
 const NewsList = ({ data }) => {
-
-  const { edges } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark;
 
   return (
     <>
-      { edges.map(({ node }, index) => <NewsItem key={ index } data={ node } />)
-      }
+      {edges.map(({ node }, index) => (
+        <NewsItem key={index} data={node} />
+      ))}
     </>
-  )
-}
+  );
+};
 
 NewsList.propTypes = {
   data: PropTypes.shape({
@@ -20,6 +20,6 @@ NewsList.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
-export default NewsList
+export default NewsList;

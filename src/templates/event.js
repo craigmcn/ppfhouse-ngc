@@ -1,27 +1,47 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import { Helmet } from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet';
 
-const EventTemplate = ({ title, artist, venue, city, date, time, guests, url, image }) => {
-
+const EventTemplate = ({
+  title,
+  artist,
+  venue,
+  city,
+  date,
+  time,
+  guests,
+  url,
+  image,
+}) => {
   return (
     <>
-      {image && <img src={ image } alt={ `${title} poster` } />}
+      {image && <img src={image} alt={`${title} poster`} />}
 
-      <h2>{ title }</h2>
+      <h2>{title}</h2>
 
       <p className="calendar-item-content">
-        WHO: { artist }<br />
-        WHERE: { venue }{ !!city && ` (${ city })` }<br />
-        WHEN: { date }{ (!!time && time !== "none") && ` ${ time }` }<br />
-        { !!guests && `WITH: ${ guests }` }
+        WHO: {artist}
+        <br />
+        WHERE: {venue}
+        {!!city && ` (${city})`}
+        <br />
+        WHEN: {date}
+        {!!time && time !== 'none' && ` ${time}`}
+        <br />
+        {!!guests && `WITH: ${guests}`}
       </p>
-      {url && <p><a href={ url } target="_blank" rel="noreferrer">{ url }</a></p>}
+      {url && (
+        <p>
+          <a href={url} target="_blank" rel="noreferrer">
+            {url}
+          </a>
+        </p>
+      )}
     </>
-  )
-}
+  );
+};
 
 EventTemplate.propTypes = {
   title: PropTypes.string,
@@ -33,38 +53,39 @@ EventTemplate.propTypes = {
   guests: PropTypes.string,
   url: PropTypes.string,
   image: PropTypes.string,
-}
+};
 
 const Event = ({ data }) => {
-  const { markdownRemark: event } = data
-  const { title, artist, venue, city, date, eventTime, guests, url, image } = event?.frontmatter
+  const { markdownRemark: event } = data;
+  const { title, artist, venue, city, date, eventTime, guests, url, image } =
+    event?.frontmatter;
 
   return (
     <Layout className="event has-sidebar">
       <Helmet>
-        <title>{ title } :: Event :: PPF House</title>
-        <meta name="description" content={ `PPF House Event: ${title}` } />
+        <title>{title} :: Event :: PPF House</title>
+        <meta name="description" content={`PPF House Event: ${title}`} />
       </Helmet>
       <EventTemplate
-        title={ title }
-        artist={ artist }
-        venue={ venue }
-        city={ city }
-        date={ date }
-        time={ eventTime }
-        guests={ guests }
-        url={ url }
-        image={ image }
+        title={title}
+        artist={artist}
+        venue={venue}
+        city={city}
+        date={date}
+        time={eventTime}
+        guests={guests}
+        url={url}
+        image={image}
       />
     </Layout>
-  )
-}
+  );
+};
 
 Event.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default Event
+export default Event;
 
 export const contactQuery = graphql`
   query Event($id: String!) {
@@ -86,4 +107,4 @@ export const contactQuery = graphql`
       }
     }
   }
-`
+`;
