@@ -1,9 +1,14 @@
-import React from "react"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const PageHeader = ({ name }) =>  (
-  <div id="page-header">
-    <h2>{ name }</h2>
+const PageHeader = ({ name }) => (
+  <div className="page-header">
+    <h2>{name}</h2>
   </div>
-)
+);
 
-export default PageHeader
+PageHeader.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export default PageHeader;

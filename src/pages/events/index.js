@@ -1,10 +1,9 @@
-import React from 'react'
-import Layout from '../../components/Layout'
-import { Helmet } from 'react-helmet'
-import EventList from '../../components/Events/EventList'
+import React from 'react';
+import Layout from '../../components/Layout';
+import { Helmet } from 'react-helmet';
+import EventList from '../../components/Events/EventList';
 
 const EventsPage = () => {
-
   return (
     <Layout className="events background has-sidebar">
       <Helmet>
@@ -13,9 +12,8 @@ const EventsPage = () => {
       </Helmet>
 
       <EventList />
-
     </Layout>
-  )
-}
+  );
+};
 
-export default EventsPage
+export default EventsPage;

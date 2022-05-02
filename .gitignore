@@ -14,3 +14,6 @@ yarn-error.log
 
 # Songkick attribution assets
 attribution-assets/
+
+# Other assets
+static/favicon_package_v0.16.zip

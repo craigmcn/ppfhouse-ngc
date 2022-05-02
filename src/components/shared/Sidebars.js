@@ -1,7 +1,9 @@
-import React from "react"
+import React from 'react';
 
 export const HowieSidebar = (
   <div id="sidebar">
-    <p>contact: <a href="mailto:howie@ppfhouse.com">Howie Shia</a></p>
+    <p>
+      contact: <a href="mailto:howie@ppfhouse.com">Howie Shia</a>
+    </p>
   </div>
-)
+);
