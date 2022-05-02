@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'PPF House',
@@ -11,24 +13,24 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
+        path: path.join(__dirname, 'static', 'img'),
         name: 'uploads',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
+        path: path.join(__dirname, 'src', 'pages'),
         name: 'pages',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: path.join(__dirname, 'src', 'img'),, 'src', '
+    //     name: 'images',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-redirect-to`,
       options: {
@@ -68,7 +70,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        modulePath: path.join(__dirname, 'src', 'cms', 'cms.js'),
       },
     },
     {
