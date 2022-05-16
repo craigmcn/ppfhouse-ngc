@@ -26,7 +26,7 @@ const BamSplashTemplate = () => {
     <div
       style={{
         position: 'relative',
-        zIndex: '100',
+        zIndex: '80',
         display: 'flex',
         justifyContent: 'center',
       }}
