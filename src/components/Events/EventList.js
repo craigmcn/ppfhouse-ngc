@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import EventItem from './EventItem';
-import Songkick from '../shared/Songkick';
-import { useSongkick } from '../../hooks/useSongkick';
+// import Songkick from '../shared/Songkick';
+// import { useSongkick } from '../../hooks/useSongkick';
 
 const EventList = ({ data }) => {
-  const songkickCurrent = useSongkick('1158046', 'current');
-  const songkickPast = useSongkick('1158046', 'past', 60);
+  // const songkickCurrent = useSongkick('1158046', 'current');
+  // const songkickPast = useSongkick('1158046', 'past', 60);
 
   // Combine locally-created events with Songkick events
   const { edges } = data.allMarkdownRemark;
@@ -41,9 +41,9 @@ const EventList = ({ data }) => {
     };
   });
 
-  const posts = localPosts
-    .concat(songkickPast.data)
-    .concat(songkickCurrent.data);
+  const posts = localPosts;
+  // .concat(songkickPast.data)
+  // .concat(songkickCurrent.data);
   posts.sort((a, b) => (a.date > b.date ? 1 : a.date < b.date ? -1 : 0));
 
   return (
@@ -58,7 +58,7 @@ const EventList = ({ data }) => {
         ))}
       {posts.length === 0 && <p>No events currently scheduled</p>}
 
-      <Songkick loading={songkickPast.loading || songkickCurrent.loading} />
+      {/* <Songkick loading={songkickPast.loading || songkickCurrent.loading} /> */}
     </>
   );
 };
