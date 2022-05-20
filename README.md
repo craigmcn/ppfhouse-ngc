@@ -2,31 +2,31 @@
 
 # Structure
 
-ppfhouse.com (splash page)
-&rdsh; about
-&rdsh; animation
-&rdsh; art-design
-&rdsh; comics
-&rdsh; contact
-&rdsh; events
-&rdsh; film-tv-scoring
-&rdsh; jazz-4-jrs
-&nbsp; &rdsh; overview (index)
-&nbsp; &rdsh; testimonials
-&nbsp; &rdsh; curriculum
-&nbsp; &rdsh; video
-&rdsh; music
-&rdsh; news-events
-&rdsh; tim-shia
-&nbsp; &rdsh; bio (index)
-&nbsp; &rdsh; live-music-and-dj-services
-&nbsp; &rdsh; music
-&rdsh; wpbe
-&nbsp; &rdsh; blackout (index)
-&nbsp; &rdsh; about
-&nbsp; &rdsh; epk-stage-plot (not editable)
-&nbsp; &rdsh; music
-&nbsp; &rdsh; news-shows (feed of WPBE News and Events content types)
+ppfhouse.com (splash page)  
+&rdsh; about  
+&rdsh; animation  
+&rdsh; art-design  
+&rdsh; comics  
+&rdsh; contact  
+&rdsh; events  
+&rdsh; film-tv-scoring  
+&rdsh; jazz-4-jrs  
+&nbsp; &rdsh; overview (index)  
+&nbsp; &rdsh; testimonials  
+&nbsp; &rdsh; curriculum  
+&nbsp; &rdsh; video  
+&rdsh; music  
+&rdsh; news-events  
+&rdsh; tim-shia  
+&nbsp; &rdsh; bio (index)  
+&nbsp; &rdsh; live-music-and-dj-services  
+&nbsp; &rdsh; music  
+&rdsh; wpbe  
+&nbsp; &rdsh; blackout (index)  
+&nbsp; &rdsh; about  
+&nbsp; &rdsh; epk-stage-plot (not editable)  
+&nbsp; &rdsh; music  
+&nbsp; &rdsh; news-shows (feed of WPBE News and Events content types)  
 &nbsp; &rdsh; visuals
 
 # Content management
