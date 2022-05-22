@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import Layout from '../components/Layout';
 import useSplashBackground from '../hooks/useSplashBackground';
 import usePrevious from '../hooks/usePrevious';
+import Layout from '../components/Layout';
+import * as styles from '../styles/contact.module.scss';
 
 const ContactPageTemplate = ({ contacts }) => {
   const contact = contacts.filter((contact) => contact.type === 'Contact');
@@ -27,7 +28,7 @@ const ContactPageTemplate = ({ contacts }) => {
         <div className="wrapper">
           <h2>contact</h2>
 
-          <ul>
+          <ul className={styles.list}>
             {contact.map((entry, index) => {
               return (
                 <li key={index}>
@@ -42,7 +43,7 @@ const ContactPageTemplate = ({ contacts }) => {
         <div className="wrapper">
           <h2>community</h2>
 
-          <ul>
+          <ul className={styles.list}>
             {community.map((entry, index) => {
               return (
                 <li key={index}>
