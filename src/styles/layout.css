@@ -41,21 +41,6 @@ ul.nav > li {
   list-style: none;
 }
 
-#container {
-  min-height: 800px;
-  padding: 0 0.5em;
-  position: relative;
-}
-
-#content {
-  margin: 0 auto;
-  padding-top: 5px;
-}
-
-.about #content {
-  color: #790000;
-}
-
 .about p {
   line-height: 1.4;
 }
@@ -73,10 +58,6 @@ h3.calendar {
 
 h3.calendar:not(:first-of-type) {
   margin-top: 3em;
-}
-
-.about #content {
-  text-align: justify;
 }
 
 .news-item,
@@ -124,44 +105,43 @@ h3.calendar:not(:first-of-type) {
   margin-bottom: 0;
 }
 
-.jazz-4-jrs #contents,
 .jazz-4-jrs h2 {
   font-family: 'Cooper Black', 'Rockwell', Georgia, serif;
 }
 
-.jazz-4-jrs #content p,
-.jazz-4-jrs #content li,
-.jazz-4-jrs #content blockquote {
-  color: #790000;
-  font-size: 110%;
-}
-
-#music-menu {
+.music-menu {
   font-family: 'ChaletComprime-MilanSeventy', 'Arial Narrow', Helvetica, Arial,
     sans-serif;
   font-size: 180%;
   line-height: 1.5;
 }
 
-#music-menu > ul {
+/* 'clearfix' hack, only targets IE8+ */
+.music-menu:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.music-menu > ul {
   float: left;
   margin-bottom: -0.5em;
   padding-left: 0;
 }
 
-#music-menu li {
+.music-menu li {
   float: left;
   list-style-type: none;
 }
 
-#music-menu a {
+.music-menu a {
   color: #222;
   display: block;
   padding-right: 1em;
   text-decoration: none;
 }
 
-#music-menu a:hover {
+.music-menu a:hover {
   text-decoration: underline;
 }
 
@@ -169,7 +149,7 @@ h3.calendar:not(:first-of-type) {
   display: none;
 }
 
-#music-menu .menu-footer > a {
+.music-menu .menu-footer > a {
   color: #959595;
 }
 
@@ -201,18 +181,6 @@ h3.calendar:not(:first-of-type) {
 .art-item,
 .animation-item + .animation-item {
   margin-top: 0.5em;
-}
-
-#contact,
-#community {
-  line-height: 1.6em;
-  list-style: none;
-  padding-left: 0;
-}
-
-#content #contact,
-#content #community {
-  font-size: 140%;
 }
 
 @media (max-width: 767px) {
@@ -250,16 +218,16 @@ h3.calendar:not(:first-of-type) {
 }
 
 @media (min-width: 768px) {
-  #container.splash,
-  #container.bam-splash,
-  #container.background {
+  .container.splash,
+  .container.bam-splash,
+  .container.background {
     background: transparent center top no-repeat fixed;
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
     height: 100%;
-    min-height: calc(100vh - 82px);
+    min-height: calc(100vh - 83px);
   }
 
   .page-header,
@@ -267,21 +235,20 @@ h3.calendar:not(:first-of-type) {
     position: absolute;
     padding-top: 5px;
     width: 21%;
-    z-index: -1;
   }
 
-  #sidebar {
+  .sidebar {
     position: absolute;
     width: 20%;
     top: 5.5em;
     text-align: justify;
   }
 
-  .music #sidebar {
+  .music .sidebar {
     top: 2em;
   }
 
-  .music #sidebar .wrapper {
+  .music .sidebar .wrapper {
     padding-top: 4.5em;
     margin-right: 12%;
     padding-right: 18%;
@@ -297,11 +264,7 @@ h3.calendar:not(:first-of-type) {
     width: 31.68%;
   }
 
-  #contents {
-    display: none;
-  }
-
-  .has-sidebar #content {
+  .has-sidebar .content {
     margin: 0 0 0 22%;
   }
 
@@ -380,7 +343,7 @@ h3.calendar:not(:first-of-type) {
     margin-top: 0;
   }
 
-  #music-menu {
+  .music-menu {
     font-family: 'ChaletComprime-CologneSixty', 'Arial Narrow', Helvetica, Arial,
       sans-serif;
     font-size: 150%;
@@ -389,28 +352,28 @@ h3.calendar:not(:first-of-type) {
     text-align: right;
   }
 
-  #music-menu > ul {
+  .music-menu > ul {
     display: block;
     float: none;
     margin: 1em 0;
   }
 
-  #music-menu li {
+  .music-menu li {
     display: list-item;
     float: none;
     padding-bottom: 0.333em;
   }
 
-  #music-menu a {
+  .music-menu a {
     color: #790000;
     padding-right: 0;
   }
 
-  #music-menu a.active {
+  .music-menu a.active {
     color: #222;
   }
 
-  #music-menu a:hover {
+  .music-menu a:hover {
     text-decoration: none;
   }
 
@@ -456,10 +419,6 @@ h3.calendar:not(:first-of-type) {
     margin: 15px 0 5px 0;
   }
 
-  #container {
-    padding: 0 1em;
-  }
-
   .has-sidebar .column {
     float: left;
   }
@@ -481,22 +440,18 @@ h3.calendar:not(:first-of-type) {
   }
 
   .page-header,
-  #sidebar,
-  .news-events #content,
-  .music #content,
-  .contact #content {
+  .sidebar,
+  .news-events .content,
+  .music .content,
+  .contact .content {
     padding-left: 0;
   }
 
-  .music.has-sidebar #content {
-    padding-left: 0;
-  }
-
-  .contact #content {
+  .contact .content {
     padding-top: 7%;
   }
 
-  #music-menu {
+  .music-menu {
     font-size: 200%;
   }
 
@@ -510,9 +465,9 @@ h3.calendar:not(:first-of-type) {
 
 @media (min-width: 1320px) {
   nav,
-  #content,
-  .has-sidebar #content,
-  .music #content {
+  .content,
+  .has-sidebar .content,
+  .music .content {
     margin: 0 auto;
     max-width: 1400px;
     width: 66.6667%;
@@ -520,17 +475,11 @@ h3.calendar:not(:first-of-type) {
 
   .page-header,
   .music .page-header,
-  #sidebar {
+  .sidebar {
     width: 16.6667%;
   }
 
-  .news-events #content,
-  .music #content,
-  .contact #content {
-    padding-left: 0;
-  }
-
-  .music #sidebar .wrapper {
+  .music .sidebar .wrapper {
     padding-top: 4.5em;
     margin-right: 16%;
   }
@@ -542,9 +491,9 @@ h3.calendar:not(:first-of-type) {
   .music.wpbe .page-header {
     width: 24.36%;
   }
-  .animation #sidebar,
-  .art-design #sidebar,
-  .comics #sidebar {
+  .animation .sidebar,
+  .art-design .sidebar,
+  .comics .sidebar {
     padding-right: 8px;
   }
 }
@@ -557,13 +506,13 @@ h3.calendar:not(:first-of-type) {
     background-image: url(img/ppfhouse_18x34.jpg);
     padding-left: 24px;
   }
-  #container.splash,
-  #container.bam-splash,
-  #container.background {
+  .container.splash,
+  .container.bam-splash,
+  .container.background {
     min-height: calc(100vh - 100.375px);
   }
   .page-header,
-  #sidebar {
+  .sidebar {
     padding-left: 24px;
   }
   ul.nav {

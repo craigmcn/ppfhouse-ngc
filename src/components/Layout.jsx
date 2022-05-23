@@ -1,15 +1,18 @@
 import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import Header from './shared/Header';
+import cx from 'classnames';
+import { ChildrenPropType } from '../utilities/propTypes';
 import useSiteMetadata from './SiteMetadata';
+import Header from './shared/Header';
 
 import '../styles/base.css';
 import '../styles/layout.css';
 import '../styles/utilities.css';
-import { ChildrenPropType } from '../utilities/propTypes';
+import * as layout from '../styles/layout.module.scss';
 
-const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
+const Layout = ({ children, pageHeader, sidebar, className }) => {
   const { title, description } = useSiteMetadata();
 
   useEffect(() => {
@@ -63,11 +66,11 @@ const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
 
       <Header />
 
-      <div id="container" {...props}>
+      <div className={cx('container', layout.container, className)}>
         {pageHeader}
         {sidebar}
 
-        <div id="content">
+        <div id="content" className={cx('content', layout.content)}>
           <div className="wrapper">{children}</div>
         </div>
       </div>
@@ -75,10 +78,11 @@ const TemplateWrapper = ({ children, pageHeader, sidebar, ...props }) => {
   );
 };
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
   children: ChildrenPropType,
   pageHeader: ChildrenPropType,
   sidebar: ChildrenPropType,
+  className: PropTypes.string,
 };
 
-export default TemplateWrapper;
+export default Layout;

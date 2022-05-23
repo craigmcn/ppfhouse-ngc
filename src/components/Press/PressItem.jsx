@@ -5,12 +5,10 @@ import { HTMLContent } from '../shared/Content';
 
 const PressItem = ({ body, source }) => {
   return (
-    <div className="content">
-      <blockquote>
-        <HTMLContent content={md2Html(body)} />
-        <cite>{source}</cite>
-      </blockquote>
-    </div>
+    <blockquote>
+      <HTMLContent content={md2Html(body)} />
+      <cite>{source}</cite>
+    </blockquote>
   );
 };
 

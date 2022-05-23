@@ -302,9 +302,9 @@ h5 {
 }
 
 p,
-#content .wrapper,
-#content ol,
-#content ul {
+.content .wrapper,
+.content ol,
+.content ul {
   font-family: 'Rockwell', Georgia, serif;
 }
 
@@ -362,13 +362,6 @@ cite:before {
 
 .centered {
   text-align: center;
-}
-
-/* 'clearfix' hack, only targets IE8+ */
-.group:after {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 /* screen reader only, e.g., 'skip to main content' */
