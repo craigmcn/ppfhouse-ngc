@@ -11,8 +11,9 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout
-      className="about background has-sidebar"
+      className="about has-sidebar"
       pageHeader={<PageHeader name="about" />}
+      hasBackground={true}
     >
       <Helmet>
         <title>About :: PPF House</title>
@@ -21,6 +22,7 @@ const AboutPage = ({ data }) => {
           content="PPF House: About PPF House, Tim Shia, Howie Shia and Leo Shia"
         />
       </Helmet>
+
       <AboutPageTemplate
         content={about.html}
         aboutContent={about.frontmatter.content}
@@ -31,7 +33,21 @@ const AboutPage = ({ data }) => {
 };
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        content: PropTypes.arrayOf(
+          PropTypes.shape({
+            heading: PropTypes.string.isRequired,
+          })
+        ),
+      }),
+      fields: PropTypes.shape({
+        contentList: PropTypes.arrayOf(PropTypes.string),
+      }),
+    }),
+  }).isRequired,
 };
 
 export default AboutPage;

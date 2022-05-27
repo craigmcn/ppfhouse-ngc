@@ -218,18 +218,6 @@ h3.calendar:not(:first-of-type) {
 }
 
 @media (min-width: 768px) {
-  .container.splash,
-  .container.bam-splash,
-  .container.background {
-    background: transparent center top no-repeat fixed;
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;
-    height: 100%;
-    min-height: calc(100vh - 83px);
-  }
-
   .page-header,
   .music .page-header {
     position: absolute;
@@ -505,11 +493,6 @@ h3.calendar:not(:first-of-type) {
   .brand {
     background-image: url(img/ppfhouse_18x34.jpg);
     padding-left: 24px;
-  }
-  .container.splash,
-  .container.bam-splash,
-  .container.background {
-    min-height: calc(100vh - 100.375px);
   }
   .page-header,
   .sidebar {

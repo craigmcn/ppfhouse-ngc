@@ -21,7 +21,8 @@ const useSplashBackground = () => {
 
   const edges = allMarkdownRemark.edges;
   const random = Math.floor(Math.random() * edges.length);
-  return edges[random].node.frontmatter.background;
+  const mql = window.matchMedia('(min-width: 768px)');
+  return mql.matches ? edges[random].node.frontmatter.background : null;
 };
 
 export default useSplashBackground;
