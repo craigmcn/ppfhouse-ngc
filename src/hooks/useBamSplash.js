@@ -6,7 +6,12 @@ const bamSplashImages = [
 
 const useBamSplash = () => {
   const random = Math.floor(Math.random() * bamSplashImages.length);
-  const mql = window.matchMedia('(min-width: 768px)');
-  return mql.matches ? bamSplashImages[random] : null;
+
+  if (typeof window !== 'undefined') {
+    const mql = window.matchMedia('(min-width: 768px)');
+    return mql.matches ? bamSplashImages[random] : null;
+  }
+
+  return null;
 };
 export default useBamSplash;

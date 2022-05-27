@@ -184,12 +184,6 @@ h3.calendar:not(:first-of-type) {
 }
 
 @media (max-width: 767px) {
-  #container.splash,
-  #container.bam-splash {
-    background: transparent no-repeat center center fixed;
-    min-height: calc(100vh - 55px);
-  }
-
   .js ul.nav {
     border: solid #959595;
     border-width: 1px 1px 0 1px;

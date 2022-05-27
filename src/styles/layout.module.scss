@@ -25,6 +25,13 @@
   font-size: 110%;
 }
 
+@media (max-width: 767px) {
+  .container.splash {
+    background: transparent no-repeat center center fixed;
+    min-height: calc(100vh - 55px);
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     background: transparent center top no-repeat fixed;

@@ -6,6 +6,7 @@ import cx from 'classnames';
 import { ChildrenPropType } from '../utilities/propTypes';
 import useSiteMetadata from './SiteMetadata';
 import Header from './shared/Header';
+import useSplash from '../hooks/useSplash';
 import useSplashBackground from '../hooks/useSplashBackground';
 import useBamSplash from '../hooks/useBamSplash';
 import usePrevious from '../hooks/usePrevious';
@@ -21,6 +22,7 @@ const Layout = ({
   sidebar,
   className,
   hasBackground,
+  isSplash,
   isBamSplash,
 }) => {
   const { title, description } = useSiteMetadata();
@@ -28,6 +30,8 @@ const Layout = ({
   const containerRef = useRef(null);
   const background = hasBackground
     ? useSplashBackground()
+    : isSplash
+    ? useSplash()
     : isBamSplash
     ? useBamSplash()
     : null;
@@ -90,7 +94,14 @@ const Layout = ({
 
       <Header />
 
-      <div className={cx(layout.container, className)} ref={containerRef}>
+      <div
+        className={cx(
+          layout.container,
+          { [layout.splash]: isSplash || isBamSplash },
+          className
+        )}
+        ref={containerRef}
+      >
         {pageHeader}
         {sidebar}
 
@@ -108,6 +119,7 @@ Layout.propTypes = {
   sidebar: ChildrenPropType,
   className: PropTypes.string,
   hasBackground: PropTypes.bool,
+  isSplash: PropTypes.bool,
   isBamSplash: PropTypes.bool,
 };
 

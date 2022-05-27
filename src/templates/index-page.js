@@ -4,7 +4,7 @@ import { IndexPageTemplate } from '../components/IndexPageTemplate';
 
 const IndexPage = () => {
   return (
-    <Layout className="splash no-columns">
+    <Layout className="no-columns" isSplash={true}>
       <IndexPageTemplate />
     </Layout>
   );
