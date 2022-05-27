@@ -22,10 +22,15 @@ const useSplash = () => {
 
   const random = Math.floor(Math.random() * allMarkdownRemark.edges.length);
   const edge = allMarkdownRemark.edges[random];
-  return {
-    large: edge.node.frontmatter.large,
-    small: edge.node.frontmatter.small,
-  };
+
+  if (typeof window !== 'undefined') {
+    const mql = window.matchMedia('(min-width: 768px)');
+    return mql.matches
+      ? edge.node.frontmatter.large
+      : edge.node.frontmatter.small;
+  }
+
+  return edge.node.frontmatter.small;
 };
 
 export default useSplash;

@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '../../components/Layout';
 import { Helmet } from 'react-helmet';
-import useSplashBackground from '../../hooks/useSplashBackground';
-import usePrevious from '../../hooks/usePrevious';
 import NewsList from '../../components/News/GeneralNewsList';
 import EventList from '../../components/Events/EventList';
 
 const NewsEventsPage = () => {
-  const background = useSplashBackground();
-  const prevBackground = usePrevious(background);
-
-  useEffect(() => {
-    if (!prevBackground) {
-      document.querySelector(
-        '.container.background'
-      ).style.backgroundImage = `url(${background})`;
-    }
-  }, [prevBackground, background]);
-
   return (
-    <Layout className="news-events background has-columns">
+    <Layout className="news-events has-columns" hasBackground={true}>
       <Helmet>
         <title>News and Events :: PPF House</title>
         <meta name="description" content="PPF House news and events" />

@@ -1,25 +1,12 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { HTMLContent } from '../components/shared/Content';
-import useSplashBackground from '../hooks/useSplashBackground';
-import usePrevious from '../hooks/usePrevious';
 
 export const AboutPageTemplate = ({
   content,
   aboutContent,
   aboutContentList,
 }) => {
-  const background = useSplashBackground();
-  const prevBackground = usePrevious(background);
-
-  useEffect(() => {
-    if (!prevBackground) {
-      document.querySelector(
-        '.container.background'
-      ).style.backgroundImage = `url(${background})`;
-    }
-  }, [prevBackground, background]);
-
   return (
     <div className="columns-2">
       <div className="column">

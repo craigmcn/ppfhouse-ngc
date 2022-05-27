@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 import { Helmet } from 'react-helmet';
@@ -6,14 +6,42 @@ import cx from 'classnames';
 import { ChildrenPropType } from '../utilities/propTypes';
 import useSiteMetadata from './SiteMetadata';
 import Header from './shared/Header';
+import useSplash from '../hooks/useSplash';
+import useSplashBackground from '../hooks/useSplashBackground';
+import useBamSplash from '../hooks/useBamSplash';
+import usePrevious from '../hooks/usePrevious';
 
 import '../styles/base.css';
 import '../styles/layout.css';
 import '../styles/utilities.css';
 import * as layout from '../styles/layout.module.scss';
 
-const Layout = ({ children, pageHeader, sidebar, className }) => {
+const Layout = ({
+  children,
+  pageHeader,
+  sidebar,
+  className,
+  hasBackground,
+  isSplash,
+  isBamSplash,
+}) => {
   const { title, description } = useSiteMetadata();
+
+  const containerRef = useRef(null);
+  const background = hasBackground
+    ? useSplashBackground()
+    : isSplash
+    ? useSplash()
+    : isBamSplash
+    ? useBamSplash()
+    : null;
+  const prevBackground = usePrevious(background);
+
+  useEffect(() => {
+    if (prevBackground === undefined && background !== null) {
+      containerRef.current.style.backgroundImage = `url(${background})`;
+    }
+  }, [prevBackground, background]);
 
   useEffect(() => {
     document.documentElement.className = 'js';
@@ -66,7 +94,14 @@ const Layout = ({ children, pageHeader, sidebar, className }) => {
 
       <Header />
 
-      <div className={cx('container', layout.container, className)}>
+      <div
+        className={cx(
+          layout.container,
+          { [layout.splash]: isSplash || isBamSplash },
+          className
+        )}
+        ref={containerRef}
+      >
         {pageHeader}
         {sidebar}
 
@@ -83,6 +118,9 @@ Layout.propTypes = {
   pageHeader: ChildrenPropType,
   sidebar: ChildrenPropType,
   className: PropTypes.string,
+  hasBackground: PropTypes.bool,
+  isSplash: PropTypes.bool,
+  isBamSplash: PropTypes.bool,
 };
 
 export default Layout;
