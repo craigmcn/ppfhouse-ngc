@@ -1,0 +1,32 @@
+.container {
+  min-height: 800px;
+  padding: 0 0.5em;
+  position: relative;
+}
+
+.content {
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+:global(.about) .content {
+  color: #790000;
+  text-align: justify;
+}
+
+:global(.jazz-4-jrs) .content {
+  font-family: 'Cooper Black', 'Rockwell', Georgia, serif;
+}
+
+:global(.jazz-4-jrs) .content p,
+:global(.jazz-4-jrs) .content li,
+:global(.jazz-4-jrs) .content blockquote {
+  color: #790000;
+  font-size: 110%;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 1em;
+  }
+}

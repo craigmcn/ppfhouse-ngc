@@ -15,7 +15,7 @@ export const AboutPageTemplate = ({
   useEffect(() => {
     if (!prevBackground) {
       document.querySelector(
-        '#container.background'
+        '.container.background'
       ).style.backgroundImage = `url(${background})`;
     }
   }, [prevBackground, background]);

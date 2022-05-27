@@ -17,7 +17,7 @@ const BamSplashTemplate = () => {
   useEffect(() => {
     if (!prevSplash) {
       document.querySelector(
-        '#container.bam-splash'
+        '.container.bam-splash'
       ).style.backgroundImage = `url(${splash})`;
     }
   }, [prevSplash, splash]);

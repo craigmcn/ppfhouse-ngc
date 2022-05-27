@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
+import PageHeader from '../components/shared/PageHeader';
 import { AboutPageTemplate } from '../components/AboutPageTemplate';
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: about } = data;
 
   return (
-    <Layout className="about background has-sidebar">
+    <Layout
+      className="about background has-sidebar"
+      pageHeader={<PageHeader name="about" />}
+    >
       <Helmet>
         <title>About :: PPF House</title>
         <meta

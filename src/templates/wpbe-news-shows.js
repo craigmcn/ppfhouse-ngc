@@ -23,14 +23,14 @@ const NewsPage = () => {
       <div className="columns-2">
         <div className="column">
           <div className="wrapper">
-            <h3 id="news">news</h3>
+            <h3>news</h3>
             <NewsList />
           </div>
         </div>
 
         <div className="column">
           <div className="wrapper">
-            <h3 id="events">events</h3>
+            <h3>events</h3>
             <EventList />
           </div>
         </div>

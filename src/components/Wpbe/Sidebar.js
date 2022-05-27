@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 const Sidebar = (
-  <div id="sidebar">
+  <div className="sidebar">
     <div className="wrapper">
-      <div id="music-menu" className="group">
+      <div className="music-menu">
         <ul>
           <li>
             <Link to="/wpbe/news-shows" activeClassName="active">

@@ -17,7 +17,7 @@ const ContactPageTemplate = ({ contacts }) => {
   useEffect(() => {
     if (!prevBackground) {
       document.querySelector(
-        '#container.background'
+        '.container.background'
       ).style.backgroundImage = `url(${background})`;
     }
   }, [prevBackground, background]);
@@ -78,10 +78,7 @@ const ContactPage = ({ data }) => {
     markdownRemark.frontmatter.contacts;
 
   return (
-    <Layout
-      className="contact background has-columns"
-      style={{ minHeight: '894px' }}
-    >
+    <Layout className="contact background has-columns">
       <Helmet>
         <title>Contact and Community :: PPF House</title>
         <meta
