@@ -1,7 +1,7 @@
 {
   "name": "ppfhouse-ngc",
   "description": "PPF House website, hosted on Netlify, using Gatsby, Netlify CMS and Cloudinary",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Craig McNaughton",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
