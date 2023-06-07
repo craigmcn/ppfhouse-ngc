@@ -3,6 +3,35 @@ templateKey: animation
 id: 86aa1078-0c72-42ab-92e1-783d30b4c12c
 title: Animation
 items:
+  - id: animation-H0Ch5FBDv
+    title: 4 North A
+    type: independent
+    url: <iframe src="https://www.nfb.ca/film/4-north-a/embed/player
+    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1686152055/animation/vid_t_4na_690_lhgwu7.jpg
+    body: >-
+      *Vimeo Staff Pick, CSA Nomination (best animated short), Winner Reel Asian
+      Michael Fukushima animation award*
+
+
+      short film directed by Howie Shia & Jordan Canning
+
+
+      written by Jordan Canning
+
+
+      produced by Annette Clarke & Michael Fukushima
+
+
+      storyboards, editing & design by Howie Shia
+
+
+      music & sound by Sacha Ratcliffe
+
+
+      animation by Howie Shia, Simon Cottee, Miranda Quesnel, Duncan Major w/ Jennifer Krick
+
+
+      NATIONAL FILM BOARD OF CANADA, 2020
   - title: Marco's Oriental Noodles
     id: 26C72FBF-285E-6051-8DFF-608395C682F6
     type: independent
@@ -139,33 +168,4 @@ items:
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/animation/vid_T_demo_m4ebaz.jpg
     url: https://player.vimeo.com/video/52787402
     body: ""
-  - id: animation-H0Ch5FBDv
-    title: 4 North A
-    type: independent
-    url: <iframe src="https://www.nfb.ca/film/4-north-a/embed/player
-    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1686152055/animation/vid_t_4na_690_lhgwu7.jpg
-    body: >-
-      *Vimeo Staff Pick, CSA Nomination (best animated short), Winner Reel Asian
-      Michael Fukushima animation award*
-
-
-      short film directed by Howie Shia & Jordan Canning
-
-
-      written by Jordan Canning
-
-
-      produced by Annette Clarke & Michael Fukushima
-
-
-      storyboards, editing & design by Howie Shia
-
-
-      music & sound by Sacha Ratcliffe
-
-
-      animation by Howie Shia, Simon Cottee, Miranda Quesnel, Duncan Major w/ Jennifer Krick
-
-
-      NATIONAL FILM BOARD OF CANADA, 2020
 ---
