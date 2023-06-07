@@ -6,7 +6,7 @@ items:
   - id: animation-H0Ch5FBDv
     title: 4 North A
     type: independent
-    url: <iframe src="https://www.nfb.ca/film/4-north-a/embed/player
+    url: https://www.nfb.ca/film/4-north-a/embed/player
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1686152055/animation/vid_t_4na_690_lhgwu7.jpg
     body: >-
       *Vimeo Staff Pick, CSA Nomination (best animated short), Winner Reel Asian
