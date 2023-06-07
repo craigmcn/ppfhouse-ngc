@@ -142,18 +142,7 @@ items:
   - id: animation-H0Ch5FBDv
     title: 4 North A
     type: independent
-    url: <iframe src="https://www.nfb.ca/film/4-north-a/embed/player/"
-      allowfullscreen="true" webkitallowfullscreen="true"
-      mozallowfullscreen="true" width="560" height="315"
-      frameborder="0"></iframe><p style="width:560px"><a
-      href="https://www.nfb.ca/film/4-north-a/" target="_blank"><em>4 North
-      A</em></a><span>, </span><a
-      href="https://www.nfb.ca/directors/jordan-canning/" title="more films by
-      Jordan Canning" target="_blank"><span>Jordan Canning</span></a><span> &
-      </span><a href="https://www.nfb.ca/directors/howie-shia/" title="more
-      films by Howie Shia" target="_blank"><span>Howie Shia</span></a><span>,
-      </span><a href="https://www.nfb.ca" target="_blank">provided by the
-      National Film Board of Canada</a></p>
+    url: <iframe src="https://www.nfb.ca/film/4-north-a/embed/player
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1686152055/animation/vid_t_4na_690_lhgwu7.jpg
     body: >-
       *Vimeo Staff Pick, CSA Nomination (best animated short), Winner Reel Asian
@@ -179,7 +168,4 @@ items:
 
 
       NATIONAL FILM BOARD OF CANADA, 2020
-
-
-      in competition at Toronto International Film Festival 2015
 ---
