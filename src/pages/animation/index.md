@@ -168,7 +168,4 @@ items:
 
 
       NATIONAL FILM BOARD OF CANADA, 2020
-
-
-      in competition at Toronto International Film Festival 2015
 ---
