@@ -642,3 +642,26 @@ collections:
                   widget: 'markdown',
                   required: false,
                 }
+
+  - name: 'splash'
+    label: 'Splash images'
+    label_singular: 'Splash image'
+    folder: 'src/pages/splash'
+    create: true
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'splash',
+        }
+      - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: splash }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Large size', name: 'large', widget: 'image' }
+      - { label: 'Small size', name: 'small', widget: 'image' }
+      - {
+          label: 'Background version',
+          name: 'background',
+          widget: 'image',
+          hint: 'Desaturated, black & white',
+        }
