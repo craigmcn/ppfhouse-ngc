@@ -7,6 +7,6 @@ eventTime: 9pm
 artist: The Worst Pop Band Ever
 venue: Baba's
 city: Charlottetown
-guests: Island Jazz Dan Rosswell, Hit the Coast
+guests: Island Jazz Dan Rowswell, Hit the Coast
 group: The Worst Pop Band Ever
 ---
