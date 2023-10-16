@@ -3,7 +3,8 @@ templateKey: music-wpbe-visuals
 id: a3c87ad3-01af-4471-b742-89e5d67dc1f0
 title: Visuals
 items:
-  - title: "This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me now"
+  - title: This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me
+      now
     id: ea32c740-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059308/music/galetaiwancrowd_tna7tx.jpg
     url: https://www.facebook.com/timshia/videos/10161514058505511/?t=5
@@ -23,7 +24,7 @@ items:
     id: ea32c768-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059301/music/adreantaiwan_pkftjt.jpg
     url: https://www.facebook.com/WorstPopBandEver/videos/257118838248322/
-  - title: "2016 Frankie's in Vancouver"
+  - title: 2016 Frankie's in Vancouver
     id: ea32c772-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059304/music/Frankies_Inor_o0mym8.png
     url: https://youtu.be/bIWrMSUj3Yc
@@ -63,7 +64,7 @@ items:
     id: ea32c7b8-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059317/music/Tainan_o8uu1j.jpg
     url: https://www.facebook.com/timshia/videos/10156150599280511/
-  - title: 'The Worst Pop Band Ever in "The Worst Tour Ever"'
+  - title: The Worst Pop Band Ever in "The Worst Tour Ever"
     id: ea32c7c2-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059321/music/wpbe-wte-1_vcb2xu.jpg
     url: https://youtube.com/embed/1dHninj934s
@@ -99,4 +100,9 @@ items:
     id: ea32c7f4-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
+  - id: music-wpbe-CITKVrlMT
+    title: Love is for Losers
+    thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
+    url: https://www.youtube.com/watch?v=it54j9MoAso
+    image: ""
 ---
