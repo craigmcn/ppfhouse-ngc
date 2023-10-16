@@ -52,10 +52,10 @@ items:
     id: ea32c79b-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-tim-shia_dtayxo.jpg
     url: https://youtube.com/embed/cDze3zaDFUw
-  - title: I remember
+  - title: El Mocambo
     id: ea32c7a4-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059319/music/taiwan_selfie_opkv1s.png
-    url: https://www.youtube.com/embed/2IUhm1bHtY8
+    url: https://www.youtube.com/watch?v=tEF4Rv9p_-Y
   - title: Blackout promo
     id: ea32c7ae-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059316/music/Screen_Shot_2015-12-15_at_10.50.25_PM_n6bgwp.png
