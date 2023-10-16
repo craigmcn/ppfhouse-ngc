@@ -100,6 +100,7 @@ items:
     id: ea32c7f4-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
+    url: https://www.youtube.com/watch?v=JPTwMXLulWY
   - id: music-wpbe-CITKVrlMT
     title: Love is for Losers
     thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
