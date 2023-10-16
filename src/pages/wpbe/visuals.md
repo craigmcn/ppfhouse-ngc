@@ -11,7 +11,7 @@ items:
     title: Love is for Losers
     thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
     url: https://www.youtube.com/watch?v=it54j9MoAso
-    image: ""
+    image: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
   - title: This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me
       now
     id: ea32c740-c8e7-11ec-86c0-a576618370a4
