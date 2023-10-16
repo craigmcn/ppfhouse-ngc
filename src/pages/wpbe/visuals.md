@@ -3,11 +3,25 @@ templateKey: music-wpbe-visuals
 id: a3c87ad3-01af-4471-b742-89e5d67dc1f0
 title: Visuals
 items:
+  - title: El Mocambo
+    id: ea32c7a4-c8e7-11ec-86c0-a576618370a4
+    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059319/music/taiwan_selfie_opkv1s.png
+    url: https://www.youtube.com/watch?v=tEF4Rv9p_-Y
+  - id: music-wpbe-CITKVrlMT
+    title: Love is for Losers
+    thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
+    url: https://www.youtube.com/watch?v=it54j9MoAso
+    image: ""
   - title: This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me
       now
     id: ea32c740-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059308/music/galetaiwancrowd_tna7tx.jpg
     url: https://www.facebook.com/timshia/videos/10161514058505511/?t=5
+  - title: Yardbird dressing room with Michael Herring
+    id: ea32c7f4-c8e7-11ec-86c0-a576618370a4
+    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
+    image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
+    url: https://www.youtube.com/watch?v=JPTwMXLulWY
   - title: TD Canada Trust Toronto Jazz Festival Dance Battle
     id: ea32c74a-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059318/music/IMG_4334_wiunhc.JPG
@@ -16,6 +30,10 @@ items:
     id: ea32c754-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059303/music/drumviewtaiwan_tkcmy2.jpg
     url: https://www.facebook.com/WorstPopBandEver/videos/2177280805817881/
+  - title: Blackout promo
+    id: ea32c7ae-c8e7-11ec-86c0-a576618370a4
+    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059316/music/Screen_Shot_2015-12-15_at_10.50.25_PM_n6bgwp.png
+    url: https://www.facebook.com/WorstPopBandEver/videos/10154540769941823/
   - title: Chris soloing on Bonita at the Rex 2019
     id: ea32c75e-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059302/music/Band_Dafydd_tcr2gg.jpg
@@ -52,14 +70,6 @@ items:
     id: ea32c79b-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/wpbe-wte-tim-shia_dtayxo.jpg
     url: https://youtube.com/embed/cDze3zaDFUw
-  - title: El Mocambo
-    id: ea32c7a4-c8e7-11ec-86c0-a576618370a4
-    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059319/music/taiwan_selfie_opkv1s.png
-    url: https://www.youtube.com/watch?v=tEF4Rv9p_-Y
-  - title: Blackout promo
-    id: ea32c7ae-c8e7-11ec-86c0-a576618370a4
-    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059316/music/Screen_Shot_2015-12-15_at_10.50.25_PM_n6bgwp.png
-    url: https://www.facebook.com/WorstPopBandEver/videos/10154540769941823/
   - title: Stave Blackout
     id: ea32c7b8-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059317/music/Tainan_o8uu1j.jpg
@@ -84,26 +94,16 @@ items:
     id: ea32c7d6-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059301/music/band_t_tne9r6.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059301/music/band_tureth.jpg
-  - title: Gordon Mowat
-    id: ea32c7e0-c8e7-11ec-86c0-a576618370a4
-    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059326/music/vantour_2013_qajkad.jpg
-    image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059326/music/vantour_2013_qajkad.jpg
   - title: Dafydd Hughes
     id: ea32c7ea-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059316/music/quintet_no_leo_h896vj.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059316/music/quintet_no_leo_h896vj.jpg
+  - title: Gordon Mowat
+    id: ea32c7e0-c8e7-11ec-86c0-a576618370a4
+    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059326/music/vantour_2013_qajkad.jpg
+    image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059326/music/vantour_2013_qajkad.jpg
   - title: Quartet
     id: ea32c7eb-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059312/music/quartet_t_k2v4xe.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059315/music/quartet_xsonob.jpg
-  - title: Yardbird dressing room with Michael Herring
-    id: ea32c7f4-c8e7-11ec-86c0-a576618370a4
-    thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
-    image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
-    url: https://www.youtube.com/watch?v=JPTwMXLulWY
-  - id: music-wpbe-CITKVrlMT
-    title: Love is for Losers
-    thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
-    url: https://www.youtube.com/watch?v=it54j9MoAso
-    image: ""
 ---
