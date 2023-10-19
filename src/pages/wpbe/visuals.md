@@ -21,7 +21,7 @@ items:
     id: ea32c7f4-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
     image: https://res.cloudinary.com/dunew51zn/image/upload/v1617059322/music/Yardbird_Herring_pi51ar.jpg
-    url: https://www.youtube.com/watch?v=JPTwMXLulWY
+    url: https://youtu.be/JPTwMXLulWY?si=VuD9x6o0pDwaLE46
   - title: TD Canada Trust Toronto Jazz Festival Dance Battle
     id: ea32c74a-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059318/music/IMG_4334_wiunhc.JPG
