@@ -10,7 +10,7 @@ items:
   - id: music-wpbe-CITKVrlMT
     title: Love is for Losers
     thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
-    url: https://youtu.be/it54j9MoAso?si=apCnEH5dwAYkx-pb
+    url: https://youtu.be/it54j9MoAso?si=bH9obg2Ykk0dwdpr
     image: ""
   - title: This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me
       now
