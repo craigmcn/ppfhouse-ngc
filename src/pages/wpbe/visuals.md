@@ -6,12 +6,12 @@ items:
   - title: El Mocambo
     id: ea32c7a4-c8e7-11ec-86c0-a576618370a4
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617059319/music/taiwan_selfie_opkv1s.png
-    url: https://youtu.be/tEF4Rv9p_-Y?si=i8H6OB3LPwh8RPZy
+    url: https://www.youtube.com/watch?v=tEF4Rv9p_-Y
   - id: music-wpbe-CITKVrlMT
     title: Love is for Losers
     thumbnail: https://i.ytimg.com/vi/it54j9MoAso/hqdefault.jpg?sqp=-oaymwEpCNACELwBSFryq4qpAxsIARUAAIhCGAHYAQHiAQwIGhACGAYgATgBQAE=&rs=AOn4CLBGHLt-4t4mSPr01RA47dJFYKq3XA
-    url: https://www.youtube.com/watch?v=it54j9MoAso
-    image: https://youtu.be/it54j9MoAso
+    url: https://youtu.be/it54j9MoAso?si=apCnEH5dwAYkx-pb
+    image: ""
   - title: This Might Be A Terrible Idea Tour of Taiwan 2019  - feets don't fail me
       now
     id: ea32c740-c8e7-11ec-86c0-a576618370a4
