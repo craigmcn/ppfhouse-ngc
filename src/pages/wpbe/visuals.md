@@ -1,7 +1,7 @@
 ---
 templateKey: music-wpbe-visuals
 id: a3c87ad3-01af-4471-b742-89e5d67dc1f0
-title: Visuals
+title: Visuals - click for video
 items:
   - title: El Mocambo
     id: ea32c7a4-c8e7-11ec-86c0-a576618370a4
