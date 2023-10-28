@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export const ChildrenPropType = PropTypes.oneOfType([
   PropTypes.arrayOf(PropTypes.node),
   PropTypes.node,
-]).isRequired;
+]);
 
 export const EventPropType = PropTypes.shape({
   artist: PropTypes.string.isRequired,
