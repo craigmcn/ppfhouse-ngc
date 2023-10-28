@@ -7,7 +7,7 @@ groups:
   - title: LEO37
     slug: leo37
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/music/leo37_logo_ra84i3.jpg
-    url: http://leo37.com/
+    url: https://www.facebook.com/037vudu
   - title: The Worst Pop Band Ever
     slug: wpbe
     thumbnail: https://res.cloudinary.com/dunew51zn/image/upload/v1617058733/music/wpbe_ikvyoa.jpg
