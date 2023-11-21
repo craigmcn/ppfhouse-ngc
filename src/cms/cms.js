@@ -13,6 +13,7 @@ import NewsPagePreview from './preview-templates/NewsPagePreview';
 import PressPagePreview from './preview-templates/PressPagePreview';
 import SimplePagePreview from './preview-templates/SimplePagePreview';
 import VideoPagePreview from './preview-templates/VideoPagePreview';
+import WpbeIndexPagePreview from './preview-templates/WpbeIndexPagePreview';
 import WpbeVisualsPagePreview from './preview-templates/WpbeVisualsPagePreview';
 
 import styles from '!css-loader!sass-loader!../styles/preview.scss'; // eslint-disable-line import/no-webpack-loader-syntax
@@ -39,6 +40,7 @@ CMS.registerPreviewTemplate('music-jazz-4-jrs-curriculum', SimplePagePreview);
 CMS.registerPreviewTemplate('music-jazz-4-jrs-video', VideoPagePreview);
 CMS.registerPreviewTemplate('music-wpbe-about', PressPagePreview);
 CMS.registerPreviewTemplate('music-wpbe-music', MediaPagePreview);
+CMS.registerPreviewTemplate('music-wpbe-index', WpbeIndexPagePreview);
 CMS.registerPreviewTemplate('music-wpbe-visuals', WpbeVisualsPagePreview);
 CMS.registerPreviewTemplate('news', NewsPagePreview);
 
