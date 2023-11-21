@@ -11,4 +11,10 @@ links:
     url: https://www.instagram.com/worstpopband/
   - name: Website
     url: http://localhost:3110/wpbe/news-shows
+  - name: fB
+    url: https://www.facebook.com/WorstPopBandEver/
+  - name: Bandcamp
+    url: Bandcamp
+  - name: Youtube
+    url: https://www.youtube.com/channel/UCEG7xxrdqQ48y1PXvAgA9Mg
 ---
