@@ -309,6 +309,16 @@ collections:
                   widget: 'string',
                   hint: 'For email links, enter "mailto:" before the email address; for websites, include "https://',
                 }
+              - label: 'Icon'
+                name: 'icon'
+                widget: 'select'
+                required: false
+                options:
+                  - { label: 'Bandcamp', value: 'bandcamp' }
+                  - { label: 'Facebook', value: 'facebook' }
+                  - { label: 'Instagram', value: 'instagram' }
+                  - { label: 'Web', value: 'web' }
+                  - { label: 'Youtube', value: 'youtube' }
 
       - file: 'src/pages/wpbe/about.md'
         label: 'About'

@@ -1,5 +1,20 @@
 import remark from 'remark';
 import remarkHTML from 'remark-html';
+import {
+  faBandcamp,
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+import { faBrowser } from '@fortawesome/pro-duotone-svg-icons';
+
+export const iconMap = {
+  bandcamp: faBandcamp,
+  facebook: faFacebookF,
+  instagram: faInstagram,
+  web: faBrowser,
+  youtube: faYoutube,
+};
 
 export const md2Html = (content) =>
   remark().use(remarkHTML).processSync(content).toString();

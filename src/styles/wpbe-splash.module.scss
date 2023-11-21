@@ -15,6 +15,13 @@
   font-style: normal;
 }
 
+:root {
+  --bandcamp: #629aa9;
+  --facebook: #1877f2;
+  --instagram: #f56040;
+  --youtube: #ff0000;
+}
+
 .wpbeSplash {
   background-color: var(--wpbe-splash-bg-color, white);
   color: var(--wpbe-splash-text-color, #790000);
@@ -39,35 +46,59 @@
 nav.wpbeNav {
   background-color: rgba(255, 255, 255, 0.9);
   font-family: inherit;
-  margin-top: auto;
+  margin: auto auto 0.5em auto;
   padding: 0 5%;
   width: 100%;
 }
 
 .wpbeNavList {
   display: flex;
-  flex-wrap: wrap;
   font-size: clamp(1.4rem, 3vw, 3rem);
+  justify-content: space-between;
   list-style: none;
-  margin: auto auto 0.5em auto;
   padding: 0;
-  row-gap: 0.5em;
-  width: 100%;
-}
-
-.wpbeNavList > li {
-  flex: 1 1 33.333%;
-  text-align: center;
 }
 
 .wpbeNavList > li > a {
   color: inherit;
   padding: 3px 6px;
+
+  &.bandcamp {
+    color: var(--bandcamp);
+  }
+
+  &.facebook {
+    color: var(--facebook);
+  }
+
+  &.instagram {
+    color: var(--instagram);
+  }
+
+  &.youtube {
+    color: var(--youtube);
+  }
 }
 
 .wpbeNavList > li > a:hover,
 .wpbeNavList > li > a:focus {
   color: color-mix(in srgb, var(--wpbe-splash-text-color, #790000), #000 30%);
+
+  &.bandcamp {
+    color: color-mix(in srgb, var(--bandcamp), #000 30%);
+  }
+
+  &.facebook {
+    color: color-mix(in srgb, var(--facebook), #000 30%);
+  }
+
+  &.instagram {
+    color: color-mix(in srgb, var(--instagram), #000 30%);
+  }
+
+  &.youtube {
+    color: color-mix(in srgb, var(--youtube), #000 30%);
+  }
 }
 
 .wpbeNavList > li > a:focus {

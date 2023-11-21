@@ -9,12 +9,17 @@ backgroundColor: "#ffffff"
 links:
   - name: Instagram
     url: https://www.instagram.com/worstpopband/
+    icon: instagram
   - name: Website
     url: https://www.ppfhouse.com/wpbe/news-shows
+    icon: null
   - name: fB
     url: https://www.facebook.com/WorstPopBandEver/
+    icon: facebook
   - name: Bandcamp
     url: https://wpbe.bandcamp.com/
+    icon: bandcamp
   - name: Youtube
     url: https://www.youtube.com/channel/UCEG7xxrdqQ48y1PXvAgA9Mg
+    icon: youtube
 ---

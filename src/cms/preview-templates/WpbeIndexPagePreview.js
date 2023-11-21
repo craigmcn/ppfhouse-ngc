@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { iconMap } from '../../utilities';
+import './WpbeIndexPagePreview.scss';
 
 const WpbeIndexPagePreview = ({ entry }) => {
   const { title, subtitle, links, image, backgroundColor, color } = entry
@@ -7,53 +10,42 @@ const WpbeIndexPagePreview = ({ entry }) => {
     .toJSON();
 
   return (
-    <div style={{ backgroundColor }}>
+    <div style={{ backgroundColor, color }}>
       <h1 className="is-size-3 has-text-centered">{title}</h1>
       <h2 className="is-size-4 has-text-centered">{subtitle}</h2>
 
       <img src={image} alt={title} />
 
-      <ul className="is-flex is-flex-wrap-wrap">
+      <ul
+        className="is-flex is-justify-content-space-between is-size-3"
+        // style={{ color }}
+      >
         {links.map((link) => {
           return (
-            <li
-              key={`${link.name}-${link.url}`}
-              style={{ flex: '1 1 33.333%', textAlign: 'center' }}
-            >
-              <a href={link.url} style={{ color }}>
-                {link.name}
+            <li key={link.name}>
+              <a
+                href={link.url}
+                title={link.name}
+                className={link.icon}
+                style={{ color }}
+              >
+                {link.icon ? (
+                  <>
+                    <span className="is-sr-only">{link.name}</span>
+                    <FontAwesomeIcon
+                      icon={iconMap[link.icon]}
+                      style={{ width: '1em' }}
+                    />
+                  </>
+                ) : (
+                  link.name
+                )}
               </a>
             </li>
           );
         })}
       </ul>
     </div>
-    //   <div className="columns">
-    //     <div className="column">
-    //       <h2 className="is-size-4">Contact</h2>
-    //       {contact.map((item, index) => {
-    //         return (
-    //           <p key={index}>
-    //             <a href={item.url}>{item.name}</a> (<code>{item.url}</code>)
-    //           </p>
-    //         );
-    //       })}
-    //     </div>
-
-    //     <div className="column">
-    //       <h2 className="is-size-4">Community</h2>
-    //       {community.map((item, index) => {
-    //         return (
-    //           <p key={index}>
-    //             <a href={item.url} target="_blank" rel="noreferrer">
-    //               {item.name}
-    //             </a>{' '}
-    //             (<code>{item.url}</code>)
-    //           </p>
-    //         );
-    //       })}
-    //     </div>
-    //   </div>
   );
 };
 

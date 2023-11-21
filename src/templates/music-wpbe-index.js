@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import * as styles from '../styles/wpbe-splash.module.css';
+import * as styles from '../styles/wpbe-splash.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { iconMap } from '../utilities';
 
 const WpbeStaticIndexPage = ({ data }) => {
   return (
@@ -27,11 +29,35 @@ const WpbeStaticIndexPage = ({ data }) => {
               return (
                 <li key={link.name}>
                   {link.url.includes('https://www.ppfhouse.com/') ? (
-                    <Link to={link.url.replace('https://www.ppfhouse.com', '')}>
-                      {link.name}
+                    <Link
+                      to={link.url.replace('https://www.ppfhouse.com', '')}
+                      title={link.name}
+                      className={styles[link.icon]}
+                    >
+                      {link.icon ? (
+                        <>
+                          <span className="sr-only">{link.name}</span>
+                          <FontAwesomeIcon icon={iconMap[link.icon]} />
+                        </>
+                      ) : (
+                        link.name
+                      )}
                     </Link>
                   ) : (
-                    <a href={link.url}>{link.name}</a>
+                    <a
+                      href={link.url}
+                      title={link.name}
+                      className={styles[link.icon]}
+                    >
+                      {link.icon ? (
+                        <>
+                          <span className="sr-only">{link.name}</span>
+                          <FontAwesomeIcon icon={iconMap[link.icon]} />
+                        </>
+                      ) : (
+                        link.name
+                      )}
+                    </a>
                   )}
                 </li>
               );
@@ -56,6 +82,7 @@ WpbeStaticIndexPage.propTypes = {
           PropTypes.shape({
             name: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
+            icon: PropTypes.string,
           })
         ),
       }),
@@ -77,6 +104,7 @@ export const wpbeStaticIndexPageQuery = graphql`
         links {
           name
           url
+          icon
         }
       }
     }
