@@ -10,16 +10,16 @@ links:
   - name: Instagram
     url: https://www.instagram.com/worstpopband/
     icon: instagram
-  - name: fB
-    url: https://www.facebook.com/WorstPopBandEver/
-    icon: facebook
-  - name: Website
-    url: http://localhost:3110/wpbe/news-shows
-    icon: null
   - name: Bandcamp
     url: https://wpbe.bandcamp.com/
     icon: bandcamp
+  - name: Website
+    url: http://localhost:3110/wpbe/news-shows
+    icon: null
   - name: Youtube
     url: https://www.youtube.com/channel/UCEG7xxrdqQ48y1PXvAgA9Mg
     icon: youtube
+  - name: fB
+    url: https://www.facebook.com/WorstPopBandEver/
+    icon: facebook
 ---
