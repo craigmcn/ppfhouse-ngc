@@ -266,6 +266,60 @@ collections:
   - name: 'music-wpbe'
     label: 'Music > WPBE'
     files:
+      - file: 'src/pages/wpbe/index.md'
+        label: 'Index'
+        name: 'music-wpbe-index'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'music-wpbe-index',
+            }
+          - { label: 'ID', name: 'id', widget: 'ncw-id', prefix: music-wpbe }
+          - {
+              label: 'Title',
+              name: 'title',
+              widget: 'string',
+              hint: 'This will not be displayed on the screen',
+            }
+          - {
+              label: 'Subtitle',
+              name: 'subtitle',
+              widget: 'string',
+              hint: 'This will not be displayed on the screen',
+            }
+          - { label: 'Background image', name: 'image', widget: 'image' }
+          - { label: 'Text colour', name: 'color', widget: 'color' }
+          - {
+              label: 'Background colour',
+              name: 'backgroundColor',
+              widget: 'color',
+            }
+          - label: 'Links'
+            label_singular: 'Link'
+            name: 'links'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - {
+                  label: 'URL',
+                  name: 'url',
+                  widget: 'string',
+                  hint: 'For email links, enter "mailto:" before the email address; for websites, include "https://',
+                }
+              - label: 'Icon'
+                name: 'icon'
+                widget: 'select'
+                required: false
+                options:
+                  - { label: 'Bandcamp', value: 'bandcamp' }
+                  - { label: 'Facebook', value: 'facebook' }
+                  - { label: 'Instagram', value: 'instagram' }
+                  - { label: 'Web', value: 'web' }
+                  - { label: 'Youtube', value: 'youtube' }
+
       - file: 'src/pages/wpbe/about.md'
         label: 'About'
         name: 'music-wpbe-about'

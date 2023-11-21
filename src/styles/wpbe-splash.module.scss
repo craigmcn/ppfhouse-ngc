@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'd-din_condensedregular';
+  src: url('fonts/d-din_condensedregular/d-dincondensed-webfont.eot');
+  src: url('fonts/d-din_condensedregular/d-dincondensed-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('fonts/d-din_condensedregular/d-dincondensed-webfont.woff2')
+      format('woff2'),
+    url('fonts/d-din_condensedregular/d-dincondensed-webfont.woff')
+      format('woff'),
+    url('fonts/d-din_condensedregular/d-dincondensed-webfont.ttf')
+      format('truetype'),
+    url('fonts/d-din_condensedregular/d-dincondensed-webfont.svg#d-din_condensedregular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bandcamp: #629aa9;
+  --facebook: #1877f2;
+  --instagram: #f56040;
+  --youtube: #ff0000;
+}
+
+.wpbeSplash {
+  background-color: var(--wpbe-splash-bg-color, white);
+  color: var(--wpbe-splash-text-color, #790000);
+  display: flex;
+  flex-direction: column;
+  font-family: 'd-din_condensedregular', system-ui, sans-serif;
+  height: 100dvh;
+  justify-items: center;
+  width: 100%;
+}
+
+.wpbeBody {
+  background-image: var(--wpbe-splash-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: default;
+  display: block;
+  height: 92%;
+}
+
+nav.wpbeNav {
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+  margin: auto auto 0.5em auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
+.wpbeNavList {
+  display: flex;
+  font-size: clamp(1.4rem, 3vw, 3rem);
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.wpbeNavList > li > a {
+  color: inherit;
+  padding: 3px 6px;
+
+  &.bandcamp {
+    color: var(--bandcamp);
+  }
+
+  &.facebook {
+    color: var(--facebook);
+  }
+
+  &.instagram {
+    color: var(--instagram);
+  }
+
+  &.youtube {
+    color: var(--youtube);
+  }
+}
+
+.wpbeNavList > li > a:hover,
+.wpbeNavList > li > a:focus {
+  color: color-mix(in srgb, var(--wpbe-splash-text-color, #790000), #000 30%);
+
+  &.bandcamp {
+    color: color-mix(in srgb, var(--bandcamp), #000 30%);
+  }
+
+  &.facebook {
+    color: color-mix(in srgb, var(--facebook), #000 30%);
+  }
+
+  &.instagram {
+    color: color-mix(in srgb, var(--instagram), #000 30%);
+  }
+
+  &.youtube {
+    color: color-mix(in srgb, var(--youtube), #000 30%);
+  }
+}
+
+.wpbeNavList > li > a:focus {
+  outline: 2px solid var(--wpbe-splash-text-color, #790000);
+}
