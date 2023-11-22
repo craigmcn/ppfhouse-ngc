@@ -15,7 +15,7 @@ links:
     icon: bandcamp
   - name: Website
     url: https://www.ppfhouse.com/wpbe/news-shows
-    icon: null
+    icon: web
   - name: Youtube
     url: https://www.youtube.com/channel/UCEG7xxrdqQ48y1PXvAgA9Mg
     icon: youtube
