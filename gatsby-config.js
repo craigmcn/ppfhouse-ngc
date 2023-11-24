@@ -7,7 +7,6 @@ module.exports = {
       'PPF House: news and events, animation, art and design, comics, music.',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
