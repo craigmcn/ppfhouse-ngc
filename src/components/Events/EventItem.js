@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { EventPropType } from '../../utilities/propTypes';
 
 const EventItem = ({ data, previous }) => {
@@ -6,7 +6,7 @@ const EventItem = ({ data, previous }) => {
     data;
 
   return (
-    <Fragment>
+    <>
       {(!previous || (previous && previous.monthYear !== monthYear)) && (
         <h3 className="calendar">{monthYear}</h3>
       )}
@@ -30,7 +30,7 @@ const EventItem = ({ data, previous }) => {
           {!!guests && `WITH: ${guests}`}
         </div>
       </article>
-    </Fragment>
+    </>
   );
 };
 

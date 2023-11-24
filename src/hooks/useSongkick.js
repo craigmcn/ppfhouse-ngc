@@ -3,8 +3,6 @@ import format from 'date-fns/format';
 import subDays from 'date-fns/subDays';
 import { formatSongkickEvents } from '../utilities/songkick';
 
-// time: 'past' | 'current'
-
 export function useSongkick(artistId, time, daysPast = 0) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -46,7 +44,7 @@ export function useSongkick(artistId, time, daysPast = 0) {
         setData(songkickEvents);
         window.sessionStorage.setItem(
           cacheKey,
-          JSON.stringify({ cacheTime, songkickEvents })
+          JSON.stringify({ cacheTime, songkickEvents }),
         );
       } else {
         if (resultsPage.error) {
@@ -56,7 +54,7 @@ export function useSongkick(artistId, time, daysPast = 0) {
         }
         window.sessionStorage.setItem(
           cacheKey,
-          JSON.stringify({ cacheTime, songkickEvents: [] })
+          JSON.stringify({ cacheTime, songkickEvents: [] }),
         );
       }
     } catch (error) {

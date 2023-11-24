@@ -50,7 +50,7 @@ ContactPageTemplate.propTypes = {
       name: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
       type: PropTypes.oneOf(['Contact', 'Community']).isRequired,
-    })
+    }),
   ).isRequired,
 };
 

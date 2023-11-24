@@ -25,7 +25,7 @@ export const WpbeVisualsPageTemplate = ({ items }) => {
       setCurrent(gallery.find((item) => item.id === id));
       setOpen(true);
     },
-    [gallery]
+    [gallery],
   );
 
   const handleClose = useCallback(() => {
