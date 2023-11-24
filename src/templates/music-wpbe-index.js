@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import * as styles from '../styles/wpbe-splash.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { iconMap } from '../utilities';
+import SharedHead from '../components/shared/Head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as styles from '../styles/wpbe-splash.module.scss';
 
 const WpbeStaticIndexPage = ({ data }) => {
   return (
@@ -83,7 +84,7 @@ WpbeStaticIndexPage.propTypes = {
             name: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
             icon: PropTypes.string,
-          })
+          }),
         ),
       }),
     }),
@@ -110,3 +111,10 @@ export const wpbeStaticIndexPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead
+    title="The Worst Pop Band Ever"
+    description="Music: The Worst Pop Band Ever"
+  />
+);

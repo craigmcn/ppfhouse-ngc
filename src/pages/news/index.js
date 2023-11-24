@@ -1,16 +1,11 @@
 import React from 'react';
+import SharedHead from '../../components/shared/Head';
 import Layout from '../../components/Layout';
-import { Helmet } from 'react-helmet';
 import NewsList from '../../components/News/GeneralNewsList';
 
 const NewsPage = () => {
   return (
     <Layout className="news background has-sidebar">
-      <Helmet>
-        <title>News :: PPF House</title>
-        <meta name="description" content="PPF House news items" />
-      </Helmet>
-
       <h2>news</h2>
 
       <NewsList />
@@ -19,3 +14,5 @@ const NewsPage = () => {
 };
 
 export default NewsPage;
+
+export const Head = () => <SharedHead title="News" description="News items" />;

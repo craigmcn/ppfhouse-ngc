@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { FilmTvScoringPageTemplate } from '../components/FilmTvScoringPageTemplate';
 import PageHeader from '../components/FilmTvScoring/PageHeader';
@@ -16,14 +16,6 @@ const FilmTvScoringPage = ({ data }) => {
       pageHeader={PageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>Film & TV Scoring :: Music :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: PPF House Music: Film & TV Scoring"
-        />
-      </Helmet>
-
       <FilmTvScoringPageTemplate items={items} />
     </Layout>
   );
@@ -50,3 +42,12 @@ export const musicFilmTvScoringPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => {
+  return (
+    <SharedHead
+      title="Film & TV Scoring :: Music"
+      description="Music: Film and TV Scoring"
+    />
+  );
+};

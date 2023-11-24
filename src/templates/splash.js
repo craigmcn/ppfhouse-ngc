@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
-import { Helmet } from 'react-helmet';
 
 const SplashTemplate = ({ title, large, small, background }) => {
   return (
@@ -41,13 +41,6 @@ const Splash = ({ data }) => {
 
   return (
     <Layout className="has-sidebar">
-      <Helmet>
-        <title>{splash.frontmatter.title} :: Splash Images :: PPF House</title>
-        <meta
-          name="description"
-          content={`PPF House: Splash images: ${splash.title}`}
-        />
-      </Helmet>
       <SplashTemplate
         title={splash.frontmatter.title}
         large={splash.frontmatter.large}
@@ -76,3 +69,13 @@ export const splashQuery = graphql`
     }
   }
 `;
+
+export const Head = (props) => {
+  const { markdownRemark: splash } = props.data || {}; // eslint-disable-line react/prop-types
+  return (
+    <SharedHead
+      title={`${splash.frontmatter.title} :: Splash Images`}
+      description={`Splash images: ${splash.frontmatter.title}`}
+    />
+  );
+};

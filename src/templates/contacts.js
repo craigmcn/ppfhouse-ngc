@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import ContactPageTemplate from '../components/ContactPageTemplate';
 
@@ -11,13 +11,6 @@ const ContactPage = ({ data }) => {
 
   return (
     <Layout className="contact has-columns" hasBackground={true}>
-      <Helmet>
-        <title>Contact and Community :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: Contacts and community links"
-        />
-      </Helmet>
       <ContactPageTemplate contacts={contacts} />
     </Layout>
   );
@@ -32,7 +25,7 @@ ContactPage.propTypes = {
             name: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
             type: PropTypes.oneOf(['Contact', 'Community']).isRequired,
-          })
+          }),
         ),
       }),
     }),
@@ -54,3 +47,12 @@ export const contactPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => {
+  return (
+    <SharedHead
+      title="Contact and Community"
+      description="Contacts and community links"
+    />
+  );
+};

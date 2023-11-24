@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HTMLContent } from '../components/shared/Content';
-import { Helmet } from 'react-helmet';
 
 const NewsTemplate = ({ title, content, postedBy, date }) => {
   return (
-    <Fragment>
+    <>
       <h2>{title}</h2>
 
       <HTMLContent content={content} className="news-item-content" />
@@ -15,7 +15,7 @@ const NewsTemplate = ({ title, content, postedBy, date }) => {
       <div className="news-item-foot">
         posted by {postedBy}, {date}
       </div>
-    </Fragment>
+    </>
   );
 };
 
@@ -31,10 +31,6 @@ const News = ({ data }) => {
 
   return (
     <Layout className="news has-sidebar">
-      <Helmet>
-        <title>{news.frontmatter.title} :: News :: PPF House</title>
-        <meta name="description" content={`PPF House News: ${news.excerpt}`} />
-      </Helmet>
       <NewsTemplate
         title={news.frontmatter.title}
         postedBy={news.frontmatter.postedBy}
@@ -64,3 +60,13 @@ export const newsQuery = graphql`
     }
   }
 `;
+
+export const Head = (props) => {
+  const { markdownRemark: news } = props.data || {}; // eslint-disable-line react/prop-types
+  return (
+    <SharedHead
+      title={`${news.frontmatter.title} :: News`}
+      description={`News: ${news.excerpt}`}
+    />
+  );
+};

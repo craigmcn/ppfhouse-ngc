@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HTMLContent } from '../components/shared/Content';
 import Sidebar from '../components/TimShia/Sidebar';
@@ -32,13 +32,6 @@ const MusicPage = ({ data }) => {
       pageHeader={PageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>Tim Shia :: Music :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: PPF House Music: Tim Shia"
-        />
-      </Helmet>
       <MusicPageTemplate title={title} content={content} />
     </Layout>
   );
@@ -60,3 +53,16 @@ export const musicPageQuery = graphql`
     }
   }
 `;
+
+/* eslint-disable react/prop-types */
+export const Head = ({ data }) => {
+  const { markdownRemark } = data;
+  const { title } = markdownRemark?.frontmatter;
+  return (
+    <SharedHead
+      title={`${title} :: Tim Shia :: Music`}
+      description={`Music: Tim Shia ${title}`}
+    />
+  );
+};
+/* eslint-enable react/prop-types */

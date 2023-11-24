@@ -1,8 +1,8 @@
 import React, { Fragment, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { getLightboxType } from '../utilities';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars';
 import ComicsPageHeader from '../components/ComicsPageHeader';
@@ -10,7 +10,7 @@ import Lightbox from '../components/Lightbox/Lightbox';
 
 const ComicsPageTemplate = ({ comics }) => {
   const validComics = comics.filter(
-    (comic) => comic.title && comic.cover && comic.pages
+    (comic) => comic.title && comic.cover && comic.pages,
   );
   const galleries = validComics.reduce((r, c, i) => {
     r[c.id] = c.pages.map((page) => ({
@@ -33,7 +33,7 @@ const ComicsPageTemplate = ({ comics }) => {
       setCurrent(galleries[galleryId][0]);
       setOpen(true);
     },
-    [galleries]
+    [galleries],
   );
 
   const handleClose = useCallback(() => {
@@ -80,9 +80,9 @@ ComicsPageTemplate.propTypes = {
         PropTypes.shape({
           name: PropTypes.string,
           image: PropTypes.string,
-        })
+        }),
       ),
-    })
+    }),
   ),
 };
 
@@ -95,11 +95,6 @@ const ComicsPage = ({ data }) => {
       pageHeader={ComicsPageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>Comics :: PPF House</title>
-        <meta name="description" content="Comics by Howie Shia" />
-      </Helmet>
-
       <ComicsPageTemplate comics={comics} />
     </Layout>
   );
@@ -129,3 +124,7 @@ export const comicsQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead title="Comics" description="Comics by Howie Shia" />
+);

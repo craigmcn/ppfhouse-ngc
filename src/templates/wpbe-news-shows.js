@@ -1,6 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
-import { Helmet } from 'react-helmet';
 import NewsList from '../components/Wpbe/NewsList';
 import EventList from '../components/Events/EventList';
 import PageHeader from '../components/Wpbe/PageHeader';
@@ -13,11 +14,6 @@ const NewsPage = () => {
       pageHeader={PageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>News :: PPF House</title>
-        <meta name="description" content="PPF House news items" />
-      </Helmet>
-
       <h2>news + shows</h2>
 
       <div className="columns-2">
@@ -40,3 +36,24 @@ const NewsPage = () => {
 };
 
 export default NewsPage;
+
+export const newsQuery = graphql`
+  query NewsShows($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        postedBy
+        date(formatString: "MMMM D, YYYY")
+      }
+      html
+      excerpt
+    }
+  }
+`;
+
+export const Head = () => (
+  <SharedHead
+    title="News and Shows :: The Worst Pop Band Ever"
+    description="The Worst Pop Band Ever: News and events"
+  />
+);
