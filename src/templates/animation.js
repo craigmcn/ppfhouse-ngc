@@ -1,25 +1,25 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import { getLightboxType, md2Html, removeHashFromUrl } from '../utilities';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars';
 import AnimationPageHeader from '../components/Animation/PageHeader';
 import Lightbox from '../components/Lightbox/Lightbox';
 import AnimationItem from '../components/Animation/AnimationItem';
-import { getLightboxType, md2Html, removeHashFromUrl } from '../utilities';
 
 const AnimationPageTemplate = ({ items }) => {
   const validAnimations = items.filter(
-    (item) => item.title && item.thumbnail && item.url
+    (item) => item.title && item.thumbnail && item.url,
   );
 
   const demo = validAnimations.filter((item) => item.type === 'demo');
   const independent = validAnimations.filter(
-    (item) => item.type === 'independent'
+    (item) => item.type === 'independent',
   );
   const commercial = validAnimations.filter(
-    (item) => item.type === 'commercial'
+    (item) => item.type === 'commercial',
   );
 
   const gallery = validAnimations.map((item) => ({
@@ -40,7 +40,7 @@ const AnimationPageTemplate = ({ items }) => {
       setCurrent(gallery.find((item) => item.id === id));
       setOpen(true);
     },
-    [gallery]
+    [gallery],
   );
 
   const handleClose = useCallback(() => {
@@ -136,7 +136,7 @@ AnimationPageTemplate.propTypes = {
       thumbnail: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 
@@ -149,10 +149,6 @@ const Animation = ({ data }) => {
       pageHeader={AnimationPageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>Animation :: PPF House</title>
-        <meta name="description" content="PPF House animation portfolio" />
-      </Helmet>
       <AnimationPageTemplate items={items} />
     </Layout>
   );
@@ -180,3 +176,7 @@ export const animationQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead title="Animation" description="Animation portfolio" />
+);

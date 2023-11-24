@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Wpbe/Sidebar';
 import PageHeader from '../components/Wpbe/PageHeader';
@@ -17,14 +17,6 @@ const WpbeVisualsPage = ({ data }) => {
       pageHeader={PageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>The Worst Pop Band Ever :: Visuals :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: PPF House Visuals: The Worst Pop Band Ever"
-        />
-      </Helmet>
-
       <h2>{title.toLowerCase()}</h2>
 
       <WpbeVisualsPageTemplate items={items} />
@@ -54,3 +46,12 @@ export const wpbeVisualsPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => {
+  return (
+    <SharedHead
+      title="Visuals :: The Worst Pop Band Ever :: Music"
+      description="Music: The Worst Pop Band Ever: Videos and photos"
+    />
+  );
+};

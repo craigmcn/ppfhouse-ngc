@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 
 function createWrapperAndAppendToBody(wrapperId) {
   const wrapperElement = document.createElement('div');
@@ -35,5 +36,10 @@ function ReactPortal({ children, wrapperId = 'react-portal-wrapper' }) {
 
   return createPortal(children, wrapperElement);
 }
+
+ReactPortal.propTypes = {
+  children: PropTypes.node.isRequired,
+  wrapperId: PropTypes.string,
+};
 
 export default ReactPortal;

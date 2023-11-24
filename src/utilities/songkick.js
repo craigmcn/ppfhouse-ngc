@@ -16,7 +16,7 @@ const formatSongkickEvents = (events) =>
     if (songkickEvent.date && songkickEvent.time !== TIME_NOT_PROVIDED) {
       songkickEvent.time = format(
         new Date(`${event.start.date} ${event.start.time}`),
-        'h:mm bbb'
+        'h:mm bbb',
       );
     }
 

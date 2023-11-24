@@ -1,8 +1,8 @@
-const path = require('path');
-const { createFilePath } = require('gatsby-source-filesystem');
-const remark = require('remark');
-const remarkHTML = require('remark-html');
-const format = require('date-fns/format');
+import path from 'path';
+import { createFilePath } from 'gatsby-source-filesystem';
+import remark from 'remark';
+import remarkHTML from 'remark-html';
+import format from 'date-fns/format/index.js';
 
 const pagePathFromSlug = ({ fields, frontmatter }) => {
   if (frontmatter.templateKey !== 'event') return fields.slug;
@@ -12,13 +12,13 @@ const pagePathFromSlug = ({ fields, frontmatter }) => {
     .split('/');
   const pageSlug = pagePathArray.pop();
   pagePathArray.push(
-    frontmatter.date.substring(0, 10) + pageSlug.substring(10)
+    frontmatter.date.substring(0, 10) + pageSlug.substring(10),
   );
 
   return pagePathArray.join('/') + '/';
 };
 
-exports.createPages = ({ actions, graphql }) => {
+export const createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   return graphql(`
@@ -53,7 +53,7 @@ exports.createPages = ({ actions, graphql }) => {
         createPage({
           path: pagePathFromSlug(edge.node),
           component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`,
           ),
           // additional data can be passed via context
           context: {
@@ -65,7 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
+export const onCreateNode = ({ node, actions, getNode, getNodes }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -83,7 +83,7 @@ exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
 
     if (contentList) {
       const value = contentList.map((content) =>
-        remark().use(remarkHTML).processSync(content.body).toString()
+        remark().use(remarkHTML).processSync(content.body).toString(),
       );
 
       createNodeField({
@@ -106,7 +106,7 @@ exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
     if (!fm.eventTime) {
       const value = format(
         new Date(fm.date.substring(0, fm.date.length - 1)),
-        'h:mm bbb'
+        'h:mm bbb',
       );
 
       createNodeField({
@@ -127,7 +127,7 @@ exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
       const orderedNode = getNodes().find(
         (node) =>
           node.internal.type === `MarkdownRemark` &&
-          node.frontmatter.id === item.item
+          node.frontmatter.id === item.item,
       );
 
       if (orderedNode) {
@@ -142,7 +142,7 @@ exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
 };
 
 // https://github.com/gatsbyjs/gatsby/issues/17159
-exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
+export const createSchemaCustomization = ({ actions, schema, getNode }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: 'MarkdownRemark',

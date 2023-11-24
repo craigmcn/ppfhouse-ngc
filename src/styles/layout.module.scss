@@ -25,6 +25,13 @@
   font-size: 110%;
 }
 
+:global(.jazz-4-jrs) .content blockquote {
+  margin-bottom: 1rem;
+}
+:global(.jazz-4-jrs) .content cite {
+  margin-top: 2px;
+}
+
 @media (max-width: 767px) {
   .container.splash {
     background: transparent no-repeat center center fixed;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import PageHeader from '../components/shared/PageHeader';
 import { AboutPageTemplate } from '../components/AboutPageTemplate';
@@ -15,14 +15,6 @@ const AboutPage = ({ data }) => {
       pageHeader={<PageHeader name="about" />}
       hasBackground={true}
     >
-      <Helmet>
-        <title>About :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: About PPF House, Tim Shia, Howie Shia and Leo Shia"
-        />
-      </Helmet>
-
       <AboutPageTemplate
         content={about.html}
         aboutContent={about.frontmatter.content}
@@ -40,7 +32,7 @@ AboutPage.propTypes = {
         content: PropTypes.arrayOf(
           PropTypes.shape({
             heading: PropTypes.string.isRequired,
-          })
+          }),
         ),
       }),
       fields: PropTypes.shape({
@@ -67,3 +59,10 @@ export const aboutPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead
+    title="About"
+    description="About PPF House, Tim Shia, Howie Shia and Leo Shia"
+  />
+);

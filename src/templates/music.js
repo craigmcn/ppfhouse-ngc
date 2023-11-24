@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import PageHeader from '../components/MusicPageHeader';
 import MusicItem from '../components/Music/MusicItem';
@@ -23,7 +23,7 @@ MusicPageTemplate.propTypes = {
       slug: PropTypes.string.isRequired,
       thumbnail: PropTypes.string.isRequired,
       url: PropTypes.string,
-    })
+    }),
   ).isRequired,
 };
 
@@ -36,14 +36,6 @@ const MusicPage = ({ data }) => {
 
   return (
     <Layout className="music index no-columns" pageHeader={PageHeader}>
-      <Helmet>
-        <title>Music :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: PPF House Music: Tim Shia, LEO37, The Worst Pop Band Ever, Film & TV Scoring, Jazz 4 Juniors"
-        />
-      </Helmet>
-
       <MusicPageTemplate groups={groups} />
     </Layout>
   );
@@ -69,3 +61,12 @@ export const musicPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => {
+  return (
+    <SharedHead
+      title="Music"
+      description="Music: Tim Shia, LEO37, The Worst Pop Band Ever, Film & TV Scoring, Jazz 4 Juniors"
+    />
+  );
+};

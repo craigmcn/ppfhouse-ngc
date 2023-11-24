@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, navigate } from 'gatsby';
+import SharedHead from '../components/shared/Head';
 
 const Page404 = () => {
   const handleClick = useCallback((e) => {
@@ -10,11 +10,6 @@ const Page404 = () => {
 
   return (
     <>
-      <Helmet>
-        <title>404 Page not found :: PPF House</title>
-        <meta name="description" content="PPF House events" />
-      </Helmet>
-
       <div
         style={{
           backgroundColor: 'white',
@@ -65,3 +60,9 @@ const Page404 = () => {
 };
 
 export default Page404;
+
+export const Head = () => {
+  return (
+    <SharedHead title="404 Page not found" description="Page not found error" />
+  );
+};

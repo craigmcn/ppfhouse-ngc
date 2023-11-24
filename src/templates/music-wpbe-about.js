@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HTMLContent } from '../components/shared/Content';
 import Sidebar from '../components/Wpbe/Sidebar';
@@ -29,9 +29,9 @@ MusicPageTemplate.propTypes = {
         PropTypes.shape({
           body: PropTypes.string.isRequired,
           source: PropTypes.string.isRequired,
-        })
+        }),
       ),
-    })
+    }),
   ),
 };
 
@@ -46,13 +46,6 @@ const MusicPage = ({ data }) => {
       pageHeader={PageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>The Worst Pop Band Ever :: Music :: PPF House</title>
-        <meta
-          name="description"
-          content="PPF House: PPF House Music: The Worst Pop Band Ever"
-        />
-      </Helmet>
       <MusicPageTemplate
         title={title}
         content={content}
@@ -87,3 +80,10 @@ export const musicPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead
+    title="About :: The Worst Pop Band Ever"
+    description="Music: The Worst Pop Band Ever: With influences ranging from Wayne Shorter to the Carpenters to J Dilla, The Worst Pop Band Ever is a Toronto based quintet that tries to combine a love of improvisational jazz and modern popular music."
+  />
+);

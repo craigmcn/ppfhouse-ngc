@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import BamSplashTemplate from '../components/BamSplashTemplate';
 
@@ -12,3 +12,5 @@ const BamSplash = () => {
 };
 
 export default BamSplash;
+
+export const Head = () => <SharedHead />;

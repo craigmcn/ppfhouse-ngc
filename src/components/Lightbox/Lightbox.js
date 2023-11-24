@@ -76,7 +76,7 @@ const Lightbox = (props) => {
     setIsLoading(true);
     setCurrentItem((previous) => {
       const currentItemIndex = gallery.findIndex(
-        (item) => item.id === previous.id
+        (item) => item.id === previous.id,
       );
       const previousItemIndex =
         currentItemIndex === 0 ? gallery.length - 1 : currentItemIndex - 1;
@@ -90,7 +90,7 @@ const Lightbox = (props) => {
     setIsLoading(true);
     setCurrentItem((previous) => {
       const currentItemIndex = gallery.findIndex(
-        (item) => item.id === previous.id
+        (item) => item.id === previous.id,
       );
       const nextItemIndex =
         currentItemIndex === gallery.length - 1 ? 0 : currentItemIndex + 1;
@@ -105,7 +105,7 @@ const Lightbox = (props) => {
       resizeContent();
       setIsLoading(false);
     },
-    [resizeContent]
+    [resizeContent],
   );
 
   return (
@@ -163,7 +163,7 @@ const Lightbox = (props) => {
               ref={contentRef}
               title={currentItem.title}
               src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                currentItem.src
+                currentItem.src,
               )}&show_text=false&t=0&height=540&width=960`}
               scrolling="no"
               frameBorder="0"

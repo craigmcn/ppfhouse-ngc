@@ -1,15 +1,12 @@
 import React from 'react';
+import SharedHead from '../../components/shared/Head';
 import Layout from '../../components/Layout';
-import { Helmet } from 'react-helmet';
 import EventList from '../../components/Events/EventList';
 
 const EventsPage = () => {
   return (
     <Layout className="events background has-sidebar">
-      <Helmet>
-        <title>Events :: PPF House</title>
-        <meta name="description" content="PPF House events" />
-      </Helmet>
+      <h2>events</h2>
 
       <EventList />
     </Layout>
@@ -17,3 +14,5 @@ const EventsPage = () => {
 };
 
 export default EventsPage;
+
+export const Head = () => <SharedHead title="Events" description="Events" />;

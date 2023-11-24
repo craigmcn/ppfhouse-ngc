@@ -9,7 +9,7 @@ const AnimationItem = (props) => {
       e.preventDefault();
       onClick(id);
     },
-    [id, onClick]
+    [id, onClick],
   );
 
   return (

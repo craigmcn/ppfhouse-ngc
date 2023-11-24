@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { getLightboxType, md2Html } from '../utilities';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
 import { HowieSidebar as Sidebar } from '../components/shared/Sidebars';
 import Lightbox from '../components/Lightbox/Lightbox';
@@ -29,7 +29,7 @@ const ArtDesignPageTemplate = ({ items }) => {
       setCurrent(validArtItems.find((item) => item.id === id));
       setOpen(true);
     },
-    [validArtItems]
+    [validArtItems],
   );
 
   const handleClose = useCallback(() => {
@@ -69,7 +69,7 @@ const ArtDesignPageTemplate = ({ items }) => {
 };
 
 ArtDesignPageTemplate.propTypes = {
-  items: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 const ArtDesignPage = ({ data }) => {
@@ -81,10 +81,6 @@ const ArtDesignPage = ({ data }) => {
       pageHeader={ArtDesignPageHeader}
       sidebar={Sidebar}
     >
-      <Helmet>
-        <title>Art & Design :: PPF House</title>
-        <meta name="description" content="PPF House art and design portfolio" />
-      </Helmet>
       <ArtDesignPageTemplate items={items} />
     </Layout>
   );
@@ -111,3 +107,7 @@ export const artDesignPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <SharedHead title="Art & Design" description="Art and design portfolio" />
+);

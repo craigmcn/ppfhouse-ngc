@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import SharedHead from '../components/shared/Head';
 import Layout from '../components/Layout';
-import { Helmet } from 'react-helmet';
 
 const EventTemplate = ({
   title,
@@ -62,10 +62,6 @@ const Event = ({ data }) => {
 
   return (
     <Layout className="event has-sidebar">
-      <Helmet>
-        <title>{title} :: Event :: PPF House</title>
-        <meta name="description" content={`PPF House Event: ${title}`} />
-      </Helmet>
       <EventTemplate
         title={title}
         artist={artist}
@@ -108,3 +104,13 @@ export const contactQuery = graphql`
     }
   }
 `;
+
+/* eslint-disable react/prop-types */
+export const Head = ({ data }) => {
+  const { markdownRemark: event } = data;
+  const { title } = event?.frontmatter;
+  return (
+    <SharedHead title={`${title} :: Event`} description={`Events: ${title}`} />
+  );
+};
+/* eslint-enable react/prop-types */

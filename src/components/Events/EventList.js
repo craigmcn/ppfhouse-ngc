@@ -80,7 +80,7 @@ const StaticQueryRender = () => (
             frontmatter: { templateKey: { eq: "event" } }
             last60Days: { eq: true }
           }
-          sort: { fields: frontmatter___date, order: DESC }
+          sort: { frontmatter: { date: DESC } }
         ) {
           edges {
             node {
