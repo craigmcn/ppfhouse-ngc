@@ -23,37 +23,11 @@ to = "/wpbe/"
 status = 301
 
 [[redirects]]
-from = "/wpbe/stage-plot/"
-to = "/wpbe/epk-stage-plot/"
-status = 301
-
-[[redirects]]
-from = "/music/tim-shia/*"
-to = "/tim-shia/:splat"
-status = 301
-
-[[redirects]]
-from = "/music/timshia/*"
-to = "/tim-shia/:splat"
-status = 301
-
-[[redirects]]
 from = "/music/leo37/*"
 to = "https://www.facebook.com/037vudu"
 status = 302
 
 [[redirects]]
-from = "/news/"
-to = "/news-events/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/art/"
-to = "/art-design/"
-status = 301
-
-[[redirects]]
-from = "/art/design/"
-to = "/art-design/"
-status = 301
+from = "/*"
+to = "/"
+status = 302
