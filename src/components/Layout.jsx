@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ChildrenPropType } from '../utilities/propTypes';
-import Header from './shared/Header';
 import useSplash from '../hooks/useSplash';
 import useSplashBackground from '../hooks/useSplashBackground';
 import useBamSplash from '../hooks/useBamSplash';
@@ -15,8 +14,6 @@ import * as layout from '../styles/layout.module.scss';
 
 const Layout = ({
   children,
-  pageHeader,
-  sidebar,
   className,
   hasBackground,
   isSplash,
@@ -48,8 +45,6 @@ const Layout = ({
         Skip to main content
       </a>
 
-      <Header />
-
       <div
         className={cx(
           layout.container,
@@ -58,9 +53,6 @@ const Layout = ({
         )}
         ref={containerRef}
       >
-        {pageHeader}
-        {sidebar}
-
         <div id="content" className={cx('content', layout.content)}>
           <div className="wrapper">{children}</div>
         </div>
@@ -71,8 +63,6 @@ const Layout = ({
 
 Layout.propTypes = {
   children: ChildrenPropType,
-  pageHeader: ChildrenPropType,
-  sidebar: ChildrenPropType,
   className: PropTypes.string,
   hasBackground: PropTypes.bool,
   isSplash: PropTypes.bool,

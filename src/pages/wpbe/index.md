@@ -13,9 +13,9 @@ links:
   - name: Bandcamp
     url: https://wpbe.bandcamp.com/
     icon: bandcamp
-  - name: Website
-    url: https://www.ppfhouse.com/wpbe/news-shows
-    icon: web
+  - name: ''
+    url: ''
+    icon: ''
   - name: Youtube
     url: https://www.youtube.com/channel/UCEG7xxrdqQ48y1PXvAgA9Mg
     icon: youtube
