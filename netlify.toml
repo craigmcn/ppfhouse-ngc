@@ -1,11 +1,5 @@
 [build]
 publish = "public"
-command = "yarn build"
-functions = "lambda"
-[build.environment]
-NODE_VERSION = "14"
-YARN_VERSION = "1.22.15"
-YARN_FLAGS = "--no-ignore-optional"
 
 [[redirects]]
 from = "/myspaceimages/*"
@@ -25,9 +19,4 @@ status = 301
 [[redirects]]
 from = "/music/leo37/*"
 to = "https://www.facebook.com/037vudu"
-status = 302
-
-[[redirects]]
-from = "/*"
-to = "/"
 status = 302
