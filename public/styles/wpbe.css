@@ -1,0 +1,180 @@
+:root {
+  --wpbe-splash-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1700433511/wpbe-logo-c_f8vpaj.jpg);
+  --wpbe-splash-bg-color: white;
+  --wpbe-splash-text-color: #790000;
+
+  --bandcamp: #629aa9;
+  --facebook: #1877f2;
+  --instagram: #f56040;
+  --youtube: #ff0000;
+}
+
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  background-color: white;
+  color: #790000;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+main {
+  height: 100%;
+}
+
+footer {
+  bottom: 0;
+  backdrop-filter: blur(4px);
+  padding: 0.5rem;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+footer > img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.wpbeSplash {
+  background-color: var(--wpbe-splash-bg-color, white);
+  color: var(--wpbe-splash-text-color, #790000);
+  display: flex;
+  flex-direction: column;
+  font-family: "d-din_condensedregular", system-ui, sans-serif;
+  height: 100dvh;
+  justify-items: center;
+}
+
+.wpbeBody {
+  background-image: var(--wpbe-splash-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: default;
+  display: block;
+  height: 100%;
+}
+
+nav.wpbeNav {
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+  margin: auto auto 5% auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
+.wpbeNavList {
+  display: flex;
+  font-size: clamp(1.4rem, 3vw, 3rem);
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.wpbeNavList > li > a {
+  color: inherit;
+  padding: 0.25rem 0.5rem;
+
+  &.bandcamp {
+    color: var(--bandcamp);
+  }
+
+  &.facebook {
+    color: var(--facebook);
+  }
+
+  &.instagram {
+    color: var(--instagram);
+  }
+
+  &.youtube {
+    color: var(--youtube);
+  }
+}
+
+.wpbeNavList > li > a:hover,
+.wpbeNavList > li > a:focus {
+  color: color-mix(in srgb, var(--wpbe-splash-text-color, #790000), #000 30%);
+
+  &.bandcamp {
+    color: color-mix(in srgb, var(--bandcamp), #000 30%);
+  }
+
+  &.facebook {
+    color: color-mix(in srgb, var(--facebook), #000 30%);
+  }
+
+  &.instagram {
+    color: color-mix(in srgb, var(--instagram), #000 30%);
+  }
+
+  &.youtube {
+    color: color-mix(in srgb, var(--youtube), #000 30%);
+  }
+}
+
+.wpbeNavList > li > a:focus {
+  outline: 2px solid var(--wpbe-splash-text-color, #790000);
+}
