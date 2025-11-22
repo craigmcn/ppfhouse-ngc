@@ -97,7 +97,8 @@ footer > img {
   width: 1px;
 }
 
-.wpbeSplash {
+.wpbeSplash,
+.wpbeLgh {
   background-color: var(--wpbe-splash-bg-color, white);
   color: var(--wpbe-splash-text-color, #790000);
   display: flex;
@@ -105,6 +106,10 @@ footer > img {
   font-family: "d-din_condensedregular", system-ui, sans-serif;
   height: 100dvh;
   justify-items: center;
+}
+
+.wpbeLgh > .wpbeBody {
+  --wpbe-splash-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1763768324/wpbe/wpbe-least-greatest-hots-vol-1_u27flf.jpg);
 }
 
 .wpbeBody {
@@ -117,6 +122,10 @@ footer > img {
   height: 100%;
 }
 
+.wpbeContent {
+  margin: 1rem auto 2rem auto;
+}
+
 nav.wpbeNav {
   background-color: rgba(255, 255, 255, 0.9);
   font-family: inherit;
@@ -126,6 +135,7 @@ nav.wpbeNav {
 }
 
 .wpbeNavList {
+  align-items: center;
   display: flex;
   font-size: clamp(1.4rem, 3vw, 3rem);
   justify-content: space-between;
@@ -134,8 +144,11 @@ nav.wpbeNav {
 }
 
 .wpbeNavList > li > a {
+  --padding-block: 0.25rem;
+  --padding-inline: 0.5rem;
+
   color: inherit;
-  padding: 0.25rem 0.5rem;
+  padding: var(--padding-block) var(--padding-inline);
 
   &.bandcamp {
     color: var(--bandcamp);
@@ -151,6 +164,18 @@ nav.wpbeNav {
 
   &.youtube {
     color: var(--youtube);
+  }
+
+  &:has(img) {
+    display: block;
+  }
+
+  & > img {
+    display: inline-block;
+  }
+
+  &.internal {
+    max-width: 3em;
   }
 }
 
@@ -175,6 +200,86 @@ nav.wpbeNav {
   }
 }
 
-.wpbeNavList > li > a:focus {
-  outline: 2px solid var(--wpbe-splash-text-color, #790000);
+.wpbeNavList > li > a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid
+    color-mix(in srgb, var(--wpbe-splash-text-color, #790000), transparent 40%);
+}
+
+.btn {
+  /* reset */
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  outline: none;
+  padding: 0;
+
+  /* default */
+  background-color: white;
+  border: solid 1px;
+  border-color: transparent;
+  border-radius: 50px;
+  color: black;
+  display: inline-block;
+  margin-top: 4px;
+  padding: calc(0.5em + 1px) 1.5em;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+
+  &:focus,
+  &:hover,
+  &:hover:visited,
+  &:active {
+    background-color: color-mix(
+      in srgb,
+      var(--wpbe-splash-text-color, #790000),
+      white 90%
+    );
+    border-color: #790000;
+    border-width: 1px;
+    box-shadow: none;
+    color: white;
+  }
+
+  &:focus-visible {
+    outline: 3px solid
+      color-mix(
+        in srgb,
+        var(--wpbe-splash-text-color, #790000),
+        transparent 60%
+      );
+    outline-offset: 1px;
+  }
+
+  &:visited {
+    color: var(--wpbe-splash-text-color, #790000);
+  }
+}
+
+.btn--download {
+  background-color: var(--wpbe-splash-text-color, #790000);
+  border-color: var(--wpbe-splash-text-color, #790000);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-inline: 3em;
+
+  &:focus,
+  &:focus-visible,
+  &:hover,
+  &:hover:visited,
+  &:active {
+    background-color: color-mix(
+      in srgb,
+      var(--wpbe-splash-text-color, #790000),
+      black 30%
+    );
+    color: white;
+  }
+
+  &:visited {
+    color: white;
+  }
 }
