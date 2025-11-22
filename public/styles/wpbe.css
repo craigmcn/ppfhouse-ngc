@@ -66,6 +66,34 @@ h6 {
   overflow-wrap: break-word;
 }
 
+a {
+  text-decoration: none;
+  color: var(--wpbe-splash-text-color);
+  padding-inline: 0.25em;
+
+  &:focus-visible,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active,
+  &:focus-visible,
+  &:hover {
+    color: color-mix(in srgb, var(--wpbe-splash-text-color), black 30%);
+  }
+
+  &:focus-visible {
+    border-radius: 0.25em;
+    outline: 2px solid
+      color-mix(
+        in srgb,
+        var(--wpbe-splash-text-color, #790000),
+        transparent 60%
+      );
+    outline-offset: 1px;
+  }
+}
+
 main {
   height: 100%;
 }
@@ -82,19 +110,6 @@ footer {
 footer > img {
   display: inline-block;
   vertical-align: middle;
-}
-
-.sr-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }
 
 .wpbeSplash,
@@ -206,6 +221,8 @@ nav.wpbeNav {
     color-mix(in srgb, var(--wpbe-splash-text-color, #790000), transparent 40%);
 }
 
+/* Buttons */
+
 .btn {
   /* reset */
   background: none;
@@ -222,10 +239,10 @@ nav.wpbeNav {
   border-color: transparent;
   border-radius: 50px;
   color: black;
-  display: inline-block;
+  display: inline-flex;
   margin-top: 4px;
   padding: calc(0.5em + 1px) 1.5em;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all 0.15s ease-in-out;
 
   &:focus,
@@ -244,6 +261,7 @@ nav.wpbeNav {
   }
 
   &:focus-visible {
+    border-radius: 50px;
     outline: 3px solid
       color-mix(
         in srgb,
@@ -282,4 +300,26 @@ nav.wpbeNav {
   &:visited {
     color: white;
   }
+}
+
+/* Utilities */
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.ms-1 {
+  margin-inline-start: 0.25rem;
+}
+.ms-2 {
+  margin-inline-start: 0.5rem;
 }
