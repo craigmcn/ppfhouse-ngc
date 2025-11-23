@@ -1,7 +1,6 @@
 :root {
-  --wpbe-splash-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1700433511/wpbe-logo-c_f8vpaj.jpg);
-  --wpbe-splash-bg-color: white;
-  --wpbe-splash-text-color: #790000;
+  --bg-color: white;
+  --text-color: #790000;
 
   --bandcamp: #629aa9;
   --facebook: #1877f2;
@@ -25,8 +24,7 @@
   isolation: isolate;
 }
 
-html,
-body {
+html {
   height: 100vh;
 }
 
@@ -34,10 +32,10 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
-  background-color: white;
-  color: #790000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: system-ui, sans-serif;
-  margin: 0;
+  height: 100%;
 }
 
 img,
@@ -68,102 +66,100 @@ h6 {
 
 a {
   text-decoration: none;
-  color: var(--wpbe-splash-text-color);
+  color: var(--text-color);
   padding-inline: 0.25em;
-
-  &:focus-visible,
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:active,
-  &:focus-visible,
-  &:hover {
-    color: color-mix(in srgb, var(--wpbe-splash-text-color), black 30%);
-  }
-
-  &:focus-visible {
-    border-radius: 0.25em;
-    outline: 2px solid
-      color-mix(
-        in srgb,
-        var(--wpbe-splash-text-color, #790000),
-        transparent 60%
-      );
-    outline-offset: 1px;
-  }
 }
 
-main {
-  height: 100%;
+a:focus-visible,
+a:hover {
+  text-decoration: underline;
 }
 
-footer {
-  bottom: 0;
-  backdrop-filter: blur(4px);
-  padding: 0.5rem;
-  position: fixed;
-  text-align: center;
-  width: 100%;
+a:active,
+a:focus-visible,
+a:hover {
+  color: color-mix(in srgb, var(--text-color), black 30%);
 }
 
-footer > img {
-  display: inline-block;
-  vertical-align: middle;
+a:focus-visible {
+  border-radius: 0.25em;
+  outline: 2px solid color-mix(in srgb, var(--text-color), transparent 60%);
+  outline-offset: 1px;
 }
 
-.wpbeSplash,
-.wpbeLgh {
-  background-color: var(--wpbe-splash-bg-color, white);
-  color: var(--wpbe-splash-text-color, #790000);
+.container {
   display: flex;
   flex-direction: column;
-  font-family: "d-din_condensedregular", system-ui, sans-serif;
-  height: 100dvh;
-  justify-items: center;
-}
-
-.wpbeLgh > .wpbeBody {
-  --wpbe-splash-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1763768324/wpbe/wpbe-least-greatest-hots-vol-1_u27flf.jpg);
-}
-
-.wpbeBody {
-  background-image: var(--wpbe-splash-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: default;
-  display: block;
   height: 100%;
 }
 
-.wpbeContent {
-  margin: 1rem auto 2rem auto;
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
 
-nav.wpbeNav {
+.content__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+
+  background-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1700433511/wpbe-logo-c_f8vpaj.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.splash--lgh {
+  background-image: url(https://res.cloudinary.com/dunew51zn/image/upload/v1763768324/wpbe/wpbe-least-greatest-hots-vol-1_u27flf.jpg);
+}
+
+@media screen and (orientation: landscape) and (max-height: 576px) {
+  .content {
+    flex-direction: row;
+  }
+
+  .content__body {
+    margin-inline: 4%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content__body {
+    margin-bottom: 2rem;
+  }
+}
+
+nav.nav {
   background-color: rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
   font-family: inherit;
-  margin: auto auto 5% auto;
-  padding: 0 5%;
+  margin: auto auto 4% auto;
+  padding: 0 4%;
   width: 100%;
 }
 
-.wpbeNavList {
+.nav__list {
   align-items: center;
   display: flex;
-  font-size: clamp(1.4rem, 3vw, 3rem);
+  font-size: clamp(1.4rem, 0.714rem + 1.905vw, 3rem);
   justify-content: space-between;
   list-style: none;
   padding: 0;
 }
 
-.wpbeNavList > li > a {
-  --padding-block: 0.25rem;
-  --padding-inline: 0.5rem;
-
+.nav__list > li > a {
   color: inherit;
-  padding: var(--padding-block) var(--padding-inline);
+  padding: 0.25rem 0.5rem;
 
   &.bandcamp {
     color: var(--bandcamp);
@@ -180,23 +176,11 @@ nav.wpbeNav {
   &.youtube {
     color: var(--youtube);
   }
-
-  &:has(img) {
-    display: block;
-  }
-
-  & > img {
-    display: inline-block;
-  }
-
-  &.internal {
-    max-width: 3em;
-  }
 }
 
-.wpbeNavList > li > a:hover,
-.wpbeNavList > li > a:focus {
-  color: color-mix(in srgb, var(--wpbe-splash-text-color, #790000), #000 30%);
+.nav__list > li > a:hover,
+.nav__list > li > a:focus {
+  color: color-mix(in srgb, var(--text-color), #000 30%);
 
   &.bandcamp {
     color: color-mix(in srgb, var(--bandcamp), #000 30%);
@@ -215,15 +199,16 @@ nav.wpbeNav {
   }
 }
 
-.wpbeNavList > li > a:focus-visible {
+.nav__list > li > a:focus-visible {
   border-radius: 2px;
-  outline: 2px solid
-    color-mix(in srgb, var(--wpbe-splash-text-color, #790000), transparent 40%);
+  outline: 2px solid color-mix(in srgb, var(--text-color), transparent 40%);
 }
 
 /* Buttons */
 
 .btn {
+  --border-radius: 999em; /* Creates a pill shape */
+
   /* reset */
   background: none;
   border: none;
@@ -237,7 +222,7 @@ nav.wpbeNav {
   background-color: white;
   border: solid 1px;
   border-color: transparent;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   color: black;
   display: inline-flex;
   margin-top: 4px;
@@ -249,11 +234,7 @@ nav.wpbeNav {
   &:hover,
   &:hover:visited,
   &:active {
-    background-color: color-mix(
-      in srgb,
-      var(--wpbe-splash-text-color, #790000),
-      white 90%
-    );
+    background-color: color-mix(in srgb, var(--text-color), white 90%);
     border-color: #790000;
     border-width: 1px;
     box-shadow: none;
@@ -261,26 +242,24 @@ nav.wpbeNav {
   }
 
   &:focus-visible {
-    border-radius: 50px;
-    outline: 3px solid
-      color-mix(
-        in srgb,
-        var(--wpbe-splash-text-color, #790000),
-        transparent 60%
-      );
+    border-radius: var(--border-radius);
+    outline: 3px solid color-mix(in srgb, var(--text-color), transparent 60%);
     outline-offset: 1px;
   }
 
   &:visited {
-    color: var(--wpbe-splash-text-color, #790000);
+    color: var(--text-color);
   }
 }
 
+.btn--responsive {
+  font-size: clamp(1.5rem, 1.179rem + 0.893vw, 2.25rem);
+}
+
 .btn--download {
-  background-color: var(--wpbe-splash-text-color, #790000);
-  border-color: var(--wpbe-splash-text-color, #790000);
+  background-color: var(--text-color);
+  border-color: var(--text-color);
   color: white;
-  font-size: 1.5rem;
   font-weight: 600;
   padding-inline: 3em;
 
@@ -289,11 +268,7 @@ nav.wpbeNav {
   &:hover,
   &:hover:visited,
   &:active {
-    background-color: color-mix(
-      in srgb,
-      var(--wpbe-splash-text-color, #790000),
-      black 30%
-    );
+    background-color: color-mix(in srgb, var(--text-color), black 30%);
     color: white;
   }
 
@@ -304,14 +279,12 @@ nav.wpbeNav {
 
 /* Utilities */
 
-.sr-only {
+.visually-hidden {
   border: 0;
-  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
-  margin: -1px;
+  margin: 0;
   overflow: hidden;
-  padding: 0;
   position: absolute;
   white-space: nowrap;
   width: 1px;
